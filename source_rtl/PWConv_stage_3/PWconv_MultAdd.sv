@@ -2,9 +2,9 @@ module PWconv_MultAdd (
     input  logic        clk,
     input  logic        rst_b,
     input  logic        en,
-    input  logic signed  conv_weights [0:32*8-1],
+    input  logic signed [0:32*8-1] conv_weights ,
     input  logic signed [7:0]  input_data [3:0][31:0], // 4个空间像素，每个32通道
-    input  logic signed [7:0]  bias,
+    input  logic signed [15:0]  bias,
     output logic signed [7:0] output_data [1:0][1:0]   // 映射回 2x2 空间像素
 );
 
@@ -30,8 +30,8 @@ module PWconv_MultAdd (
 
                 // 2. 例化后处理模块：重缩放与激活 (Rescale & ReLU)
                 RescaleReLu #(
-                    .M0(8'sd59),
-                    .N(8'd11)
+                    .M0(8'sd69),
+                    .N(8'd13)
                 ) rescalerelu_inst (
                     .rst_b(rst_b),                 // 顶层复位控制流向后处理模块
                     .clk(clk),

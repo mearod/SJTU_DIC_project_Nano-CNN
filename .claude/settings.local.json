@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -d D:/subject/IC_project/NanoCNN/CNN*)",
+      "Bash(ls -d \"D:/subject/IC_project/NanoCNN/\"*测试*)"
+    ]
+  }
+}

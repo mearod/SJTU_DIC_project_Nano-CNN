@@ -1,8 +1,8 @@
 module Conv_MultAdd_cell (
     input  logic        clk,
-    input  logic signed  conv_weights [0:77*8-1],
+    input  logic signed [0:77*8-1] conv_weights ,
     input  logic signed [7:0]  input_data [10:0][6:0], 
-    input  logic signed [7:0]  bias,
+    input  logic signed [15:0]  bias,
     output logic signed [31:0] output_data
 );
 
@@ -33,7 +33,7 @@ module Conv_MultAdd_cell (
     // 延迟: ~ 4 x T_add (乘法器延迟)
     // ==========================================
     logic signed [15:0] s1_prod [0:76];
-    logic signed [7:0]  s1_bias; // Bias 延迟一拍，与乘法器输出在时间上对齐
+    logic signed [15:0]  s1_bias; // Bias 延迟一拍，与乘法器输出在时间上对齐
 
     always_ff @(posedge clk) begin
         // 77个 8bit x 8bit 有符号乘法 -> 16bit输出

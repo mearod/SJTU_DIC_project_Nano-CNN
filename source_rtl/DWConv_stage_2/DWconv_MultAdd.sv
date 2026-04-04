@@ -2,9 +2,9 @@ module DWconv_MultAdd (
     input  logic        clk,
     input  logic        rst_b,
     input  logic        en,
-    input  logic signed  conv_weights [0:9*8-1],
+    input  logic signed [0:9*8-1] conv_weights ,
     input  logic signed [7:0]  input_data [3:0][3:0], 
-    input  logic signed [7:0]  bias,
+    input  logic signed [15:0]  bias,
     output logic signed [7:0] output_data [1:0][1:0]
 );
 

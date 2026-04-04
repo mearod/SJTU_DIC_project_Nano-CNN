@@ -1,133 +1,121 @@
-`define PIPE_STAGE_NUM 3
+// Conv Stage 1: (1,30,10) → (32,20,4)
+// Processes 32 output channels sequentially.
+// For each channel: 2×4 output pixels via Conv_MultAdd (pipeline latency = 5).
+// FIFO combines consecutive 2-row strips into 4-row blocks for DWConv.
+// Position 0: FIFO fill only. Positions 1-9: valid 4×4 output.
 
 module Conv (
     input clk,
     input rst_b,
     input en,
-    input [7:0] input_data [11:0][9:0],  // 12*10*8
-    output [4:0] cnt_out,
-    output [3:0] pos_out,  //0-9
-    output [7:0] dwconv_weights [2:0][2:0], //?????
-    output [8:0] output_data [3:0][3:0], //4*4*8
-
     input valid_in,
-    output ready_in,
-    output switch_map_flag_out,
+    input signed [7:0] input_data [11:0][9:0],  // 12×10 sliding window
+
+    output [4:0] cnt_out,
+    output [3:0] pos_out,
+    output logic signed [7:0] output_data [3:0][3:0],  // 4×4 output block
     output valid_out
 );
-//state control in
-logic [4:0] cnt_in_reg;
 
-always_ff @(posedge clk or negedge rst_b) begin
-    if (!rst_b) begin
-        cnt_in_reg <= 0;
-    end else if (en) begin
-        cnt_in_reg <= cnt_in_reg + 1; // Increment the counter on each clock cycle when enabled
-    end else begin
-        cnt_in_reg <= 0; // Reset the counter when not enabled
+    // Pipeline latency: Conv_MultAdd_cell (3 stages) + RescaleReLu (2 stages) = 5
+    localparam PIPE_LATENCY = 5;
+
+    // ===== Input channel counter (ROM address) =====
+    logic [4:0] cnt_in_reg;
+    always_ff @(posedge clk or negedge rst_b) begin
+        if (!rst_b)
+            cnt_in_reg <= 0;
+        else if (en && valid_in)
+            cnt_in_reg <= cnt_in_reg + 1;  // 5-bit auto-wraps at 32
     end
-end
 
-//weighes and bias sram
-logic [7:0] conv_weights [10:0][6:0];
-logic [0:77*8-1] conv_weights_flattened; // 77 weights for 9 positions + 1 bias per channel
-
-Conv_WeightROM weight_rom_inst (
-    .clk(clk),
-    .rst_b(rst_b),
-    .addr(cnt_in_reg), // 使用输入计数器作为地址
-    .en(en),       // 使能信号与输入同步
-    .data_out(conv_weights_flattened) // 输出选定的权重数据
-);
-
-logic [4:0] dwconv_weight_addr;
-logic [7:0] dwconv_weights [2:0][2:0];
-logic [0:9*8-1] dwconv_weights_flattened;
-always_ff begin
-    dwconv_weight_addr = pipe_stage_shifter_reg[`PIPE_STAGE_NUM-2] ? cnt_out_reg+1 : 0; // 直接使用输入计数器作为地址
-end //or ff but `PIPE_STAGE_NUM-2
-DWconv_WeightROM Dweight_rom_inst (
-    .clk(clk),
-    .rst_b(rst_b),
-    .addr(dwconv_weight_addr), // 使用输入计数器作为地址
-    .en(en),       // 使能信号与输入同步
-    .data_out(dwconv_weights_flattened) // 输出选定的权重数据
-);
-
-//state control out
-logic [`PIPE_STAGE_NUM-1:0] pipe_stage_shifter_reg;
-
-always_ff @(posedge clk or negedge rst_b) begin
-    if (!rst_b) begin
-        pipe_stage_shifter_reg <= '0;
-    end else if (en && valid_in) begin
-        pipe_stage_shifter_reg <= {pipe_stage_shifter_reg[`PIPE_STAGE_NUM-2:0], 1'b1}; // Shift in a '1' to indicate progress through the pipeline
-    end else begin
-        pipe_stage_shifter_reg <= {pipe_stage_shifter_reg[`PIPE_STAGE_NUM-2:0], 1'b0};
+    // ===== Pipeline valid shift register =====
+    logic [PIPE_LATENCY-1:0] valid_pipe;
+    always_ff @(posedge clk or negedge rst_b) begin
+        if (!rst_b)
+            valid_pipe <= '0;
+        else
+            valid_pipe <= {valid_pipe[PIPE_LATENCY-2:0], (en && valid_in)};
     end
-end
+    wire pipe_out_valid = valid_pipe[PIPE_LATENCY-1];
 
-logic [4:0] cnt_out_reg;
-logic [3:0] pos_out_reg;
+    // ===== Output channel counter =====
+    logic [4:0] cnt_out_reg;
+    always_ff @(posedge clk or negedge rst_b) begin
+        if (!rst_b)
+            cnt_out_reg <= 0;
+        else if (pipe_out_valid)
+            cnt_out_reg <= cnt_out_reg + 1;  // auto-wraps at 32
+    end
+    assign cnt_out = cnt_out_reg;
 
-always_ff @(posedge clk or negedge rst_b) begin
-    if (!rst_b) begin
-        cnt_out_reg <= 0;
-    end else if (pipe_stage_shifter_reg[`PIPE_STAGE_NUM - 1] == 1'b1) begin
-        cnt_out_reg <= cnt_out_reg + 1; // Output the current stage of the pipeline
-    end else begin
-        cnt_out_reg <= 0; // Reset output when enable is low
-    end 
-end
-
-always_ff @(posedge clk or negedge rst_b) begin
-    if (!rst_b) begin
-        pos_out_reg <= 0;
-    end else if (cnt_out_reg == 5'd31) begin
-        if(pos_out_reg == 4'd9) begin
-            pos_out_reg <= 0; // Reset position output after reaching the last position
-        end else begin
-            pos_out_reg <= pos_out_reg + 1; // Move to the next position
+    // ===== Position counter =====
+    logic [3:0] pos_reg;
+    logic first_position;
+    always_ff @(posedge clk or negedge rst_b) begin
+        if (!rst_b) begin
+            pos_reg <= 0;
+            first_position <= 1;
+        end else if (pipe_out_valid && cnt_out_reg == 5'd31) begin
+            if (pos_reg == 4'd9) begin
+                pos_reg <= 0;
+                first_position <= 1;
+            end else begin
+                pos_reg <= pos_reg + 1;
+                first_position <= 0;
+            end
         end
-    end else begin
-        pos_out_reg <= pos_out_reg;
-    end 
-end
+    end
+    assign pos_out = pos_reg;
 
-wire data_computed_flag = (pipe_stage_shifter_reg[`PIPE_STAGE_NUM - 1] == 1'b1) ? 1'b1 : 1'b0; // Valid output when the pipeline is at the last stage
-assign ready_in = (pipe_stage_shifter_reg[0] == 1'b0 || cnt_in_reg == 5'd0) ? 1'b1 : 1'b0; // New input should be ready in next cycle.
-assign switch_map_flag_out = (cnt_in_reg == 5'd31 && pos_out_reg == 4'd9) ? 1'b1 : 1'b0; // Flag to indicate when to switch the map
+    // ===== Weight and Bias ROMs (combinational output) =====
+    wire [0:77*8-1] conv_weights_flat;
+    wire signed [15:0] conv_bias;
 
+    Conv_WeightROM weight_rom (
+        .clk(clk), .rst_b(rst_b),
+        .addr(cnt_in_reg), .en(en),
+        .data_out(conv_weights_flat)
+    );
 
-//FIFO_CACHE_2x4X8
-logic [7:0] data_computed [1:0][3:0];
-logic spliced_data_valid;
-always_comb begin
-    spliced_data_valid = pos_out_reg != 0 ? 1'b1 : 1'b0; // Data is valid when the counter reaches the last stage of the pipeline
-end
+    Conv_BiasROM bias_rom (
+        .clk(clk), .rst_b(rst_b),
+        .addr(cnt_in_reg), .en(en),
+        .data_out(conv_bias)
+    );
 
+    // ===== Convolution computation =====
+    wire signed [7:0] data_computed [1:0][3:0];
 
-logic [7:0] fifo_rd_data [1:0][3:0];
+    Conv_MultAdd mult_add_inst (
+        .clk(clk), .rst_b(rst_b), .en(en),
+        .conv_weights(conv_weights_flat),
+        .input_data(input_data),
+        .bias(conv_bias),
+        .output_data(data_computed)
+    );
 
-FIFO_2x4X8 #(
-    .DEPTH(32)
-) fifo_cache_inst (
-    .clk(clk),
-    .rst_n(rst_b),
-    .wr_en(en && data_computed_flag), // Write enable when the module is enabled and input is valid
-    .rd_en(spliced_data_valid), // Read enable at the last stage of the pipeline
-    .wr_data(data_computed), // Write input data to FIFO
-    .rd_data(fifo_rd_data)
-);
+    // ===== FIFO: stores previous 2×4 row strip for combining =====
+    wire signed [7:0] fifo_rd_data [1:0][3:0];
 
-always_comb begin
-    output_data[3] = data_computed[1]; // 直接赋值一整行 ([3:0])
-    output_data[2] = data_computed[0];
-    output_data[1] = fifo_rd_data[1];
-    output_data[0] = fifo_rd_data[0];
-    valid_out = spliced_data_valid; // 输出数据有效信号
-end
+    FIFO_2x4X8 #(.DEPTH(32)) fifo_inst (
+        .clk(clk),
+        .rst_n(rst_b),
+        .wr_en(pipe_out_valid),
+        .rd_en(valid_pipe[PIPE_LATENCY-2]),
+        .wr_data(data_computed),
+        .rd_data(fifo_rd_data)
+    );
 
-// convolution computation:compute data_computed based on input_data,which will be written into FIFO
+    // ===== Output assembly =====
+    // Combine FIFO (old 2 rows) + current compute (new 2 rows) → 4×4 block
+    assign valid_out = pipe_out_valid && !first_position;
+
+    always_comb begin
+        output_data[0] = fifo_rd_data[0];   // old row 0
+        output_data[1] = fifo_rd_data[1];   // old row 1
+        output_data[2] = data_computed[0];   // new row 0
+        output_data[3] = data_computed[1];   // new row 1
+    end
 
 endmodule

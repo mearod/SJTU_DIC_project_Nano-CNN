@@ -2,9 +2,9 @@ module Conv_MultAdd (
     input  logic    clk,
     input  logic    rst_b,
     input  logic    en,
-    input  logic signed  conv_weights [0:77*8-1],
+    input  logic signed [0:77*8-1] conv_weights ,
     input  logic signed [7:0]  input_data [11:0][9:0], 
-    input  logic signed [7:0]  bias,
+    input  logic signed [15:0]  bias,
     output logic signed [7:0] output_data [1:0][3:0]
 );
 
@@ -40,11 +40,10 @@ module Conv_MultAdd (
 
                 // 3. 例化后处理模块：重缩放与激活 (Rescale & ReLU)
                 RescaleReLu #(
-                    .M0(8'sd59),
-                    .N(8'd11)
+                    .M0(8'sd111),
+                    .N(8'd14)
                 ) rescalerelu (
-                    // 顶层没有复位和使能端口，所以固定接 1 (active low reset & high enable)
-                    .rst_b(1'b1),
+                    .rst_b(rst_b),
                     .clk(clk),
                     .en(en),
                     .data_in(cell_out[r][c]),      // 接入本单元的 32-bit 乘加和

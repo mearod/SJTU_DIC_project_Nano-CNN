@@ -2,22 +2,27 @@ module PostProcess_Maxpool (
     input clk,
     input rst_b,
     input en,
+    input valid_in,
     input [8:0] iter_in,  // cnt 和 pos 被转换为 iter
     input signed [7:0] data_in0,
     input signed [7:0] data_in1,
     input signed [7:0] data_in2,
     input signed [7:0] data_in3,
     output reg [8:0] iter_out,
-    output reg signed [7:0] data_out
+    output reg signed [7:0] data_out,
+    output reg valid_out
 );
 
     always @(posedge clk or negedge rst_b) begin
         if (~rst_b) begin
             iter_out <= 0;
+            valid_out <= 0;
         end else if (en) begin
             iter_out <= iter_in;
+            valid_out <= valid_in;
         end else begin
             iter_out <= iter_out;
+            valid_out <= valid_out;
         end
     end
 

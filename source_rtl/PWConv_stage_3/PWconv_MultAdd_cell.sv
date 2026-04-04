@@ -3,9 +3,9 @@
 // ==========================================
 module PWconv_MultAdd_cell (
     input  logic        clk,
-    input  logic signed  conv_weights [0:32*8-1], // 32个权重 * 8bit
+    input  logic signed [0:32*8-1] conv_weights , // 32个权重 * 8bit
     input  logic signed [7:0]  input_data [31:0], // 32个通道输入数据
-    input  logic signed [7:0]  bias,
+    input  logic signed [15:0]  bias,
     output logic signed [31:0] output_data
 );
 
@@ -26,7 +26,7 @@ module PWconv_MultAdd_cell (
     // 延迟: T_mul
     // ==========================================
     logic signed [15:0] s1_prod [0:31];
-    logic signed [7:0]  s1_bias;
+    logic signed [15:0]  s1_bias;
 
     always_ff @(posedge clk) begin
         // 32个通道并行乘法
@@ -56,7 +56,7 @@ module PWconv_MultAdd_cell (
 
     // S2 寄存器锁存 (截断加法树以平衡时序)
     logic signed [19:0] s2_out [0:1];
-    logic signed [7:0]  s2_bias;
+    logic signed [15:0]  s2_bias;
     always_ff @(posedge clk) begin
         s2_out[0] <= s2_l4[0];
         s2_out[1] <= s2_l4[1];

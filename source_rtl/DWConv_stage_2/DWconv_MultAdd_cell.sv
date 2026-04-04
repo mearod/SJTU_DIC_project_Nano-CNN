@@ -1,8 +1,8 @@
 module DWconv_MultAdd_cell (
     input  logic        clk,
-    input  logic signed  conv_weights [0:9*8-1],  // 9个权重 * 8bit
+    input  logic signed [0:9*8-1] conv_weights ,  // 9个权重 * 8bit
     input  logic signed [7:0]  input_data [2:0][2:0], // 3x3 输入窗口
-    input  logic signed [7:0]  bias,
+    input  logic signed [15:0]  bias,
     output logic signed [31:0] output_data
 );
 
@@ -33,7 +33,7 @@ module DWconv_MultAdd_cell (
     // 组合延迟: T_mul
     // ==========================================
     logic signed [15:0] s1_prod [0:8];
-    logic signed [7:0]  s1_bias; 
+    logic signed [15:0]  s1_bias;
 
     always_ff @(posedge clk) begin
         // 9个 8bit x 8bit 乘法 -> 16bit输出

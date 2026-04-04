@@ -2,6 +2,7 @@ module PostProcess (
     input clk,
     input rst_b,
     input en,
+    input valid_in,
     input [4:0] cnt_in,
     input [3:0] pos_in,
     input signed [7:0] data_in0,
@@ -20,22 +21,25 @@ module PostProcess (
     // maxpool
     wire [8:0] iter_maxpool;
     wire signed [7:0] data_maxpool;
+    wire valid_maxpool;
     PostProcess_Maxpool u_postprocess_maxpool (
         .clk(clk),
         .rst_b(rst_b),
         .en(en),
+        .valid_in(valid_in),
         .iter_in(iter_in),
         .data_in0(data_in0),
         .data_in1(data_in1),
         .data_in2(data_in2),
         .data_in3(data_in3),
         .iter_out(iter_maxpool),
-        .data_out(data_maxpool)
+        .data_out(data_maxpool),
+        .valid_out(valid_maxpool)
     );
     // weight
     wire signed [7:0] weight0;
     wire signed [7:0] weight1;
-    PostProcess_Linear_WeightSelector u_linear_weightselector (
+    PostProcess_Linear_WeightROM u_linear_weightROM (
        .clk(clk),
        .rst_b(rst_b),
        .en(en),
@@ -62,6 +66,7 @@ module PostProcess (
         .clk(clk),
         .rst_b(rst_b),
         .en(en),
+        .valid_in(valid_maxpool),
         .iter_in(iter_maxpool),
         .weight0(weight0),
         .weight1(weight1),

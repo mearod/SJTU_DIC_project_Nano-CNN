@@ -8,13 +8,13 @@ module Rescale_Shifter #(  // 只 shift，不做 relu
     output reg signed [7:0] data_out
 );
 
-    wire signed [7:0] res;   // FUCK YOU LLL
-    assign res = data_in >>> N;
+    wire signed [31:0] shifted;
+    assign shifted = data_in >>> N;
     always @(posedge clk or negedge rst_b) begin
         if (~rst_b) begin
             data_out <= 0;
         end else if (en) begin
-            data_out <= (res < -128) ? -8'sd128 : ((res > 127) ? 8'sd127 : res[7:0]);
+            data_out <= (shifted < -128) ? -8'sd128 : ((shifted > 127) ? 8'sd127 : shifted[7:0]);
         end else begin
             data_out <= data_out;
         end

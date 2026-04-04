@@ -2,6 +2,7 @@ module PostProcess_Linear (
     input clk,
     input rst_b,
     input en,
+    input valid_in,
     input [8:0] iter_in,  // cnt 和 pos 被转换为 iter
     input signed [7:0] weight0,
     input signed [7:0] weight1,
@@ -28,6 +29,7 @@ module PostProcess_Linear (
        .clk(clk),
        .rst_b(rst_b),
        .en(en),
+       .valid_in(valid_in),
        .iter(iter_in),
        .data_in(data_in),
        .weight(weight0),
@@ -38,6 +40,7 @@ module PostProcess_Linear (
        .clk(clk),
        .rst_b(rst_b),
        .en(en),
+       .valid_in(valid_in),
        .iter(iter_in),
        .data_in(data_in),
        .weight(weight1),
