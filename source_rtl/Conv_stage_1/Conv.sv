@@ -10,7 +10,9 @@ module Conv (
     input en,
     input valid_in,
     input signed [7:0] input_data [11:0][9:0],  // 12×10 sliding window
+    input [4:0] cnt_in,       // channel index from top-level
 
+    output [4:0] DWconv_sram_cnt_out,     // channel index for DWconv
     output [4:0] cnt_out,
     output [3:0] pos_out,
     output logic signed [7:0] output_data [3:0][3:0],  // 4×4 output block
@@ -19,15 +21,6 @@ module Conv (
 
     // Pipeline latency: Conv_MultAdd_cell (3 stages) + RescaleReLu (2 stages) = 5
     localparam PIPE_LATENCY = 5;
-
-    // ===== Input channel counter (ROM address) =====
-    logic [4:0] cnt_in_reg;
-    always_ff @(posedge clk or negedge rst_b) begin
-        if (!rst_b)
-            cnt_in_reg <= 0;
-        else if (en && valid_in)
-            cnt_in_reg <= cnt_in_reg + 1;  // 5-bit auto-wraps at 32
-    end
 
     // ===== Pipeline valid shift register =====
     logic [PIPE_LATENCY-1:0] valid_pipe;
@@ -39,12 +32,22 @@ module Conv (
     end
     wire pipe_out_valid = valid_pipe[PIPE_LATENCY-1];
 
+    // ===== DWconv_sram channel counter =====
+    logic [4:0] DWconv_sram_cnt_out_reg;
+    always_ff @(posedge clk or negedge rst_b) begin
+        if (!rst_b)
+            DWconv_sram_cnt_out_reg <= 0;
+        else if (valid_pipe[PIPE_LATENCY-2]) // DWconv_sram_cnt_out connect to DWconv, and DWconv's sram is delayed by 1 cycle when reading, so we use valid_pipe[PIPE_LATENCY-2] to ensure synchronization
+            DWconv_sram_cnt_out_reg <= DWconv_sram_cnt_out_reg + 1;  // auto-wraps at 32
+    end
+    assign DWconv_sram_cnt_out = DWconv_sram_cnt_out_reg;
+
     // ===== Output channel counter =====
     logic [4:0] cnt_out_reg;
     always_ff @(posedge clk or negedge rst_b) begin
         if (!rst_b)
             cnt_out_reg <= 0;
-        else if (pipe_out_valid)
+        else if (pipe_out_valid) // cnt_out connect to DWconv, and DWconv's sram is delayed by 1 cycle when reading, so we use valid_pipe[PIPE_LATENCY-2] to ensure synchronization
             cnt_out_reg <= cnt_out_reg + 1;  // auto-wraps at 32
     end
     assign cnt_out = cnt_out_reg;
@@ -74,13 +77,13 @@ module Conv (
 
     Conv_WeightROM weight_rom (
         .clk(clk), .rst_b(rst_b),
-        .addr(cnt_in_reg), .en(en),
+        .addr(cnt_in), .en(en),
         .data_out(conv_weights_flat)
     );
 
     Conv_BiasROM bias_rom (
         .clk(clk), .rst_b(rst_b),
-        .addr(cnt_in_reg), .en(en),
+        .addr(cnt_in), .en(en),
         .data_out(conv_bias)
     );
 

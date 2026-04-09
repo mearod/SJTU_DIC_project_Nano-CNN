@@ -20,6 +20,42 @@ module CNN_tb;
     initial clk = 0;
     always #5 clk = ~clk;  // 100 MHz
 
+
+    // =========================================================================
+    // conv_input_window selection logic
+    // =========================================================================
+    logic [9:0] input_cycle_cnt;  // 0 to 319
+    logic conv_feeding;           // high during the 320-cycle input phase
+
+    always_ff @(posedge clk or negedge rst_b) begin
+        if (!rst_b) begin
+            input_cycle_cnt <= 0;
+            conv_feeding <= 0;
+        end else if (start) begin
+            input_cycle_cnt <= 0;
+            conv_feeding <= 1;
+        end else if (conv_feeding) begin
+            if (input_cycle_cnt == 10'd319) begin
+                conv_feeding <= 0;
+            end else begin
+                input_cycle_cnt <= input_cycle_cnt + 1;
+            end
+        end
+    end
+
+    // Position = input_cycle_cnt / 32 = input_cycle_cnt[8:5]
+    wire [3:0] input_pos = input_cycle_cnt[8:5];
+
+
+    always_comb begin
+        for (int r = 0; r < 12; r++) begin
+            for (int c = 0; c < 10; c++) begin
+                conv_input_window[r][c] = feature_map[2 * input_pos + r][c];
+            end
+        end
+    end
+
+
     // =========================================================================
     // DUT
     // =========================================================================
@@ -27,16 +63,23 @@ module CNN_tb;
     wire done;
     wire [31:0] result0, result1;
 
+    // Select 12×10 window for Conv
+    logic signed [7:0] conv_input_window [11:0][9:0];
+
     CNN_Top dut (
         .clk(clk),
         .rst_b(rst_b),
         .en(en),
         .start(start),
-        .feature_map(feature_map),
+        .feature_window(conv_input_window),
         .done(done),
         .result0(result0),
         .result1(result1)
     );
+
+
+
+
 
     // =========================================================================
     // Expected intermediate results (loaded from reference files)
@@ -89,15 +132,32 @@ module CNN_tb;
     endtask
 
     task load_conv_weights;
+        reg [127:0] sw0, sw1, sw2, sw3, sw4;
+        integer w_idx, bit_off;
     begin
         fd = $fopen({DATA_DIR, "Param\\Param_Conv_Weight.txt"}, "r");
         if (fd == 0) begin $display("ERROR: Param_Conv_Weight.txt"); $finish; end
-        for (i = 0; i < 32; i++)
+        for (i = 0; i < 32; i++) begin
+            sw0 = 128'd0; sw1 = 128'd0; sw2 = 128'd0; sw3 = 128'd0; sw4 = 128'd0;
             for (j = 0; j < 11; j++)
                 for (k = 0; k < 7; k++) begin
                     status = $fscanf(fd, "%d", val);
-                    dut.u_conv.weight_rom.mem[i][j*7+k] = val[7:0];
+                    w_idx = j*7+k;
+                    bit_off = (w_idx % 16) * 8;
+                    case (w_idx / 16)
+                        0: sw0[bit_off +: 8] = val[7:0];
+                        1: sw1[bit_off +: 8] = val[7:0];
+                        2: sw2[bit_off +: 8] = val[7:0];
+                        3: sw3[bit_off +: 8] = val[7:0];
+                        4: sw4[bit_off +: 8] = val[7:0];
+                    endcase
                 end
+            dut.u_conv.weight_rom.sram_inst[0].u_sram.mem_array[i] = sw0;
+            dut.u_conv.weight_rom.sram_inst[1].u_sram.mem_array[i] = sw1;
+            dut.u_conv.weight_rom.sram_inst[2].u_sram.mem_array[i] = sw2;
+            dut.u_conv.weight_rom.sram_inst[3].u_sram.mem_array[i] = sw3;
+            dut.u_conv.weight_rom.sram_inst[4].u_sram.mem_array[i] = sw4;
+        end
         $fclose(fd);
     end
     endtask
@@ -108,22 +168,26 @@ module CNN_tb;
         if (fd == 0) begin $display("ERROR: Param_Conv_Bias.txt"); $finish; end
         for (i = 0; i < 32; i++) begin
             status = $fscanf(fd, "%d", val);
-            dut.u_conv.bias_rom.mem[i] = val[15:0];
+            dut.u_conv.bias_rom.sram_inst.mem_array[i] = {16'd0, val[15:0]};
         end
         $fclose(fd);
     end
     endtask
 
     task load_dwconv_weights;
+        reg [71:0] sram_word;
     begin
         fd = $fopen({DATA_DIR, "Param\\Param_DWConv_Weight.txt"}, "r");
         if (fd == 0) begin $display("ERROR: Param_DWConv_Weight.txt"); $finish; end
-        for (i = 0; i < 32; i++)
+        for (i = 0; i < 32; i++) begin
+            sram_word = 72'd0;
             for (j = 0; j < 3; j++)
                 for (k = 0; k < 3; k++) begin
                     status = $fscanf(fd, "%d", val);
-                    dut.u_dwconv.weight_rom.mem[i][j*3+k] = val[7:0];
+                    sram_word[(j*3+k)*8 +: 8] = val[7:0];
                 end
+            dut.u_dwconv.weight_rom.sram_inst.mem_array[i] = sram_word;
+        end
         $fclose(fd);
     end
     endtask
@@ -134,21 +198,31 @@ module CNN_tb;
         if (fd == 0) begin $display("ERROR: Param_DWConv_Bias.txt"); $finish; end
         for (i = 0; i < 32; i++) begin
             status = $fscanf(fd, "%d", val);
-            dut.u_dwconv.bias_rom.mem[i] = val[15:0];
+            dut.u_dwconv.bias_rom.sram_inst.mem_array[i] = {16'd0, val[15:0]};
         end
         $fclose(fd);
     end
     endtask
 
     task load_pwconv_weights;
+        reg [127:0] sw0, sw1;
+        integer bit_off;
     begin
         fd = $fopen({DATA_DIR, "Param\\Param_PWConv_Weight.txt"}, "r");
         if (fd == 0) begin $display("ERROR: Param_PWConv_Weight.txt"); $finish; end
-        for (i = 0; i < 32; i++)
+        for (i = 0; i < 32; i++) begin
+            sw0 = 128'd0; sw1 = 128'd0;
             for (j = 0; j < 32; j++) begin
                 status = $fscanf(fd, "%d", val);
-                dut.u_pwconv.weight_rom.mem[i][j] = val[7:0];
+                bit_off = (j % 16) * 8;
+                if (j < 16)
+                    sw0[bit_off +: 8] = val[7:0];
+                else
+                    sw1[bit_off +: 8] = val[7:0];
             end
+            dut.u_pwconv.weight_rom.sram_inst[0].u_sram.mem_array[i] = sw0;
+            dut.u_pwconv.weight_rom.sram_inst[1].u_sram.mem_array[i] = sw1;
+        end
         $fclose(fd);
     end
     endtask
@@ -159,7 +233,7 @@ module CNN_tb;
         if (fd == 0) begin $display("ERROR: Param_PWConv_Bias.txt"); $finish; end
         for (i = 0; i < 32; i++) begin
             status = $fscanf(fd, "%d", val);
-            dut.u_pwconv.bias_rom.mem[i] = val[15:0];
+            dut.u_pwconv.bias_rom.sram_inst.mem_array[i] = {16'd0, val[15:0]};
         end
         $fclose(fd);
     end
@@ -171,8 +245,10 @@ module CNN_tb;
         if (fd == 0) begin $display("ERROR: Linear_Weight_arranged.txt"); $finish; end
         for (i = 0; i < 288; i++) begin
             status = $fscanf(fd, "%h", val);
-            //$display("Loading Linear weight %0d: %h\n", i, val);
-            dut.u_postprocess.u_linear_weightROM.mem[i] = {val[7:0], val[15:8]};  // Reorder to match hardware layout
+            if (i < 256)
+                dut.u_postprocess.u_linear_weightROM.sram_lo.mem_array[i] = {16'd0, val[7:0], val[15:8]};
+            else
+                dut.u_postprocess.u_linear_weightROM.sram_hi.mem_array[i-256] = {16'd0, val[7:0], val[15:8]};
         end
         $fclose(fd);
     end
@@ -185,9 +261,9 @@ module CNN_tb;
         if (fd == 0) begin $display("ERROR: sigmoid_lookup_table.txt"); $finish; end
         for (i = 0; i < 256; i++) begin
             status = $fscanf(fd, "%h", hex_val);
-            // File line i = sigmoid((-128+i)*scale)
-            // Unsigned address = (-128+i) & 0xFF = (128+i) % 256
-            dut.u_postprocess.u_postprocess_sigmoid.sigmoid_lut[i] = hex_val;
+            // Load into both SRAM instances (for parallel lookup of two inputs)
+            dut.u_postprocess.u_postprocess_sigmoid.sram_inst0.mem_array[i] = hex_val;
+            dut.u_postprocess.u_postprocess_sigmoid.sram_inst1.mem_array[i] = hex_val;
         end
         $fclose(fd);
     end
@@ -470,9 +546,9 @@ module CNN_tb;
 
         // Start
         @(posedge clk);
-        start = 1;
+        start <= 1;
         @(posedge clk);
-        start = 0;
+        start <= 0;
 
         $display("\n[TB] Processing started...\n");
 

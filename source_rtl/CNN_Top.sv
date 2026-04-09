@@ -10,7 +10,7 @@ module CNN_Top (
     input rst_b,
     input en,
     input start,                              // pulse to begin processing
-    input signed [7:0] feature_map [0:29][0:9], // 30×10 input
+    input signed [7:0] feature_window [11:0][9:0], // 12x10 input
 
     output done,                              // processing complete
     output [31:0] result0,                    // FP32 sigmoid output 0
@@ -45,32 +45,36 @@ module CNN_Top (
     // Position = input_cycle_cnt / 32 = input_cycle_cnt[8:5]
     wire [3:0] input_pos = input_cycle_cnt[8:5];
 
-    // Select 12×10 window for Conv
-    logic signed [7:0] conv_input_window [11:0][9:0];
-    always_comb begin
-        for (int r = 0; r < 12; r++) begin
-            for (int c = 0; c < 10; c++) begin
-                conv_input_window[r][c] = feature_map[2 * input_pos + r][c];
-            end
-        end
-    end
 
     wire conv_valid_in = conv_feeding & en;
 
     // =========================================================================
     // Stage 1: Conv
     // =========================================================================
-    wire [4:0] conv_cnt_out;
+    logic [4:0] conv_cnt_in;
+    wire [4:0] DWconv_sram_cnt;
     wire [3:0] conv_pos_out;
     wire signed [7:0] conv_output [3:0][3:0];
     wire conv_valid_out;
+
+
+    // ===== Input channel counter (ROM address) ===== (sram has 1 cycle latency, so we can start counting when start signal is given or when valid_in is high)
+    logic [4:0] conv_cnt_in;
+    always_ff @(posedge clk or negedge rst_b) begin
+        if (!rst_b)
+            conv_cnt_in <= 0;
+        else if (en && (start || conv_valid_in))  // Start counting on start signal or when valid_in is high
+            conv_cnt_in <= conv_cnt_in + 1;  // 5-bit auto-wraps at 32
+    end
 
     Conv u_conv (
         .clk(clk),
         .rst_b(rst_b),
         .en(en),
         .valid_in(conv_valid_in),
-        .input_data(conv_input_window),
+        .input_data(feature_window),
+        .cnt_in(conv_cnt_in),
+        .DWconv_sram_cnt_out(DWconv_sram_cnt),  // Pass channel index to DWconv
         .cnt_out(conv_cnt_out),
         .pos_out(conv_pos_out),
         .output_data(conv_output),
@@ -89,7 +93,7 @@ module CNN_Top (
         .rst_b(rst_b),
         .en(en),
         .valid_in(conv_valid_out),
-        .cnt_in(conv_cnt_out),
+        .cnt_in(DWconv_sram_cnt),
         .input_data(conv_output),
         .valid_out(dw_valid_out),
         .pos_out(dw_pos_out),

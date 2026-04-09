@@ -90,13 +90,8 @@ module DWconv (
 
     // ===== Buffer ready signal =====
     // Fires 1 cycle after the last channel (31) is written, when bank has flipped
-    logic buffer_ready;
-    always_ff @(posedge clk or negedge rst_b) begin
-        if (!rst_b)
-            buffer_ready <= 0;
-        else
-            buffer_ready <= (dw_out_valid && out_cnt == 5'd31);
-    end
-    assign valid_out = buffer_ready;
+    logic buffer_ready_next;
+    assign buffer_ready_next = dw_out_valid && (out_cnt == 5'd31);
+    assign valid_out = buffer_ready_next;
 
 endmodule
