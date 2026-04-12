@@ -1,52 +1,73 @@
 #Library Setup
-set search_path "$search_path ../rtl/cnn ../scripts ../../../SMIC18/lib ../../../SMIC18/mem ../work"
-set target_lib   "slow.lib S018V3EBCDSP_X8Y4D128_PR.lib SP018W_V1p8_max.lib"
-set link_priority     "* slow S018V3EBCDSP_X8Y4D128_PR SP018W_V1p8_max"
+set search_path "$search_path ../rtl/cnn ../scripts ../../../LIB/mem ../../../SMIC18/lib ../work"
 
-#source read.tcl
-read_design -format verilog ../rtl/cnn/PE.v
-read_design -format verilog ../rtl/cnn/FC_PE.v
-read_design -format verilog ../rtl/cnn/relu.v
-read_design -format verilog ../rtl/cnn/SRAM_32_256.v
-read_design -format verilog ../rtl/cnn/rescale_conv.v
-read_design -format verilog ../rtl/cnn/rescale_dwconv.v
-read_design -format verilog ../rtl/cnn/rescale_pwconv.v
-read_design -format verilog ../rtl/cnn/rescale_linear.v
-read_design -format verilog ../rtl/cnn/maxpool_v2.v
-read_design -format verilog ../rtl/cnn/SA1_channel.v
-read_design -format verilog ../rtl/cnn/SA1.v
-read_design -format verilog ../rtl/cnn/SA_channel_2.v
-read_design -format verilog ../rtl/cnn/SA_2.v
-read_design -format verilog ../rtl/cnn/SA_channel_3.v
-read_design -format verilog ../rtl/cnn/SA_3.v
-read_design -format verilog ../rtl/cnn/sramBuffer1.v
-read_design -format verilog ../rtl/cnn/BUFFER_2.v
-#read_design -format verilog ../rtl/cnn/BUFFER_3.v
-read_design -format verilog ../rtl/cnn/FC.v
-read_design -format verilog ../rtl/cnn/FF_8.v
-read_design -format verilog ../rtl/cnn/FF_32.v
-#read_design -format verilog ../rtl/cnn/FF_256.v
-read_design -format verilog ../rtl/cnn/SigLUT.v
-#read_design -format verilog ../rtl/cnn/Sigmoid.v
-read_design -format verilog ../rtl/cnn/CNN_top.v
-read_design -format verilog ../rtl/cnn/cnn_chip.v
+# 把标准单元库 (slow.lib)、IO库 (SP018W...) 和所有的 SRAM 库全部放进 target_lib
+set target_lib "slow.lib SP018W_V1p8_max.lib S018V3EBCDSP_X8Y4D32_PR_tt_1.8_25.lib S018V3EBCDSP_X8Y4D72_PR_tt_1.8_25.lib S018V3EBCDSP_X8Y4D77_PR_tt_1.8_25.lib S018V3EBCDSP_X8Y4D128_PR_tt_1.8_25.lib S018V3EBCDSP_X64Y4D32_PR_tt_1.8_25.lib"
 
-set current_design cnn_chip
+# link_priority 同样需要包含所有的库名字（去掉 .lib 后缀，最前面保留 *）
+set link_priority "* slow SP018W_V1p8_max S018V3EBCDSP_X8Y4D32_PR_tt_1.8_25 S018V3EBCDSP_X8Y4D72_PR_tt_1.8_25 S018V3EBCDSP_X8Y4D77_PR_tt_1.8_25 S018V3EBCDSP_X8Y4D128_PR_tt_1.8_25 S018V3EBCDSP_X64Y4D32_PR_tt_1.8_25"
+
+# =========================================================================
+# Read SystemVerilog Files (.sv)
+# =========================================================================
+read_design -format sverilog ../rtl/cnn/Buffer_4x32x8.sv
+read_design -format sverilog ../rtl/cnn/CNN_Top.sv
+read_design -format sverilog ../rtl/cnn/Conv.sv
+read_design -format sverilog ../rtl/cnn/Conv_BiasRom.sv
+read_design -format sverilog ../rtl/cnn/Conv_MultAdd.sv
+read_design -format sverilog ../rtl/cnn/Conv_MultAdd_cell.sv
+read_design -format sverilog ../rtl/cnn/Conv_WeightRom.sv
+read_design -format sverilog ../rtl/cnn/DWconv.sv
+read_design -format sverilog ../rtl/cnn/DWconv_BiasRom.sv
+read_design -format sverilog ../rtl/cnn/DWconv_MultAdd.sv
+read_design -format sverilog ../rtl/cnn/DWconv_MultAdd_cell.sv
+read_design -format sverilog ../rtl/cnn/DWconv_WeightRom.sv
+read_design -format sverilog ../rtl/cnn/FIFO_2x4X8.sv
+read_design -format sverilog ../rtl/cnn/PWconv.sv
+read_design -format sverilog ../rtl/cnn/PWconv_BiasRom.sv
+read_design -format sverilog ../rtl/cnn/PWconv_MultAdd.sv
+read_design -format sverilog ../rtl/cnn/PWconv_MultAdd_cell.sv
+read_design -format sverilog ../rtl/cnn/PWconv_WeightRom.sv
+
+# =========================================================================
+# Read Verilog Files (.v)
+# =========================================================================
+read_design -format verilog ../rtl/cnn/PostProcess.v
+read_design -format verilog ../rtl/cnn/PostProcess_Linear.v
+read_design -format verilog ../rtl/cnn/PostProcess_Linear_1group.v
+read_design -format verilog ../rtl/cnn/PostProcess_Linear_BiasSelector.v
+read_design -format verilog ../rtl/cnn/PostProcess_Linear_WeightROM.v
+read_design -format verilog ../rtl/cnn/PostProcess_Maxpool.v
+read_design -format verilog ../rtl/cnn/PostProcess_Rescale.v
+read_design -format verilog ../rtl/cnn/PostProcess_Sigmoid.v
+read_design -format verilog ../rtl/cnn/Rescale.v
+read_design -format verilog ../rtl/cnn/RescaleReLu.v
+read_design -format verilog ../rtl/cnn/RescaleRelu_Mult.v
+read_design -format verilog ../rtl/cnn/RescaleRelu_ShifterReLu.v
+read_design -format verilog ../rtl/cnn/Rescale_Shifter.v
+
+# =========================================================================
+# Note: SRAM simulation models (S018V3EBCDSP_*.v and asdrlspkb*.v) 
+# have been intentionally excluded from read_design to prevent synthesis errors.
+# =========================================================================
+
+# Set Top Module and Link
+set current_design CNN_Top
 
 link_design
 make_unique
-source cnn.sdc
 
-#Compile
+# Source the newly generated SDC file
+source CNN_Top.sdc
+
+# Compile
 optimize
 
-#Clean-up
-#Report
+# Clean-up / Report
 analyze_constraint -all_violators > ../reports/violators_clk_with_driving.rpt
 analyze_area > ../reports/area_report_clk_with_driving.rpt
 analyze_timing > ../reports/timing_report_clk_with_driving.rpt
 
-###YBR
-write_design -format verilog -hierarchy -o ../outputs/cnn_chip_clk_with_driving.v
-write_sdc ../outputs/cnn_chip_clk_with_driving.sdc
-
+### Output Generation
+write_design -format verilog -hierarchy -o ../outputs/CNN_Top_clk_with_driving.v
+write_sdc ../outputs/CNN_Top_clk_with_driving.sdc

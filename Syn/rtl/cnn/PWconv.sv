@@ -8,6 +8,7 @@ module PWconv (
     input rst_b,
     input en,
     input start,                                       // pulse from DWconv buffer_ready
+    input [4:0] cnt_in,       // channel index from DWconv
     input [3:0] pos_in,                                // position from DWconv
     input signed [7:0] input_data [3:0][31:0],         // 4 spatial × 32 channels
 
@@ -25,16 +26,34 @@ module PWconv (
     logic [4:0] proc_cnt;  // 0-31: processing, 32+: idle
     logic processing;
 
+    always_ff @( posedge clk or negedge rst_b ) begin
+        if( !rst_b ) begin
+            processing <= 0;
+        end else if(start == 1) begin
+            processing <= 1;
+        end else if(proc_cnt == 5'd31) begin
+            processing <= 0;
+        end
+    end
+
     always_ff @(posedge clk or negedge rst_b) begin
         if (!rst_b) begin
             proc_cnt <= 5'd0;
-        end else if (start | processing) begin
+        end else if (processing) begin
             proc_cnt <= proc_cnt + 1;
         end
     end
-    assign processing = start | (proc_cnt != 5'd0);
 
+    // ===== sram address control =====
+    logic [4:0] sram_addr;
 
+    always_ff @(posedge clk or negedge rst_b) begin
+        if(!rst_b) begin
+            sram_addr <= 5'd0;
+        end else if (start | (processing & proc_cnt != 5'd31)) begin
+            sram_addr <= sram_addr + 1;
+        end
+    end
 
     // ===== Pipeline valid tracking =====
     logic [PIPE_LATENCY-1:0] valid_pipe;
@@ -74,13 +93,13 @@ module PWconv (
 
     PWconv_WeightROM weight_rom (
         .clk(clk), .rst_b(rst_b),
-        .addr(proc_cnt[4:0]), .en(en),
+        .addr(sram_addr), .en(en),
         .data_out(pw_weights_flat)
     );
 
     PWconv_BiasRom bias_rom (
         .clk(clk), .rst_b(rst_b),
-        .addr(proc_cnt[4:0]), .en(en),
+        .addr(sram_addr), .en(en),
         .data_out(pw_bias)
     );
 
