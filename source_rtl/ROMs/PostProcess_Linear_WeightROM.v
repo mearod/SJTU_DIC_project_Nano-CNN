@@ -17,25 +17,25 @@ module PostProcess_Linear_WeightROM (
     wire wen = 1'b1;
 
     // SRAM 0: entries 0-255 (256 depth × 32 bits)
-    wire [31:0] sram_lo_q;
-    S018V3EBCDSP_X64Y4D32_PR sram_lo (
+    wire [15:0] sram_lo_q;
+    S018V3EBCDSP_X64Y4D16_PR sram_lo (
         .Q   (sram_lo_q),
         .CLK (clk),
         .CEN (cen),
         .WEN (wen),
         .A   (iter[7:0]),
-        .D   (32'd0)
+        .D   (16'd0)
     );
 
     // SRAM 1: entries 256-287 (32 depth × 32 bits)
-    wire [31:0] sram_hi_q;
-    S018V3EBCDSP_X8Y4D32_PR sram_hi (
+    wire [15:0] sram_hi_q;
+    S018V3EBCDSP_X8Y4D16_PR sram_hi (
         .Q   (sram_hi_q),
         .CLK (clk),
         .CEN (cen),
         .WEN (wen),
         .A   (iter[4:0]),
-        .D   (32'd0)
+        .D   (16'd0)
     );
 
     // Select based on iter range
@@ -43,7 +43,7 @@ module PostProcess_Linear_WeightROM (
     always @(posedge clk) begin
         use_hi <= iter[8];
     end
-    wire [31:0] sram_q = use_hi ? sram_hi_q : sram_lo_q;
+    wire [15:0] sram_q = use_hi ? sram_hi_q : sram_lo_q;
 
     assign weight0 = sram_q[7:0];
     assign weight1 = sram_q[15:8];

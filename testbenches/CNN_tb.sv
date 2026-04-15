@@ -168,7 +168,7 @@ module CNN_tb;
         if (fd == 0) begin $display("ERROR: Param_Conv_Bias.txt"); $finish; end
         for (i = 0; i < 32; i++) begin
             status = $fscanf(fd, "%d", val);
-            dut.u_conv.bias_rom.sram_inst.mem_array[i] = {16'd0, val[15:0]};
+            dut.u_conv.bias_rom.sram_inst.mem_array[i] = {val[15:0]};
         end
         $fclose(fd);
     end
@@ -198,7 +198,7 @@ module CNN_tb;
         if (fd == 0) begin $display("ERROR: Param_DWConv_Bias.txt"); $finish; end
         for (i = 0; i < 32; i++) begin
             status = $fscanf(fd, "%d", val);
-            dut.u_dwconv.bias_rom.sram_inst.mem_array[i] = {16'd0, val[15:0]};
+            dut.u_dwconv.bias_rom.sram_inst.mem_array[i] = {val[15:0]};
         end
         $fclose(fd);
     end
@@ -233,7 +233,7 @@ module CNN_tb;
         if (fd == 0) begin $display("ERROR: Param_PWConv_Bias.txt"); $finish; end
         for (i = 0; i < 32; i++) begin
             status = $fscanf(fd, "%d", val);
-            dut.u_pwconv.bias_rom.sram_inst.mem_array[i] = {16'd0, val[15:0]};
+            dut.u_pwconv.bias_rom.sram_inst.mem_array[i] = {val[15:0]};
         end
         $fclose(fd);
     end
@@ -246,9 +246,9 @@ module CNN_tb;
         for (i = 0; i < 288; i++) begin
             status = $fscanf(fd, "%h", val);
             if (i < 256)
-                dut.u_postprocess.u_linear_weightROM.sram_lo.mem_array[i] = {16'd0, val[7:0], val[15:8]};
+                dut.u_postprocess.u_linear_weightROM.sram_lo.mem_array[i] = {val[7:0], val[15:8]};
             else
-                dut.u_postprocess.u_linear_weightROM.sram_hi.mem_array[i-256] = {16'd0, val[7:0], val[15:8]};
+                dut.u_postprocess.u_linear_weightROM.sram_hi.mem_array[i-256] = {val[7:0], val[15:8]};
         end
         $fclose(fd);
     end

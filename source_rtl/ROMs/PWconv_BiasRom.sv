@@ -13,15 +13,15 @@ module PWconv_BiasRom (
 
     wire cen = ~en;
     wire wen = 1'b1;
-    wire [31:0] sram_q;
+    wire [15:0] sram_q;
 
-    S018V3EBCDSP_X8Y4D32_PR sram_inst (
+    S018V3EBCDSP_X8Y4D16_PR sram_inst (
         .Q   (sram_q),
         .CLK (clk),
         .CEN (cen),
         .WEN (wen),
         .A   (addr),
-        .D   (32'd0)
+        .D   (16'd0)
     );
 
     assign data_out = sram_q[15:0];
