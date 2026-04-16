@@ -2,10 +2,10 @@
 
 *******************************************************************************
 * Report  : Timing                                                            *
-* Command : analyze_timing > ../reports/timing_report_clk_with_driving.rpt    *
+* Command : analyze_timing > ../reports/timing_report_clk_with_driving.rpt   *
 * Design  : CNN_Top                                                           *
 * Version : main_1229_2e0365ed.rel                                            *
-* Date    : 9:37 PM, 12-Apr-26                                                *
+* Date    : 9:42 AM, 16-Apr-26                                                *
 *******************************************************************************
 *******************************************************************************
 * MAX Timing Analysis                                                         *
@@ -36,8 +36,8 @@
 *******************************************************************************
 
 
-Beginpoint: en (input port clocked by clk)
-Endpoint: u_postprocess/u_postprocess_linear/u_linear_group1/data_out_reg[19] (re-triggered flip-flop clocked by clk)
+Beginpoint: u_postprocess/u_linear_weightROM/sram_lo (re-triggered flip-flop clocked by clk)
+Endpoint: u_postprocess/u_postprocess_linear/u_linear_group0/data_out_reg[15] (re-triggered flip-flop clocked by clk)
 Path Group: clk
 Delay Type: max
 
@@ -45,32 +45,49 @@ Point (Gate Type)                                    Inc.         Path
 ------------------------------------------------------------------------
 clock clk (re)                                       0.00         0.00
 clock tree delay (ideal)                             0.30         0.30
-input external delay                                 4.00         4.30 R
-en (input port)                                      0.00         4.30 R
-u_postprocess/en (PostProcess)                       0.00         4.30 R
-u_postprocess/u3283/Y (INVX1)                        0.39         4.69 F
-u_postprocess/u3284/Y (INVX1)                        1.64         6.33 R
-u_postprocess/u573/Y (AND2X4)                        0.50         6.84 R
-u_postprocess/u3213/Y (INVX1)                        0.60         7.44 F
-u_postprocess/u571/Y (NOR2X1)                        1.30         8.73 R
-u_postprocess/u1021/Y (NAND2XL)                      0.32         9.05 F
-u_postprocess/u1095/Y (OAI21XL)                      0.17         9.22 R
-u_postprocess/u1096/Y (AOI31XL)                      0.08         9.30 F
-u_postprocess/u1098/Y (NOR2BXL)                      0.23         9.53 F
-u_postprocess/u_postprocess_linear/u_linear_group1/data_out_reg[19]/D (DFFRHQXL)
-                                                     0.00         9.53 F
-data arrival time                                                 9.53
+u_postprocess/u_linear_weightROM/sram_lo/CLK (S018V3EBCDSP_X64Y4D16_PR)
+                                                     0.00         0.30 R
+u_postprocess/u_linear_weightROM/sram_lo/Q[4] (S018V3EBCDSP_X64Y4D16_PR)
+                                                     1.87         2.17 F
+u_postprocess/u1210/Y (MX2X2)                        0.22         2.39 F
+u_postprocess/u3786/Y (INVX1)                        0.11         2.49 R
+u_postprocess/u3787/Y (CLKINVX3)                     0.13         2.63 F
+u_postprocess/u1246/Y (AND4X2)                       0.25         2.87 F
+u_postprocess/u1247/Y (NOR2X1)                       0.14         3.01 R
+u_postprocess/u1248/Y (XOR2X1)                       0.32         3.34 R
+u_postprocess/u1254/Y (XNOR3X2)                      0.55         3.89 F
+u_postprocess/u1257/Y (XNOR2X4)                      0.26         4.15 R
+u_postprocess/u1259/Y (XNOR2X4)                      0.24         4.38 R
+u_postprocess/u1311/Y (XNOR2X2)                      0.24         4.63 R
+u_postprocess/u1312/Y (NAND2X1)                      0.17         4.80 F
+u_postprocess/u1514/Y (AOI21X1)                      0.26         5.05 R
+u_postprocess/u1515/Y (XNOR2X2)                      0.32         5.38 R
+u_postprocess/u1519/Y (OAI32X1)                      0.15         5.53 F
+u_postprocess/u1520/Y (AOI22X2)                      0.26         5.79 R
+u_postprocess/u1521/Y (NAND2X1)                      0.18         5.96 F
+u_postprocess/u1544/Y (OAI2BB1X2)                    0.24         6.20 F
+u_postprocess/u1557/Y (AOI211X2)                     0.30         6.50 R
+u_postprocess/u1601/Y (AOI2BB1X2)                    0.29         6.80 R
+u_postprocess/u4300/Y (BUFX3)                        0.16         6.96 R
+u_postprocess/u1672/Y (NAND3X1)                      0.12         7.08 F
+u_postprocess/u3986/Y (INVX1)                        0.09         7.17 R
+u_postprocess/u3987/Y (INVX1)                        0.06         7.23 F
+u_postprocess/u1730/Y (NOR2BX1)                      0.18         7.41 F
+u_postprocess/u1734/Y (OAI32X1)                      0.27         7.68 R
+u_postprocess/u_postprocess_linear/u_linear_group0/data_out_reg[15]/D (DFFRXL)
+                                                     0.00         7.68 R
+data arrival time                                                 7.68
 
-clock clk (re)                                      10.00        10.00
-clock tree delay (ideal)                             0.30        10.30
-u_postprocess/u_postprocess_linear/u_linear_group1/data_out_reg[19]/CK (DFFRHQXL)
-                                                     0.00        10.30 R
-clock uncertainty                                   -0.50         9.80
-library setup time                                  -0.23         9.57
-data required time                                                9.57
+clock clk (re)                                       8.00         8.00
+clock tree delay (ideal)                             0.30         8.30
+u_postprocess/u_postprocess_linear/u_linear_group0/data_out_reg[15]/CK (DFFRXL)
+                                                     0.00         8.30 R
+clock uncertainty                                   -0.50         7.80
+library setup time                                  -0.12         7.68
+data required time                                                7.68
 ------------------------------------------------------------------------
-data required time                                                9.57
-data arrival time                                                -9.53
+data required time                                                7.68
+data arrival time                                                -7.68
 ------------------------------------------------------------------------
-slack (MET)                                                       0.04
+slack (MET)                                                       0.00
 

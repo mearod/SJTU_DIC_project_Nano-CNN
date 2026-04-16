@@ -44,28 +44,29 @@ module CNN_Top (
 
     // Position = input_cycle_cnt / 32 = input_cycle_cnt[8:5]
     wire [3:0] input_pos = input_cycle_cnt[8:5];
-
+    wire [4:0] conv_sram_addr = input_cycle_cnt[4:0];
 
     wire conv_valid_in = conv_feeding & en;
 
     // =========================================================================
     // Stage 1: Conv
     // =========================================================================
-    logic [4:0] conv_cnt_in;
+    // logic [4:0] conv_cnt_in;
     wire [4:0] DWconv_sram_cnt;
+    wire [4:0] conv_cnt_out;
     wire [3:0] conv_pos_out;
     wire signed [7:0] conv_output [3:0][3:0];
     wire conv_valid_out;
 
 
     // ===== Input channel counter (ROM address) ===== (sram has 1 cycle latency, so we can start counting when start signal is given or when valid_in is high)
-    logic [4:0] conv_cnt_in;
-    always_ff @(posedge clk or negedge rst_b) begin
-        if (!rst_b)
-            conv_cnt_in <= 0;
-        else if (en && (start || conv_valid_in))  // Start counting on start signal or when valid_in is high
-            conv_cnt_in <= conv_cnt_in + 1;  // 5-bit auto-wraps at 32
-    end
+    // logic [4:0] conv_cnt_in;
+    // always_ff @(posedge clk or negedge rst_b) begin
+    //     if (!rst_b)
+    //         conv_cnt_in <= 0;
+    //     else if (en && (start || conv_valid_in))  // Start counting on start signal or when valid_in is high
+    //         conv_cnt_in <= conv_cnt_in + 1;  // 5-bit auto-wraps at 32
+    // end
 
     Conv u_conv (
         .clk(clk),
@@ -73,7 +74,7 @@ module CNN_Top (
         .en(en),
         .valid_in(conv_valid_in),
         .input_data(feature_window),
-        .cnt_in(conv_cnt_in),
+        .cnt_in(conv_sram_addr),
         .DWconv_sram_cnt_out(DWconv_sram_cnt),  // Pass channel index to DWconv
         .cnt_out(conv_cnt_out),
         .pos_out(conv_pos_out),

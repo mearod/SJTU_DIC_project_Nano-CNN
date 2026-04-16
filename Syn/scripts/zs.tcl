@@ -2,10 +2,10 @@
 set search_path "$search_path ../rtl/cnn ../scripts ../../../LIB/mem ../../../SMIC18/lib ../work"
 
 # 把标准单元库 (slow.lib)、IO库 (SP018W...) 和所有的 SRAM 库全部放进 target_lib
-set target_lib "slow.lib SP018W_V1p8_max.lib S018V3EBCDSP_X8Y4D32_PR_tt_1.8_25.lib S018V3EBCDSP_X8Y4D72_PR_tt_1.8_25.lib S018V3EBCDSP_X8Y4D77_PR_tt_1.8_25.lib S018V3EBCDSP_X8Y4D128_PR_tt_1.8_25.lib S018V3EBCDSP_X64Y4D32_PR_tt_1.8_25.lib"
+set target_lib "slow.lib SP018W_V1p8_max.lib S018V3EBCDSP_X8Y4D16_PR_tt_1.8_25.lib S018V3EBCDSP_X8Y4D32_PR_tt_1.8_25.lib S018V3EBCDSP_X8Y4D72_PR_tt_1.8_25.lib S018V3EBCDSP_X8Y4D77_PR_tt_1.8_25.lib S018V3EBCDSP_X8Y4D128_PR_tt_1.8_25.lib S018V3EBCDSP_X64Y4D16_PR_tt_1.8_25.lib S018V3EBCDSP_X64Y4D32_PR_tt_1.8_25.lib"
 
 # link_priority 同样需要包含所有的库名字（去掉 .lib 后缀，最前面保留 *）
-set link_priority "* slow SP018W_V1p8_max S018V3EBCDSP_X8Y4D32_PR_tt_1.8_25 S018V3EBCDSP_X8Y4D72_PR_tt_1.8_25 S018V3EBCDSP_X8Y4D77_PR_tt_1.8_25 S018V3EBCDSP_X8Y4D128_PR_tt_1.8_25 S018V3EBCDSP_X64Y4D32_PR_tt_1.8_25"
+set link_priority "* slow SP018W_V1p8_max S018V3EBCDSP_X8Y4D16_PR_tt_1.8_25 S018V3EBCDSP_X8Y4D32_PR_tt_1.8_25 S018V3EBCDSP_X8Y4D72_PR_tt_1.8_25 S018V3EBCDSP_X8Y4D77_PR_tt_1.8_25 S018V3EBCDSP_X8Y4D128_PR_tt_1.8_25 S018V3EBCDSP_X64Y4D16_PR_tt_1.8_25 S018V3EBCDSP_X64Y4D32_PR_tt_1.8_25"
 
 # =========================================================================
 # Read SystemVerilog Files (.sv)
