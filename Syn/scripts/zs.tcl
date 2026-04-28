@@ -11,6 +11,7 @@ set link_priority "* slow SP018W_V1p8_max S018V3EBCDSP_X8Y4D16_PR_tt_1.8_25 S018
 # Read SystemVerilog Files (.sv)
 # =========================================================================
 read_design -format sverilog ../rtl/cnn/Buffer_4x32x8.sv
+read_design -format sverilog ../rtl/cnn/cnn.sv
 read_design -format sverilog ../rtl/cnn/CNN_Top.sv
 read_design -format sverilog ../rtl/cnn/Conv.sv
 read_design -format sverilog ../rtl/cnn/Conv_BiasRom.sv

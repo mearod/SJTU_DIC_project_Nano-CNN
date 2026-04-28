@@ -10,6 +10,7 @@ module Conv_MultAdd_cell (
     // 0. 输入展平处理与数据重组
     // ==========================================
     logic signed [7:0] flat_wt [0:76];
+    logic signed [7:0] flat_in [0:76];
 
     always_comb begin
         // 1. 处理 conv_weights: 将 616 个 1-bit 数按每 8 bit 组合成 77 个 8-bit有符号数
@@ -18,17 +19,11 @@ module Conv_MultAdd_cell (
                 flat_wt[i][j] = conv_weights[i*8 + j];
             end
         end
-    end
-
-    // ==========================================
-    // 流水级 0 (S0)：输入特征图锁存
-    // ==========================================
-    logic signed [7:0] flat_in [0:76];
-
-    always_ff @(posedge clk) begin
+        
+        // 2. 处理 input_data: 将二维数组映射为一维数组，方便对齐
         for (int i = 0; i < 11; i++) begin
             for (int j = 0; j < 7; j++) begin
-                flat_in[i*7 + j] <= input_data[i][j];
+                flat_in[i*7 + j] = input_data[i][j];
             end
         end
     end

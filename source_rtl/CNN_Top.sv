@@ -1,150 +1,154 @@
-// CNN Top Module
-// Connects: Conv → DWConv → PWConv → PostProcess
-// Manages input feature map window selection for Conv stage.
-//
-// Input:  30×10 INT8 feature map (loaded externally)
-// Output: 2 FP32 sigmoid values (binary classification)
-
 module CNN_Top (
     input clk,
     input rst_b,
     input en,
     input start,                              // pulse to begin processing
-    input signed [7:0] feature_window [11:0][9:0], // 12x10 input
+    input signed [7:0] feature_in [3:0],      // 4 bytes per cycle (reduced IO)
 
-    output done,                              // processing complete
-    output [31:0] result0,                    // FP32 sigmoid output 0
-    output [31:0] result1                     // FP32 sigmoid output 1
+    output logic done,                        // high for 8 cycles when outputting result
+    output logic [7:0] result_byte            // 1 byte per cycle, alternating result0 and result1
 );
 
     // =========================================================================
-    // Conv input management
+    // Master controller for Input Phase
     // =========================================================================
-    // Conv needs 12×10 window. For position p, rows [2*p : 2*p+11].
-    // Total: 10 positions × 32 channels = 320 valid_in cycles.
-
-    logic [9:0] input_cycle_cnt;  // 0 to 319
-    logic conv_feeding;           // high during the 320-cycle input phase
+    logic [8:0] master_cnt;
+    logic active;
 
     always_ff @(posedge clk or negedge rst_b) begin
         if (!rst_b) begin
-            input_cycle_cnt <= 0;
-            conv_feeding <= 0;
+            active <= 0;
+            master_cnt <= 0;
         end else if (start) begin
-            input_cycle_cnt <= 0;
-            conv_feeding <= 1;
-        end else if (conv_feeding) begin
-            if (input_cycle_cnt == 10'd319) begin
-                conv_feeding <= 0;
-            end else begin
-                input_cycle_cnt <= input_cycle_cnt + 1;
+            active <= 1;
+            master_cnt <= 0;
+        end else if (active && en) begin
+            if (master_cnt == 500)    // Wait until entire input shifting phase is gracefully done
+                active <= 0;
+            else
+                master_cnt <= master_cnt + 1;
+        end
+    end
+
+    // =========================================================================
+    // Shift Register and Holding Register for 120-Byte Input Window
+    // =========================================================================
+    logic signed [7:0] flat_shift_reg[0:119];
+    logic signed [7:0] flat_holding_reg [0:119];
+
+    logic [4:0] word_idx;
+    assign word_idx = master_cnt % 32;
+
+    // Shift in 4 bytes per cycle. We shift during the first 30 cycles of each 32-cycle block
+    always_ff @(posedge clk) begin
+        if (active && word_idx < 30 && master_cnt < 320 && en) begin
+            flat_shift_reg[word_idx*4 + 0] <= feature_in[0];
+            flat_shift_reg[word_idx*4 + 1] <= feature_in[1];
+            flat_shift_reg[word_idx*4 + 2] <= feature_in[2];
+            flat_shift_reg[word_idx*4 + 3] <= feature_in[3];
+        end
+    end
+
+    // Transfer Shift-Reg -> Holding-Reg exactly at the boundary before 'cnn' needs the next window
+    always_ff @(posedge clk) begin
+        if (active && word_idx == 31 && master_cnt < 320 && en) begin
+            for (int i = 0; i < 120; i++) begin
+                flat_holding_reg[i] <= flat_shift_reg[i];
             end
         end
     end
 
-    // Position = input_cycle_cnt / 32 = input_cycle_cnt[8:5]
-    wire [3:0] input_pos = input_cycle_cnt[8:5];
-    wire [4:0] conv_sram_addr = input_cycle_cnt[4:0];
-
-    wire conv_valid_in = conv_feeding & en;
+    // Generate internal start for cnn module exactly when the first 120-bytes block is ready
+    logic cnn_start;
+    always_ff @(posedge clk or negedge rst_b) begin
+        if (!rst_b) 
+            cnn_start <= 0;
+        else if (active && master_cnt == 30 && en) 
+            cnn_start <= 1;
+        else 
+            cnn_start <= 0;
+    end
 
     // =========================================================================
-    // Stage 1: Conv
+    // Remap flat 120 bytes into 12x10 interface for cnn perspective matching
     // =========================================================================
-    // logic [4:0] conv_cnt_in;
-    wire [4:0] DWconv_sram_cnt;
-    wire [4:0] conv_cnt_out;
-    wire [3:0] conv_pos_out;
-    wire signed [7:0] conv_output [3:0][3:0];
-    wire conv_valid_out;
+    wire signed [7:0] cnn_feature_window [11:0][9:0];
+    genvar r, c;
+    generate
+        for (r = 0; r < 12; r++) begin : gen_r
+            for (c = 0; c < 10; c++) begin : gen_c
+                assign cnn_feature_window[r][c] = flat_holding_reg[r * 10 + c];
+            end
+        end
+    endgenerate
 
+    // =========================================================================
+    // Instantiate original cnn layer
+    // =========================================================================
+    wire cnn_done;
+    wire [31:0] cnn_result0;
+    wire [31:0] cnn_result1;
 
-    // ===== Input channel counter (ROM address) ===== (sram has 1 cycle latency, so we can start counting when start signal is given or when valid_in is high)
-    // logic [4:0] conv_cnt_in;
-    // always_ff @(posedge clk or negedge rst_b) begin
-    //     if (!rst_b)
-    //         conv_cnt_in <= 0;
-    //     else if (en && (start || conv_valid_in))  // Start counting on start signal or when valid_in is high
-    //         conv_cnt_in <= conv_cnt_in + 1;  // 5-bit auto-wraps at 32
-    // end
-
-    Conv u_conv (
+    cnn u_cnn (
         .clk(clk),
         .rst_b(rst_b),
         .en(en),
-        .valid_in(conv_valid_in),
-        .input_data(feature_window),
-        .cnt_in(conv_sram_addr),
-        .DWconv_sram_cnt_out(DWconv_sram_cnt),  // Pass channel index to DWconv
-        .cnt_out(conv_cnt_out),
-        .pos_out(conv_pos_out),
-        .output_data(conv_output),
-        .valid_out(conv_valid_out)
+        .start(cnn_start),
+        .feature_window(cnn_feature_window),
+        .done(cnn_done),
+        .result0(cnn_result0),
+        .result1(cnn_result1)
     );
 
     // =========================================================================
-    // Stage 2: DWConv
+    // Output State Machine (Serialize 64-bit to 8-bit over 8 cycles)
     // =========================================================================
-    wire dw_valid_out;
-    wire [3:0] dw_pos_out;
-    wire signed [7:0] dw_output [3:0][31:0];
+    logic out_active;
+    logic [3:0] out_cnt;
+    logic [31:0] reg_result0;
+    logic [31:0] reg_result1;
 
-    DWconv u_dwconv (
-        .clk(clk),
-        .rst_b(rst_b),
-        .en(en),
-        .valid_in(conv_valid_out),
-        .cnt_in(DWconv_sram_cnt),
-        .input_data(conv_output),
-        .valid_out(dw_valid_out),
-        .pos_out(dw_pos_out),
-        .output_data(dw_output)
-    );
-
-    // =========================================================================
-    // Stage 3: PWConv
-    // =========================================================================
-    wire pw_valid_out;
-    wire [4:0] pw_cnt_out;
-    wire [3:0] pw_pos_out;
-    wire signed [7:0] pw_output [3:0];
-
-    PWconv u_pwconv (
-        .clk(clk),
-        .rst_b(rst_b),
-        .en(en),
-        .start(dw_valid_out),
-        .pos_in(dw_pos_out),
-        .input_data(dw_output),
-        .valid_out(pw_valid_out),
-        .cnt_out(pw_cnt_out),
-        .pos_out(pw_pos_out),
-        .output_data(pw_output)
-    );
-
-    // =========================================================================
-    // Stage 4: PostProcess (Maxpool → Linear → Rescale → Sigmoid)
-    // =========================================================================
-    wire pp_valid;
-    wire [8:0] pp_iter_out;
-
-    PostProcess u_postprocess (
-        .clk(clk),
-        .rst_b(rst_b),
-        .en(en),
-        .valid_in(pw_valid_out),
-        .cnt_in(pw_cnt_out),
-        .pos_in(pw_pos_out),
-        .data_in0(pw_output[0]),
-        .data_in1(pw_output[1]),
-        .data_in2(pw_output[2]),
-        .data_in3(pw_output[3]),
-        .valid(pp_valid),
-        .iter_out(pp_iter_out),
-        .float_out0(result0),
-        .float_out1(result1)
-    );
-
-    assign done = pp_valid;
+    always_ff @(posedge clk or negedge rst_b) begin
+        if (!rst_b) begin
+            out_active  <= 0;
+            out_cnt     <= 0;
+            reg_result0 <= 0;
+            reg_result1 <= 0;
+            done        <= 0;
+            result_byte <= 0;
+        end else if (cnn_done && en) begin
+            // 捕获脉冲信号和浮点结果
+            reg_result0 <= cnn_result0;
+            reg_result1 <= cnn_result1;
+            out_active  <= 1;
+            out_cnt     <= 0;
+            done        <= 1;
+            // 立即输出第一个字节 (result0 的低8位)
+            result_byte <= cnn_result0[7:0]; 
+        end else if (out_active && en) begin
+            if (out_cnt == 4'd7) begin
+                out_active  <= 0;
+                done        <= 0;
+                result_byte <= 0;
+            end else begin
+                out_cnt <= out_cnt + 1;
+                done    <= 1;
+                // 轮流逐字节输出
+                case (out_cnt + 1)
+                    4'd1: result_byte <= reg_result1[7:0];
+                    4'd2: result_byte <= reg_result0[15:8];
+                    4'd3: result_byte <= reg_result1[15:8];
+                    4'd4: result_byte <= reg_result0[23:16];
+                    4'd5: result_byte <= reg_result1[23:16];
+                    4'd6: result_byte <= reg_result0[31:24];
+                    4'd7: result_byte <= reg_result1[31:24];
+                    default: result_byte <= 8'd0;
+                endcase
+            end
+        end else if (!out_active) begin
+            done        <= 0;
+            result_byte <= 0;
+        end
+    end
 
 endmodule

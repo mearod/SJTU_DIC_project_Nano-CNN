@@ -1,10 +1,3 @@
-// CNN Testbench with Comprehensive Layer-by-Layer Verification
-// Loads weights/biases/sigmoid LUT, drives input, and verifies each layer
-// against reference outputs (Conv, DWConv, PWConv, Flatten, Linear, Sigmoid).
-//
-// USAGE: Run from the project root (NanoCNN/) or adjust file paths below.
-//        Compile all .sv/.v files in source_rtl/** and this testbench.
-
 `timescale 1ns / 1ps
 
 module CNN_tb;
@@ -20,86 +13,66 @@ module CNN_tb;
     initial clk = 0;
     always #5 clk = ~clk;  // 100 MHz
 
-
-    // =========================================================================
-    // conv_input_window selection logic
-    // =========================================================================
-    logic [9:0] input_cycle_cnt;  // 0 to 319
-    logic conv_feeding;           // high during the 320-cycle input phase
-
-    always_ff @(posedge clk or negedge rst_b) begin
-        if (!rst_b) begin
-            input_cycle_cnt <= 0;
-            conv_feeding <= 0;
-        end else if (start) begin
-            input_cycle_cnt <= 0;
-            conv_feeding <= 1;
-        end else if (conv_feeding) begin
-            if (input_cycle_cnt == 10'd319) begin
-                conv_feeding <= 0;
-            end else begin
-                input_cycle_cnt <= input_cycle_cnt + 1;
-            end
-        end
-    end
-
-    // Position = input_cycle_cnt / 32 = input_cycle_cnt[8:5]
-    wire [3:0] input_pos = input_cycle_cnt[8:5];
-
-
-    always_comb begin
-        for (int r = 0; r < 12; r++) begin
-            for (int c = 0; c < 10; c++) begin
-                conv_input_window[r][c] = feature_map[2 * input_pos + r][c];
-            end
-        end
-    end
-
-
     // =========================================================================
     // DUT
     // =========================================================================
-    reg signed [7:0] feature_map [0:29][0:9];
+    reg signed[7:0] feature_map [0:29][0:9];
     wire done;
-    wire [31:0] result0, result1;
+    wire [7:0] result_byte;
 
-    // Select 12×10 window for Conv
-    logic signed [7:0] conv_input_window [11:0][9:0];
+    logic signed [7:0] feature_in[3:0];
 
     CNN_Top dut (
         .clk(clk),
         .rst_b(rst_b),
         .en(en),
         .start(start),
-        .feature_window(conv_input_window),
+        .feature_in(feature_in),
         .done(done),
-        .result0(result0),
-        .result1(result1)
+        .result_byte(result_byte)
     );
 
-
-
-
+    // =========================================================================
+    // Feed Features Task (Serial Input stream)
+    // =========================================================================
+    task feed_features;
+        int w, i, r, c;
+        logic signed[7:0] flat_win[0:119];
+        
+        for (w = 0; w < 10; w++) begin
+            for (r = 0; r < 12; r++) begin
+                for (c = 0; c < 10; c++) begin
+                    flat_win[r * 10 + c] = feature_map[2 * w + r][c];
+                end
+            end
+            
+            for (i = 0; i < 30; i++) begin
+                feature_in[0] <= flat_win[i * 4 + 0];
+                feature_in[1] <= flat_win[i * 4 + 1];
+                feature_in[2] <= flat_win[i * 4 + 2];
+                feature_in[3] <= flat_win[i * 4 + 3];
+                @(posedge clk);
+            end
+            
+            feature_in[0] <= 0;
+            feature_in[1] <= 0;
+            feature_in[2] <= 0;
+            feature_in[3] <= 0;
+            @(posedge clk);
+            @(posedge clk);
+        end
+    endtask
 
     // =========================================================================
-    // Expected intermediate results (loaded from reference files)
+    // Expected intermediate results
     // =========================================================================
-    // Conv output: 32 channels x 20 rows x 4 cols, INT8
     reg signed [7:0] exp_conv [0:31][0:19][0:3];
-    // DWConv output: 32 channels x 18 rows x 2 cols, INT8
     reg signed [7:0] exp_dwconv [0:31][0:17][0:1];
-    // PWConv output: 32 channels x 18 rows x 2 cols, INT8
     reg signed [7:0] exp_pwconv [0:31][0:17][0:1];
-    // Flatten output: 288 values, INT8 (= maxpool output in order)
-    reg signed [7:0] exp_flatten [0:287];
-    // Linear output: 2 values, INT8 (after rescale)
+    reg signed [7:0] exp_flatten[0:287];
     reg signed [7:0] exp_linear [0:1];
-    // Sigmoid output: 2 floats (as strings; we compare hex)
     real exp_sigmoid [0:1];
 
-    // =========================================================================
-    // Error counters
-    // =========================================================================
     integer conv_errors, conv_checks;
     integer dwconv_errors, dwconv_checks;
     integer pwconv_errors, pwconv_checks;
@@ -107,15 +80,12 @@ module CNN_tb;
     integer linear_pass;
     integer sigmoid_pass;
 
-    // =========================================================================
-    // File I/O helpers
-    // =========================================================================
     integer fd, status, i, j, k;
     integer val;
     localparam string DATA_DIR = "D:\\subject\\IC_project\\NanoCNN\\CNN_test_data\\";
 
     // =========================================================================
-    // Load network parameters into ROMs
+    // ROM loadings
     // =========================================================================
     task load_all_parameters;
     begin
@@ -132,7 +102,7 @@ module CNN_tb;
     endtask
 
     task load_conv_weights;
-        reg [127:0] sw0, sw1, sw2, sw3, sw4;
+        reg[127:0] sw0, sw1, sw2, sw3, sw4;
         integer w_idx, bit_off;
     begin
         fd = $fopen({DATA_DIR, "Param\\Param_Conv_Weight.txt"}, "r");
@@ -152,11 +122,11 @@ module CNN_tb;
                         4: sw4[bit_off +: 8] = val[7:0];
                     endcase
                 end
-            dut.u_conv.weight_rom.sram_inst[0].u_sram.mem_array[i] = sw0;
-            dut.u_conv.weight_rom.sram_inst[1].u_sram.mem_array[i] = sw1;
-            dut.u_conv.weight_rom.sram_inst[2].u_sram.mem_array[i] = sw2;
-            dut.u_conv.weight_rom.sram_inst[3].u_sram.mem_array[i] = sw3;
-            dut.u_conv.weight_rom.sram_inst[4].u_sram.mem_array[i] = sw4;
+            dut.u_cnn.u_conv.weight_rom.sram_inst[0].u_sram.mem_array[i] = sw0;
+            dut.u_cnn.u_conv.weight_rom.sram_inst[1].u_sram.mem_array[i] = sw1;
+            dut.u_cnn.u_conv.weight_rom.sram_inst[2].u_sram.mem_array[i] = sw2;
+            dut.u_cnn.u_conv.weight_rom.sram_inst[3].u_sram.mem_array[i] = sw3;
+            dut.u_cnn.u_conv.weight_rom.sram_inst[4].u_sram.mem_array[i] = sw4;
         end
         $fclose(fd);
     end
@@ -168,7 +138,7 @@ module CNN_tb;
         if (fd == 0) begin $display("ERROR: Param_Conv_Bias.txt"); $finish; end
         for (i = 0; i < 32; i++) begin
             status = $fscanf(fd, "%d", val);
-            dut.u_conv.bias_rom.sram_inst.mem_array[i] = {val[15:0]};
+            dut.u_cnn.u_conv.bias_rom.sram_inst.mem_array[i] = {val[15:0]};
         end
         $fclose(fd);
     end
@@ -186,7 +156,7 @@ module CNN_tb;
                     status = $fscanf(fd, "%d", val);
                     sram_word[(j*3+k)*8 +: 8] = val[7:0];
                 end
-            dut.u_dwconv.weight_rom.sram_inst.mem_array[i] = sram_word;
+            dut.u_cnn.u_dwconv.weight_rom.sram_inst.mem_array[i] = sram_word;
         end
         $fclose(fd);
     end
@@ -198,7 +168,7 @@ module CNN_tb;
         if (fd == 0) begin $display("ERROR: Param_DWConv_Bias.txt"); $finish; end
         for (i = 0; i < 32; i++) begin
             status = $fscanf(fd, "%d", val);
-            dut.u_dwconv.bias_rom.sram_inst.mem_array[i] = {val[15:0]};
+            dut.u_cnn.u_dwconv.bias_rom.sram_inst.mem_array[i] = {val[15:0]};
         end
         $fclose(fd);
     end
@@ -220,8 +190,8 @@ module CNN_tb;
                 else
                     sw1[bit_off +: 8] = val[7:0];
             end
-            dut.u_pwconv.weight_rom.sram_inst[0].u_sram.mem_array[i] = sw0;
-            dut.u_pwconv.weight_rom.sram_inst[1].u_sram.mem_array[i] = sw1;
+            dut.u_cnn.u_pwconv.weight_rom.sram_inst[0].u_sram.mem_array[i] = sw0;
+            dut.u_cnn.u_pwconv.weight_rom.sram_inst[1].u_sram.mem_array[i] = sw1;
         end
         $fclose(fd);
     end
@@ -233,7 +203,7 @@ module CNN_tb;
         if (fd == 0) begin $display("ERROR: Param_PWConv_Bias.txt"); $finish; end
         for (i = 0; i < 32; i++) begin
             status = $fscanf(fd, "%d", val);
-            dut.u_pwconv.bias_rom.sram_inst.mem_array[i] = {val[15:0]};
+            dut.u_cnn.u_pwconv.bias_rom.sram_inst.mem_array[i] = {val[15:0]};
         end
         $fclose(fd);
     end
@@ -246,9 +216,9 @@ module CNN_tb;
         for (i = 0; i < 288; i++) begin
             status = $fscanf(fd, "%h", val);
             if (i < 256)
-                dut.u_postprocess.u_linear_weightROM.sram_lo.mem_array[i] = {val[7:0], val[15:8]};
+                dut.u_cnn.u_postprocess.u_linear_weightROM.sram_lo.mem_array[i] = {val[7:0], val[15:8]};
             else
-                dut.u_postprocess.u_linear_weightROM.sram_hi.mem_array[i-256] = {val[7:0], val[15:8]};
+                dut.u_cnn.u_postprocess.u_linear_weightROM.sram_hi.mem_array[i-256] = {val[7:0], val[15:8]};
         end
         $fclose(fd);
     end
@@ -261,16 +231,15 @@ module CNN_tb;
         if (fd == 0) begin $display("ERROR: sigmoid_lookup_table.txt"); $finish; end
         for (i = 0; i < 256; i++) begin
             status = $fscanf(fd, "%h", hex_val);
-            // Load into both SRAM instances (for parallel lookup of two inputs)
-            dut.u_postprocess.u_postprocess_sigmoid.sram_inst0.mem_array[i] = hex_val;
-            dut.u_postprocess.u_postprocess_sigmoid.sram_inst1.mem_array[i] = hex_val;
+            dut.u_cnn.u_postprocess.u_postprocess_sigmoid.sram_inst0.mem_array[i] = hex_val;
+            dut.u_cnn.u_postprocess.u_postprocess_sigmoid.sram_inst1.mem_array[i] = hex_val;
         end
         $fclose(fd);
     end
     endtask
 
     // =========================================================================
-    // Load expected intermediate results
+    // Expected outputs loading
     // =========================================================================
     task load_expected_outputs;
     begin
@@ -284,7 +253,6 @@ module CNN_tb;
     end
     endtask
 
-    // Conv: 32 channels, each 20 rows x 4 cols, separated by blank lines
     task load_exp_conv;
     begin
         fd = $fopen({DATA_DIR, "Test\\Out_Conv.txt"}, "r");
@@ -299,7 +267,6 @@ module CNN_tb;
     end
     endtask
 
-    // DWConv: 32 channels, each 18 rows x 2 cols
     task load_exp_dwconv;
     begin
         fd = $fopen({DATA_DIR, "Test\\Out_DWConv.txt"}, "r");
@@ -314,7 +281,6 @@ module CNN_tb;
     end
     endtask
 
-    // PWConv: 32 channels, each 18 rows x 2 cols
     task load_exp_pwconv;
     begin
         fd = $fopen({DATA_DIR, "Test\\Out_PWConv.txt"}, "r");
@@ -329,7 +295,6 @@ module CNN_tb;
     end
     endtask
 
-    // Flatten: 288 values on one line
     task load_exp_flatten;
     begin
         fd = $fopen({DATA_DIR, "Test\\Out_Flatten.txt"}, "r");
@@ -342,7 +307,6 @@ module CNN_tb;
     end
     endtask
 
-    // Linear: 2 values
     task load_exp_linear;
     begin
         fd = $fopen({DATA_DIR, "Test\\Out_Linear.txt"}, "r");
@@ -355,7 +319,6 @@ module CNN_tb;
     end
     endtask
 
-    // Sigmoid: 2 float values
     task load_exp_sigmoid;
         real rval;
     begin
@@ -369,9 +332,6 @@ module CNN_tb;
     end
     endtask
 
-    // =========================================================================
-    // Load input feature map
-    // =========================================================================
     task load_input_from_file;
         input string filename;
     begin
@@ -387,29 +347,25 @@ module CNN_tb;
     endtask
 
     // =========================================================================
-    // === VERIFICATION LOGIC ===
+    // === VERIFICATION LOGIC (Probes logic for whitebox verification) ===
     // =========================================================================
 
-    // ---- 1. Conv output verification ----
-    // Conv valid_out fires at pos_reg=1..9, cnt_out=0..31
-    // output_data[0..3][0..3] = 4 rows x 4 cols
-    // Row mapping: output_data[r] = expected_conv[ch][2*(pos-1)+r][c]
     reg [3:0] conv_verify_pos;
     reg [4:0] conv_verify_cnt;
 
     always @(posedge clk) begin
-        if (dut.u_conv.valid_out) begin
-            conv_verify_pos = dut.u_conv.pos_out;  // 1..9
-            conv_verify_cnt = dut.u_conv.cnt_out;   // 0..31
+        if (dut.u_cnn.u_conv.valid_out) begin
+            conv_verify_pos = dut.u_cnn.u_conv.pos_out;
+            conv_verify_cnt = dut.u_cnn.u_conv.cnt_out;
             for (int r = 0; r < 4; r++) begin
                 for (int c = 0; c < 4; c++) begin
                     automatic int exp_row = 2 * (conv_verify_pos - 1) + r;
-                    automatic reg signed [7:0] got = dut.u_conv.output_data[r][c];
+                    automatic reg signed [7:0] got = dut.u_cnn.u_conv.output_data[r][c];
                     automatic reg signed [7:0] exp = exp_conv[conv_verify_cnt][exp_row][c] < 0? 0 : exp_conv[conv_verify_cnt][exp_row][c];
                     conv_checks = conv_checks + 1;
                     if (got !== exp) begin
                         conv_errors = conv_errors + 1;
-                        if (conv_errors <= 20)  // limit error messages
+                        if (conv_errors <= 20)
                             $display("[CONV MISMATCH] ch=%0d row=%0d col=%0d got=%0d exp=%0d",
                                      conv_verify_cnt, exp_row, c, got, exp);
                     end
@@ -418,29 +374,22 @@ module CNN_tb;
         end
     end
 
-    // ---- 2. PWConv output verification ----
-    // PWConv valid_out: cnt_out=0..31, pos_out=0..8
-    // output_data[0..3] maps to:
-    //   [0] = exp_pwconv[ch][2*pos][0]   (row 2q, col 0)
-    //   [1] = exp_pwconv[ch][2*pos][1]   (row 2q, col 1)
-    //   [2] = exp_pwconv[ch][2*pos+1][0] (row 2q+1, col 0)
-    //   [3] = exp_pwconv[ch][2*pos+1][1] (row 2q+1, col 1)
     reg [4:0] pw_verify_cnt;
     reg [3:0] pw_verify_pos;
 
     always @(posedge clk) begin
-        if (dut.u_pwconv.valid_out) begin
-            pw_verify_cnt = dut.u_pwconv.cnt_out;
-            pw_verify_pos = dut.u_pwconv.pos_out;
+        if (dut.u_cnn.u_pwconv.valid_out) begin
+            pw_verify_cnt = dut.u_cnn.u_pwconv.cnt_out;
+            pw_verify_pos = dut.u_cnn.u_pwconv.pos_out;
             begin
-                automatic reg signed [7:0] g0 = dut.u_pwconv.output_data[0];
-                automatic reg signed [7:0] g1 = dut.u_pwconv.output_data[1];
-                automatic reg signed [7:0] g2 = dut.u_pwconv.output_data[2];
-                automatic reg signed [7:0] g3 = dut.u_pwconv.output_data[3];
+                automatic reg signed [7:0] g0 = dut.u_cnn.u_pwconv.output_data[0];
+                automatic reg signed [7:0] g1 = dut.u_cnn.u_pwconv.output_data[1];
+                automatic reg signed [7:0] g2 = dut.u_cnn.u_pwconv.output_data[2];
+                automatic reg signed [7:0] g3 = dut.u_cnn.u_pwconv.output_data[3];
                 automatic reg signed [7:0] e0 = exp_pwconv[pw_verify_cnt][2*pw_verify_pos][0] < 0? 0 : exp_pwconv[pw_verify_cnt][2*pw_verify_pos][0];
                 automatic reg signed [7:0] e1 = exp_pwconv[pw_verify_cnt][2*pw_verify_pos][1] < 0? 0 : exp_pwconv[pw_verify_cnt][2*pw_verify_pos][1];
                 automatic reg signed [7:0] e2 = exp_pwconv[pw_verify_cnt][2*pw_verify_pos+1][0] < 0? 0 : exp_pwconv[pw_verify_cnt][2*pw_verify_pos+1][0];
-                automatic reg signed [7:0] e3 = exp_pwconv[pw_verify_cnt][2*pw_verify_pos+1][1] < 0? 0 : exp_pwconv[pw_verify_cnt][2*pw_verify_pos+1][1];
+                automatic reg signed[7:0] e3 = exp_pwconv[pw_verify_cnt][2*pw_verify_pos+1][1] < 0? 0 : exp_pwconv[pw_verify_cnt][2*pw_verify_pos+1][1];
                 pwconv_checks = pwconv_checks + 4;
                 if (g0 !== e0) begin pwconv_errors = pwconv_errors + 1;
                     if (pwconv_errors <= 20) $display("[PW MISMATCH] ch=%0d pos=%0d [0] got=%0d exp=%0d", pw_verify_cnt, pw_verify_pos, g0, e0); end
@@ -454,20 +403,14 @@ module CNN_tb;
         end
     end
 
-    // ---- 3. Flatten (Maxpool output) verification ----
-    // Maxpool output = max(data_in0..3) at each iter
-    // PostProcess enabled by pw_valid_out; iter = {pos, cnt}
-    // Flatten index = iter = pos*32 + cnt
     reg [8:0] flatten_verify_iter;
 
     always @(posedge clk) begin
-        // PostProcess Maxpool outputs 1 cycle after PostProcess.en
-        // The maxpool iter_out tracks the delayed iter
-        if (dut.u_postprocess.u_postprocess_maxpool.iter_out !== 9'bx &&
-            dut.u_postprocess.u_postprocess_maxpool.valid_out) begin
-            flatten_verify_iter = dut.u_postprocess.u_postprocess_maxpool.iter_out;
+        if (dut.u_cnn.u_postprocess.u_postprocess_maxpool.iter_out !== 9'bx &&
+            dut.u_cnn.u_postprocess.u_postprocess_maxpool.valid_out) begin
+            flatten_verify_iter = dut.u_cnn.u_postprocess.u_postprocess_maxpool.iter_out;
             if (flatten_verify_iter < 288) begin
-                automatic reg signed [7:0] got = dut.u_postprocess.u_postprocess_maxpool.data_out;
+                automatic reg signed[7:0] got = dut.u_cnn.u_postprocess.u_postprocess_maxpool.data_out;
                 automatic reg signed [7:0] exp = exp_flatten[flatten_verify_iter[8:5] + flatten_verify_iter[4:0]*9];
                 flatten_checks = flatten_checks + 1;
                 if (got !== exp) begin
@@ -480,19 +423,14 @@ module CNN_tb;
         end
     end
 
-    // ---- 4. Linear output verification ----
-    // Linear accumulation completes at iter=287. Check data_out0/1 after rescale.
-    // PostProcess_Rescale has 2-cycle latency after Linear.
-    // The rescaled INT8 values should match exp_linear.
     reg linear_checked;
     always @(posedge clk) begin
         if (!rst_b) linear_checked <= 0;
-        // Check when sigmoid valid fires (all processing done)
-        if (dut.u_postprocess.u_postprocess_sigmoid.valid && !linear_checked) begin
+        if (dut.u_cnn.u_postprocess.u_postprocess_sigmoid.valid && !linear_checked) begin
             linear_checked <= 1;
             begin
-                automatic reg signed [7:0] got0 = dut.u_postprocess.u_postprocess_rescale.data_out0;
-                automatic reg signed [7:0] got1 = dut.u_postprocess.u_postprocess_rescale.data_out1;
+                automatic reg signed [7:0] got0 = dut.u_cnn.u_postprocess.u_postprocess_rescale.data_out0;
+                automatic reg signed [7:0] got1 = dut.u_cnn.u_postprocess.u_postprocess_rescale.data_out1;
                 $display("[LINEAR] Rescaled output: [%0d, %0d]  Expected: [%0d, %0d]",
                          got0, got1, exp_linear[0], exp_linear[1]);
                 if (got0 == exp_linear[0] && got1 == exp_linear[1])
@@ -506,21 +444,20 @@ module CNN_tb;
         end
     end
 
-    // ---- 5. Sigmoid (final) verification ----
-    // Compare FP32 hex output against sigmoid LUT expected result
-    // exp_sigmoid has float values; result0/result1 are IEEE754 hex
-
     // =========================================================================
     // Main test sequence
     // =========================================================================
-        shortreal   Sigmoid_decimal_val0;
-        shortreal   Sigmoid_decimal_val1;
+    shortreal Sigmoid_decimal_val0;
+    shortreal Sigmoid_decimal_val1;
+    logic [31:0] tb_result0;
+    logic[31:0] tb_result1;
+
     initial begin
         $display("================================================================");
-        $display("  NanoCNN Layer-by-Layer Verification Testbench");
+        $display("  NanoCNN Layer-by-Layer Verification Testbench (Fully Serial IO)");
         $display("================================================================");
 
-        // Init counters
+        // Init
         conv_errors = 0;    conv_checks = 0;
         dwconv_errors = 0;  dwconv_checks = 0;
         pwconv_errors = 0;  pwconv_checks = 0;
@@ -528,48 +465,61 @@ module CNN_tb;
         linear_pass = 0;
         sigmoid_pass = 0;
 
-        // Reset
         rst_b = 0; en = 0; start = 0;
+        feature_in[0] = 0; feature_in[1] = 0; feature_in[2] = 0; feature_in[3] = 0;
+        tb_result0 = 0; tb_result1 = 0;
+
         repeat(4) @(posedge clk);
 
-        // Load parameters + expected outputs
         load_all_parameters;
         load_expected_outputs;
 
-        // Release reset
         rst_b = 1; en = 1;
         repeat(2) @(posedge clk);
 
-        // Load reference input
         load_input_from_file({DATA_DIR, "Test\\Input.txt"});
         repeat(2) @(posedge clk);
 
-        // Start
+        // Trigger start pulse
         @(posedge clk);
         start <= 1;
         @(posedge clk);
         start <= 0;
+        
+        $display("\n[TB] Processing started... Serial input data feeding active...\n");
+        // Stream data features into the new TOP wrapper
+        feed_features();
 
-        $display("\n[TB] Processing started...\n");
-
-        // Wait for completion
+        // Wait for completion (Collect alternating 8 bytes driven by output logic)
         fork : wait_block
-            begin wait(done == 1); end
+            begin 
+                int b = 0;
+                while (b < 8) begin
+                    @(posedge clk);
+                    if (done) begin
+                        if (b == 0) tb_result0[7:0]   = result_byte;
+                        if (b == 1) tb_result1[7:0]   = result_byte;
+                        if (b == 2) tb_result0[15:8]  = result_byte;
+                        if (b == 3) tb_result1[15:8]  = result_byte;
+                        if (b == 4) tb_result0[23:16] = result_byte;
+                        if (b == 5) tb_result1[23:16] = result_byte;
+                        if (b == 6) tb_result0[31:24] = result_byte;
+                        if (b == 7) tb_result1[31:24] = result_byte;
+                        b++;
+                    end
+                end
+            end
             begin #500000; $display("[TB] TIMEOUT!"); $finish; end
         join_any
         disable wait_block;
 
         repeat(4) @(posedge clk);
 
-        // ---- Sigmoid verification ----
-        Sigmoid_decimal_val0 = $bitstoshortreal(result0);
-        Sigmoid_decimal_val1 = $bitstoshortreal(result1);
-        $display("  Sigmoid: result0=0x%08h(%f)  result1=0x%08h(%f)", result0, Sigmoid_decimal_val0, result1, Sigmoid_decimal_val1);
+        Sigmoid_decimal_val0 = $bitstoshortreal(tb_result0);
+        Sigmoid_decimal_val1 = $bitstoshortreal(tb_result1);
+        $display("  Sigmoid: result0=0x%08h(%f)  result1=0x%08h(%f)", tb_result0, Sigmoid_decimal_val0, tb_result1, Sigmoid_decimal_val1);
         $display("[SIGMOID] Expected: %.6f and %.6f", exp_sigmoid[0], exp_sigmoid[1]);
 
-        // =========================================================================
-        // Summary report
-        // =========================================================================
         $display("\n================================================================");
         $display("  VERIFICATION SUMMARY");
         $display("================================================================");
@@ -592,24 +542,18 @@ module CNN_tb;
         if (linear_pass) $display("  Linear : >>> PASS <<<");
         else             $display("  Linear : >>> FAIL <<<");
 
-        $display("  Sigmoid: result0=0x%08h(%f)(expected: %.6f)  result1=0x%08h(%f)(expected: %.6f)", result0, Sigmoid_decimal_val0, exp_sigmoid[0], result1, Sigmoid_decimal_val1, exp_sigmoid[1]);
+        $display("  Sigmoid: result0=0x%08h(%f)(expected: %.6f)  result1=0x%08h(%f)(expected: %.6f)", tb_result0, Sigmoid_decimal_val0, exp_sigmoid[0], tb_result1, Sigmoid_decimal_val1, exp_sigmoid[1]);
 
         $display("================================================================\n");
         $finish;
     end
 
-    // =========================================================================
-    // Absolute timeout
-    // =========================================================================
     initial begin
         #2000000;
         $display("[TB] FATAL: Absolute timeout (2ms)!");
         $finish;
     end
 
-    // =========================================================================
-    // VCD dump
-    // =========================================================================
     initial begin
         $dumpfile("cnn_tb.vcd");
         $dumpvars(0, CNN_tb);

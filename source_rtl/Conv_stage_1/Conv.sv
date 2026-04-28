@@ -19,8 +19,8 @@ module Conv (
     output valid_out
 );
 
-    // Pipeline latency: Input_latch + Conv_MultAdd_cell (3 stages) + RescaleReLu (2 stages) = 6
-    localparam PIPE_LATENCY = 6;
+    // Pipeline latency: Conv_MultAdd_cell (3 stages) + RescaleReLu (2 stages) = 5
+    localparam PIPE_LATENCY = 5;
 
     // ===== Pipeline valid shift register =====
     logic [PIPE_LATENCY-1:0] valid_pipe;
