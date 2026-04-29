@@ -15,6 +15,11 @@ module CNN_Top (
     logic [8:0] master_cnt;
     logic active;
 
+    logic asyn_en;
+    always_ff @(posedge clk) begin
+        asyn_en <= en;
+    end
+
     always_ff @(posedge clk or negedge rst_b) begin
         if (!rst_b) begin
             active <= 0;
@@ -22,7 +27,7 @@ module CNN_Top (
         end else if (start) begin
             active <= 1;
             master_cnt <= 0;
-        end else if (active && en) begin
+        end else if (active && asyn_en) begin
             if (master_cnt == 500)    // Wait until entire input shifting phase is gracefully done
                 active <= 0;
             else
@@ -41,7 +46,7 @@ module CNN_Top (
 
     // Shift in 4 bytes per cycle. We shift during the first 30 cycles of each 32-cycle block
     always_ff @(posedge clk) begin
-        if (active && word_idx < 30 && master_cnt < 320 && en) begin
+        if (active && word_idx < 30 && master_cnt < 320 && asyn_en) begin
             flat_shift_reg[word_idx*4 + 0] <= feature_in[0];
             flat_shift_reg[word_idx*4 + 1] <= feature_in[1];
             flat_shift_reg[word_idx*4 + 2] <= feature_in[2];
@@ -51,7 +56,7 @@ module CNN_Top (
 
     // Transfer Shift-Reg -> Holding-Reg exactly at the boundary before 'cnn' needs the next window
     always_ff @(posedge clk) begin
-        if (active && word_idx == 31 && master_cnt < 320 && en) begin
+        if (active && word_idx == 31 && master_cnt < 320 && asyn_en) begin
             for (int i = 0; i < 120; i++) begin
                 flat_holding_reg[i] <= flat_shift_reg[i];
             end
@@ -63,7 +68,7 @@ module CNN_Top (
     always_ff @(posedge clk or negedge rst_b) begin
         if (!rst_b) 
             cnn_start <= 0;
-        else if (active && master_cnt == 30 && en) 
+        else if (active && master_cnt == 30 && asyn_en) 
             cnn_start <= 1;
         else 
             cnn_start <= 0;
@@ -92,7 +97,7 @@ module CNN_Top (
     cnn u_cnn (
         .clk(clk),
         .rst_b(rst_b),
-        .en(en),
+        .en(asyn_en),
         .start(cnn_start),
         .feature_window(cnn_feature_window),
         .done(cnn_done),
@@ -116,7 +121,7 @@ module CNN_Top (
             reg_result1 <= 0;
             done        <= 0;
             result_byte <= 0;
-        end else if (cnn_done && en) begin
+        end else if (cnn_done && asyn_en) begin
             // 捕获脉冲信号和浮点结果
             reg_result0 <= cnn_result0;
             reg_result1 <= cnn_result1;
@@ -125,7 +130,7 @@ module CNN_Top (
             done        <= 1;
             // 立即输出第一个字节 (result0 的低8位)
             result_byte <= cnn_result0[7:0]; 
-        end else if (out_active && en) begin
+        end else if (out_active && asyn_en) begin
             if (out_cnt == 4'd7) begin
                 out_active  <= 0;
                 done        <= 0;

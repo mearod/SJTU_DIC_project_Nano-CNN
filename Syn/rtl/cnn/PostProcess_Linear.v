@@ -14,13 +14,17 @@ module PostProcess_Linear (
     output signed [31:0] data_out1
 );
 
+    reg signed [8:0] iter_tmp;
     always @(posedge clk or negedge rst_b) begin
         if (~rst_b) begin
             iter_out <= 0;
+            iter_tmp <= 0;
         end else if (en) begin
-            iter_out <= iter_in;
+            iter_out <= iter_tmp;
+            iter_tmp <= iter_in;
         end else begin
             iter_out <= iter_out;
+            iter_tmp <= iter_tmp;
         end
     end
 
@@ -31,6 +35,7 @@ module PostProcess_Linear (
        .en(en),
        .valid_in(valid_in),
        .iter(iter_in),
+       .iter_tmp(iter_tmp),
        .data_in(data_in),
        .weight(weight0),
        .bias(bias0),
@@ -42,6 +47,7 @@ module PostProcess_Linear (
        .en(en),
        .valid_in(valid_in),
        .iter(iter_in),
+       .iter_tmp(iter_tmp),
        .data_in(data_in),
        .weight(weight1),
        .bias(bias1),
