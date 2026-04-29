@@ -3,9 +3,9 @@
 *******************************************************************************
 * Report  : Timing                                                            *
 * Command : analyze_timing > ../reports/timing_report_clk_with_driving.rpt   *
-* Design  : CNN_Top                                                           *
+* Design  : CNN_chip                                                          *
 * Version : main_1229_2e0365ed.rel                                            *
-* Date    : 9:42 AM, 16-Apr-26                                                *
+* Date    : 5:37 PM, 29-Apr-26                                                *
 *******************************************************************************
 *******************************************************************************
 * MAX Timing Analysis                                                         *
@@ -32,12 +32,12 @@
 
 *******************************************************************************
 * Report  : Critical paths for each clock group                               *
-* Design  : CNN_Top                                                           *
+* Design  : CNN_chip                                                          *
 *******************************************************************************
 
 
-Beginpoint: u_postprocess/u_linear_weightROM/sram_lo (re-triggered flip-flop clocked by clk)
-Endpoint: u_postprocess/u_postprocess_linear/u_linear_group0/data_out_reg[15] (re-triggered flip-flop clocked by clk)
+Beginpoint: inst_CNN_Top/u_cnn/u_conv/weight_rom/sram_inst[4].u_sram (re-triggered flip-flop clocked by clk)
+Endpoint: inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/s1_prod_reg[75][14] (re-triggered flip-flop clocked by clk)
 Path Group: clk
 Delay Type: max
 
@@ -45,49 +45,74 @@ Point (Gate Type)                                    Inc.         Path
 ------------------------------------------------------------------------
 clock clk (re)                                       0.00         0.00
 clock tree delay (ideal)                             0.30         0.30
-u_postprocess/u_linear_weightROM/sram_lo/CLK (S018V3EBCDSP_X64Y4D16_PR)
+inst_CNN_Top/u_cnn/u_conv/weight_rom/sram_inst[4].u_sram/CLK (S018V3EBCDSP_X8Y4D128_PR)
                                                      0.00         0.30 R
-u_postprocess/u_linear_weightROM/sram_lo/Q[4] (S018V3EBCDSP_X64Y4D16_PR)
-                                                     1.87         2.17 F
-u_postprocess/u1210/Y (MX2X2)                        0.22         2.39 F
-u_postprocess/u3786/Y (INVX1)                        0.11         2.49 R
-u_postprocess/u3787/Y (CLKINVX3)                     0.13         2.63 F
-u_postprocess/u1246/Y (AND4X2)                       0.25         2.87 F
-u_postprocess/u1247/Y (NOR2X1)                       0.14         3.01 R
-u_postprocess/u1248/Y (XOR2X1)                       0.32         3.34 R
-u_postprocess/u1254/Y (XNOR3X2)                      0.55         3.89 F
-u_postprocess/u1257/Y (XNOR2X4)                      0.26         4.15 R
-u_postprocess/u1259/Y (XNOR2X4)                      0.24         4.38 R
-u_postprocess/u1311/Y (XNOR2X2)                      0.24         4.63 R
-u_postprocess/u1312/Y (NAND2X1)                      0.17         4.80 F
-u_postprocess/u1514/Y (AOI21X1)                      0.26         5.05 R
-u_postprocess/u1515/Y (XNOR2X2)                      0.32         5.38 R
-u_postprocess/u1519/Y (OAI32X1)                      0.15         5.53 F
-u_postprocess/u1520/Y (AOI22X2)                      0.26         5.79 R
-u_postprocess/u1521/Y (NAND2X1)                      0.18         5.96 F
-u_postprocess/u1544/Y (OAI2BB1X2)                    0.24         6.20 F
-u_postprocess/u1557/Y (AOI211X2)                     0.30         6.50 R
-u_postprocess/u1601/Y (AOI2BB1X2)                    0.29         6.80 R
-u_postprocess/u4300/Y (BUFX3)                        0.16         6.96 R
-u_postprocess/u1672/Y (NAND3X1)                      0.12         7.08 F
-u_postprocess/u3986/Y (INVX1)                        0.09         7.17 R
-u_postprocess/u3987/Y (INVX1)                        0.06         7.23 F
-u_postprocess/u1730/Y (NOR2BX1)                      0.18         7.41 F
-u_postprocess/u1734/Y (OAI32X1)                      0.27         7.68 R
-u_postprocess/u_postprocess_linear/u_linear_group0/data_out_reg[15]/D (DFFRXL)
-                                                     0.00         7.68 R
-data arrival time                                                 7.68
+inst_CNN_Top/u_cnn/u_conv/weight_rom/sram_inst[4].u_sram/Q[93] (S018V3EBCDSP_X8Y4D128_PR)
+                                                     2.11         2.41 R
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/conv_weights[605] (Conv_MultAdd)
+                                                     0.00         2.41 R
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/u5327/Y (INVX1)
+                                                     0.08         2.49 F
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/u5328/Y (INVX4)
+                                                     0.41         2.90 R
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/conv_weights[605] (Conv_MultAdd_cell_4)
+                                                     0.00         2.90 R
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/u32567/Y (NAND2XL)
+                                                     0.23         3.13 F
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/u32568/Y (AND3XL)
+                                                     0.38         3.51 F
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/u32570/Y (NOR2XL)
+                                                     0.11         3.62 R
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/u32571/Y (XOR2XL)
+                                                     0.38         4.00 F
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/u32573/Y (OR2XL)
+                                                     0.25         4.26 F
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/u32574/Y (NAND2XL)
+                                                     0.09         4.35 R
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/u32575/Y (XOR2XL)
+                                                     0.39         4.74 R
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/u32576/Y (OAI21XL)
+                                                     0.14         4.88 F
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/u32578/Y (OAI22XL)
+                                                     0.19         5.07 R
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/u32598/Y (NAND2BXL)
+                                                     0.20         5.27 R
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/u32623/Y (AND2XL)
+                                                     0.18         5.45 R
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/u32624/Y (XNOR2XL)
+                                                     0.38         5.83 F
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/u32650/Y (AND2XL)
+                                                     0.20         6.03 F
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/u32777/Y (AOI2BB1X1)
+                                                     0.32         6.35 F
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/u32781/Y (NOR3X1)
+                                                     0.26         6.61 R
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/u32794/Y (NOR2X1)
+                                                     0.08         6.68 F
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/u32795/Y (NOR2BX1)
+                                                     0.17         6.85 R
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/u32812/Y (AOI21X1)
+                                                     0.12         6.98 F
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/u32814/Y (NOR2BX1)
+                                                     0.21         7.18 F
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/u32818/Y (NOR2X1)
+                                                     0.14         7.33 R
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/u35003/Y (XNOR2X1)
+                                                     0.26         7.59 F
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/s1_prod_reg[75][14]/D (DFFHQXL)
+                                                     0.00         7.59 F
+data arrival time                                                 7.59
 
 clock clk (re)                                       8.00         8.00
 clock tree delay (ideal)                             0.30         8.30
-u_postprocess/u_postprocess_linear/u_linear_group0/data_out_reg[15]/CK (DFFRXL)
+inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].cell_inst/s1_prod_reg[75][14]/CK (DFFHQXL)
                                                      0.00         8.30 R
 clock uncertainty                                   -0.50         7.80
-library setup time                                  -0.12         7.68
-data required time                                                7.68
+library setup time                                  -0.21         7.59
+data required time                                                7.59
 ------------------------------------------------------------------------
-data required time                                                7.68
-data arrival time                                                -7.68
+data required time                                                7.59
+data arrival time                                                -7.59
 ------------------------------------------------------------------------
 slack (MET)                                                       0.00
 

@@ -4,9 +4,9 @@
 * Report  : Maximal/setup time constraint                                     *
 * Command : analyze_constraint -all_violators >                               *
 *         : ../reports/violators_clk_with_driving.rpt                         *
-* Design  : CNN_Top                                                           *
+* Design  : CNN_chip                                                          *
 * Version : main_1229_2e0365ed.rel                                            *
-* Date    : 9:42 AM, 16-Apr-26                                                *
+* Date    : 5:37 PM, 29-Apr-26                                                *
 *******************************************************************************
 
 
@@ -14,9 +14,9 @@
 * Report  : Minimal/hold time constraint                                      *
 * Command : analyze_constraint -all_violators >                               *
 *         : ../reports/violators_clk_with_driving.rpt                         *
-* Design  : CNN_Top                                                           *
+* Design  : CNN_chip                                                          *
 * Version : main_1229_2e0365ed.rel                                            *
-* Date    : 9:42 AM, 16-Apr-26                                                *
+* Date    : 5:37 PM, 29-Apr-26                                                *
 *******************************************************************************
 
 
@@ -24,145 +24,144 @@ Clock group: clk
 
 Endpoint                                           Delay   Constraint      Slack
 --------------------------------------------------------------------------------
-u_postprocess/u_postprocess_sigmoid/sram_inst0/A[0]       0.98 R       1.26      -0.28(V)
-u_postprocess/u_postprocess_sigmoid/sram_inst0/A[1]       0.98 R       1.26      -0.28(V)
-u_postprocess/u_postprocess_sigmoid/sram_inst0/A[2]       0.98 R       1.26      -0.28(V)
-u_postprocess/u_postprocess_sigmoid/sram_inst0/A[3]       0.98 R       1.26      -0.28(V)
-u_postprocess/u_postprocess_sigmoid/sram_inst0/A[4]       0.98 R       1.26      -0.28(V)
-u_postprocess/u_postprocess_sigmoid/sram_inst0/A[5]       0.98 R       1.26      -0.28(V)
-u_postprocess/u_postprocess_sigmoid/sram_inst0/A[6]       0.98 R       1.26      -0.28(V)
-u_postprocess/u_postprocess_sigmoid/sram_inst1/A[0]       0.98 R       1.26      -0.28(V)
-u_postprocess/u_postprocess_sigmoid/sram_inst1/A[1]       0.98 R       1.26      -0.28(V)
-u_postprocess/u_postprocess_sigmoid/sram_inst1/A[2]       0.98 R       1.26      -0.28(V)
-u_postprocess/u_postprocess_sigmoid/sram_inst1/A[3]       0.98 R       1.26      -0.28(V)
-u_postprocess/u_postprocess_sigmoid/sram_inst1/A[4]       0.98 R       1.26      -0.28(V)
-u_postprocess/u_postprocess_sigmoid/sram_inst1/A[5]       0.98 R       1.26      -0.28(V)
-u_postprocess/u_postprocess_sigmoid/sram_inst1/A[6]       0.98 R       1.26      -0.28(V)
-u_postprocess/u_postprocess_sigmoid/sram_inst1/A[7]       1.00 R       1.26      -0.26(V)
-u_postprocess/u_postprocess_sigmoid/sram_inst0/A[7]       0.93 F       1.15      -0.23(V)
-u_postprocess/u_linear_weightROM/sram_lo/A[7]       0.96 F       1.12      -0.16(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[0]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[0]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[0]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[0]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[11]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[11]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[11]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[11]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[12]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[12]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[12]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[12]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[2]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[2]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[2]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[2]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[4]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[4]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[4]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[4]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[6]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[6]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[6]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[6]/D       0.69 F       0.84      -0.15(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[10]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[10]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[10]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[10]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[13]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[13]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[13]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[13]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[14]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[14]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[14]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[14]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[15]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[15]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[15]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[15]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[1]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[1]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[1]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[1]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[3]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[3]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[3]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[3]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[5]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[5]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[5]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[5]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[7]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[7]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[7]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[7]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[8]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[8]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[8]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[8]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[9]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[9]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[9]/D       0.69 F       0.83      -0.14(V)
-u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[9]/D       0.69 F       0.83      -0.14(V)
-u_postprocess/u_linear_weightROM/sram_lo/A[5]       0.99 F       1.11      -0.11(V)
-u_postprocess/u_linear_weightROM/sram_lo/A[6]       1.00 F       1.11      -0.11(V)
-u_conv/valid_pipe_reg[1]/D                          0.75 F       0.85      -0.10(V)
-u_dwconv/valid_pipe_reg[1]/D                        0.75 F       0.85      -0.10(V)
-u_pwconv/valid_pipe_reg[1]/D                        0.75 F       0.85      -0.10(V)
-u_conv/valid_pipe_reg[2]/D                          0.75 F       0.85      -0.10(V)
-u_dwconv/valid_pipe_reg[2]/D                        0.75 F       0.85      -0.10(V)
-u_pwconv/valid_pipe_reg[2]/D                        0.75 F       0.85      -0.10(V)
-u_conv/valid_pipe_reg[3]/D                          0.75 F       0.85      -0.10(V)
-u_dwconv/valid_pipe_reg[3]/D                        0.75 F       0.85      -0.10(V)
-u_pwconv/valid_pipe_reg[3]/D                        0.75 F       0.85      -0.10(V)
-u_conv/valid_pipe_reg[4]/D                          0.75 F       0.85      -0.10(V)
-u_pwconv/valid_pipe_reg[4]/D                        0.75 F       0.85      -0.10(V)
-u_dwconv/bias_rom/sram_inst/A[2]                    1.02 F       1.10      -0.09(V)
-u_dwconv/weight_rom/sram_inst/A[2]                  1.02 F       1.10      -0.09(V)
-u_dwconv/bias_rom/sram_inst/A[4]                    1.02 F       1.10      -0.09(V)
-u_dwconv/weight_rom/sram_inst/A[4]                  1.02 F       1.10      -0.09(V)
-u_dwconv/bias_rom/sram_inst/A[3]                    1.02 F       1.10      -0.08(V)
-u_dwconv/weight_rom/sram_inst/A[3]                  1.02 F       1.10      -0.08(V)
-u_postprocess/u_linear_weightROM/sram_hi/A[2]       1.03 F       1.10      -0.07(V)
-u_postprocess/u_linear_weightROM/sram_lo/A[2]       1.03 F       1.10      -0.07(V)
-u_postprocess/u_linear_weightROM/sram_hi/A[4]       1.05 F       1.10      -0.04(V)
-u_postprocess/u_linear_weightROM/sram_lo/A[4]       1.05 F       1.10      -0.04(V)
-u_dwconv/bias_rom/sram_inst/A[1]                    1.06 F       1.10      -0.04(V)
-u_dwconv/weight_rom/sram_inst/A[1]                  1.06 F       1.10      -0.04(V)
-u_dwconv/bias_rom/sram_inst/A[0]                    1.06 F       1.10      -0.03(V)
-u_dwconv/weight_rom/sram_inst/A[0]                  1.06 F       1.10      -0.03(V)
-u_postprocess/u_linear_weightROM/sram_hi/A[1]       1.08 F       1.09      -0.02(V)
-u_postprocess/u_linear_weightROM/sram_lo/A[1]       1.08 F       1.09      -0.02(V)
-u_postprocess/u_linear_weightROM/sram_hi/A[0]       1.08 F       1.09      -0.01(V)
-u_postprocess/u_linear_weightROM/sram_lo/A[0]       1.08 F       1.09      -0.01(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_sigmoid/sram_inst0/A[0]       0.98 R       1.26      -0.28(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_sigmoid/sram_inst0/A[1]       0.98 R       1.26      -0.28(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_sigmoid/sram_inst0/A[2]       0.98 R       1.26      -0.28(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_sigmoid/sram_inst0/A[3]       0.98 R       1.26      -0.28(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_sigmoid/sram_inst0/A[4]       0.98 R       1.26      -0.28(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_sigmoid/sram_inst0/A[5]       0.98 R       1.26      -0.28(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_sigmoid/sram_inst0/A[6]       0.98 R       1.26      -0.28(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_sigmoid/sram_inst1/A[0]       0.98 R       1.26      -0.28(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_sigmoid/sram_inst1/A[1]       0.98 R       1.26      -0.28(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_sigmoid/sram_inst1/A[2]       0.98 R       1.26      -0.28(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_sigmoid/sram_inst1/A[3]       0.98 R       1.26      -0.28(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_sigmoid/sram_inst1/A[4]       0.98 R       1.26      -0.28(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_sigmoid/sram_inst1/A[5]       0.98 R       1.26      -0.28(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_sigmoid/sram_inst1/A[6]       0.98 R       1.26      -0.28(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_sigmoid/sram_inst1/A[7]       1.00 R       1.26      -0.26(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_sigmoid/sram_inst0/A[7]       0.93 F       1.15      -0.23(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_linear_weightROM/sram_lo/A[7]       0.96 F       1.12      -0.16(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[0]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[0]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[0]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[0]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[11]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[11]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[11]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[11]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[12]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[12]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[12]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[12]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[2]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[2]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[2]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[2]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[4]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[4]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[4]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[4]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[6]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[6]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[6]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[6]/D       0.69 F       0.84      -0.15(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[10]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[10]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[10]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[10]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[13]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[13]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[13]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[13]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[14]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[14]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[14]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[14]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[15]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[15]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[15]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[15]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[1]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[1]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[1]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[1]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[3]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[3]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[3]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[3]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[5]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[5]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[5]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[5]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[7]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[7]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[7]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[7]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[8]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[8]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[8]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[8]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/s2_bias_reg[9]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[1].cell_inst/s2_bias_reg[9]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_bias_reg[9]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s2_bias_reg[9]/D       0.69 F       0.83      -0.14(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_linear_weightROM/sram_lo/A[5]       0.99 F       1.11      -0.11(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_linear_weightROM/sram_lo/A[6]       1.00 F       1.11      -0.11(V)
+inst_CNN_Top/u_cnn/u_conv/valid_pipe_reg[1]/D       0.75 F       0.85      -0.10(V)
+inst_CNN_Top/u_cnn/u_dwconv/valid_pipe_reg[1]/D       0.75 F       0.85      -0.10(V)
+inst_CNN_Top/u_cnn/u_pwconv/valid_pipe_reg[1]/D       0.75 F       0.85      -0.10(V)
+inst_CNN_Top/u_cnn/u_conv/valid_pipe_reg[2]/D       0.75 F       0.85      -0.10(V)
+inst_CNN_Top/u_cnn/u_dwconv/valid_pipe_reg[2]/D       0.75 F       0.85      -0.10(V)
+inst_CNN_Top/u_cnn/u_pwconv/valid_pipe_reg[2]/D       0.75 F       0.85      -0.10(V)
+inst_CNN_Top/u_cnn/u_conv/valid_pipe_reg[3]/D       0.75 F       0.85      -0.10(V)
+inst_CNN_Top/u_cnn/u_dwconv/valid_pipe_reg[3]/D       0.75 F       0.85      -0.10(V)
+inst_CNN_Top/u_cnn/u_pwconv/valid_pipe_reg[3]/D       0.75 F       0.85      -0.10(V)
+inst_CNN_Top/u_cnn/u_pwconv/valid_pipe_reg[4]/D       0.75 F       0.85      -0.10(V)
+inst_CNN_Top/u_cnn/u_dwconv/bias_rom/sram_inst/A[2]       1.02 F       1.10      -0.09(V)
+inst_CNN_Top/u_cnn/u_dwconv/weight_rom/sram_inst/A[2]       1.02 F       1.10      -0.09(V)
+inst_CNN_Top/u_cnn/u_dwconv/bias_rom/sram_inst/A[4]       1.02 F       1.10      -0.09(V)
+inst_CNN_Top/u_cnn/u_dwconv/weight_rom/sram_inst/A[4]       1.02 F       1.10      -0.09(V)
+inst_CNN_Top/u_cnn/u_dwconv/bias_rom/sram_inst/A[3]       1.02 F       1.10      -0.08(V)
+inst_CNN_Top/u_cnn/u_dwconv/weight_rom/sram_inst/A[3]       1.02 F       1.10      -0.08(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_linear_weightROM/sram_hi/A[2]       1.03 F       1.10      -0.07(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_linear_weightROM/sram_lo/A[2]       1.03 F       1.10      -0.07(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_linear_weightROM/sram_hi/A[4]       1.05 F       1.10      -0.04(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_linear_weightROM/sram_lo/A[4]       1.05 F       1.10      -0.04(V)
+inst_CNN_Top/u_cnn/u_dwconv/bias_rom/sram_inst/A[1]       1.06 F       1.10      -0.04(V)
+inst_CNN_Top/u_cnn/u_dwconv/weight_rom/sram_inst/A[1]       1.06 F       1.10      -0.04(V)
+inst_CNN_Top/u_cnn/u_dwconv/bias_rom/sram_inst/A[0]       1.06 F       1.10      -0.03(V)
+inst_CNN_Top/u_cnn/u_dwconv/weight_rom/sram_inst/A[0]       1.06 F       1.10      -0.03(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_linear_weightROM/sram_hi/A[0]       1.07 F       1.09      -0.02(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_linear_weightROM/sram_lo/A[0]       1.07 F       1.09      -0.02(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_linear_weightROM/sram_hi/A[1]       1.08 F       1.09      -0.02(V)
+inst_CNN_Top/u_cnn/u_postprocess/u_linear_weightROM/sram_lo/A[1]       1.08 F       1.09      -0.02(V)
 
 
 
 *******************************************************************************
 * Report  : Minimum Pulse Width of Pins                                       *
-* Design  : CNN_Top                                                           *
+* Design  : CNN_chip                                                          *
 *******************************************************************************
 
 
 
 *******************************************************************************
 * Report  : Minimum Period of Pins                                            *
-* Design  : CNN_Top                                                           *
+* Design  : CNN_chip                                                          *
 *******************************************************************************
 
 
 
 *******************************************************************************
 * Report  : Maximum Capacitance of Cells                                      *
-* Design  : CNN_Top                                                           *
+* Design  : CNN_chip                                                          *
 *******************************************************************************
 
 
 
 *******************************************************************************
 * Report  : Maximum Capacitance of Nets                                       *
-* Design  : CNN_Top                                                           *
+* Design  : CNN_chip                                                          *
 *******************************************************************************
 
 
@@ -172,23 +171,61 @@ u_postprocess/u_linear_weightROM/sram_lo/A[0]       1.08 F       1.09      -0.01
 
 *******************************************************************************
 * Report  : Maximum Transition of Pins                                        *
-* Design  : CNN_Top                                                           *
+* Design  : CNN_chip                                                          *
 *******************************************************************************
+*******************************************************************************
+* DRC fixing command setting:                                                 *
+*  - clock path:                          OFF                                 *
+*  - async path:                          ON                                  *
+*  - tie-high / tie-low or constant net:  OFF                                 *
+*  (use 'set_drc_option -clock_path | -async_path' | '-tiecell_net' cmd       *
+*   to control fixing)                                                        *
+* Legend:                                                                     *
+* (V): violation                                                              *
+* (N): net is dont_change                                                     *
+* (I): instance is dont_change                                                *
+* (T): tie-high or tie-low object                                             *
+* (C): clock path object                                                      *
+* (A): asynchronous path object                                               *
+*******************************************************************************
+
+Driving pin (cell)                            Value Constraint      Delta
+-------------------------------------------------------------------------------
+gen_piw_feature[3].PIW_feature/PAD (PIW)       3.57       3.00      -0.57(V)
 
 
 
 
 *******************************************************************************
 * Report  : Maximum Transition of Nets                                        *
-* Design  : CNN_Top                                                           *
+* Design  : CNN_chip                                                          *
 *******************************************************************************
+*******************************************************************************
+* DRC fixing command setting:                                                 *
+*  - clock path:                          OFF                                 *
+*  - async path:                          ON                                  *
+*  - tie-high / tie-low or constant net:  OFF                                 *
+*  (use 'set_drc_option -clock_path | -async_path' | '-tiecell_net' cmd       *
+*   to control fixing)                                                        *
+* Legend:                                                                     *
+* (V): violation                                                              *
+* (N): net is dont_change                                                     *
+* (I): instance is dont_change                                                *
+* (T): tie-high or tie-low object                                             *
+* (C): clock path object                                                      *
+* (A): asynchronous path object                                               *
+*******************************************************************************
+
+Net name                                      Value Constraint      Delta
+-------------------------------------------------------------------------------
+feature_in[3]                                  3.57       3.00      -0.57(V)
 
 
 
 
 *******************************************************************************
 * Report  : Minimum Transition of Pins                                        *
-* Design  : CNN_Top                                                           *
+* Design  : CNN_chip                                                          *
 *******************************************************************************
 
 
@@ -196,34 +233,34 @@ u_postprocess/u_linear_weightROM/sram_lo/A[0]       1.08 F       1.09      -0.01
 
 *******************************************************************************
 * Report  : Minimum Transition of Nets                                        *
-* Design  : CNN_Top                                                           *
+* Design  : CNN_chip                                                          *
 *******************************************************************************
 
 
 
 *******************************************************************************
 * Report  : Maximum Fanout of Cells                                           *
-* Design  : CNN_Top                                                           *
+* Design  : CNN_chip                                                          *
 *******************************************************************************
 
 
 
 *******************************************************************************
 * Report  : Maximum Fanout of Nets                                            *
-* Design  : CNN_Top                                                           *
+* Design  : CNN_chip                                                          *
 *******************************************************************************
 
 
 
 *******************************************************************************
 * Report  : Top Port Connection Class                                         *
-* Design  : CNN_Top                                                           *
+* Design  : CNN_chip                                                          *
 *******************************************************************************
 
 
 
 *******************************************************************************
 * Report  : Connection Class                                                  *
-* Design  : CNN_Top                                                           *
+* Design  : CNN_chip                                                          *
 *******************************************************************************
 

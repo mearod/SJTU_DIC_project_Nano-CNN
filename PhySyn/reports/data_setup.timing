@@ -1,0 +1,48 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : cnn_chip
+Version: O-2018.06-SP1
+Date   : Thu Apr 23 10:08:51 2026
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: slow   Library: slow
+
+  Startpoint: inst_CNN/outBuffer2/data_out_reg[29]/CK
+              (internal path startpoint clocked by clk)
+  Endpoint: data_out[28]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             4.30       4.30
+  input external delay                                    0.00       4.30 r
+  inst_CNN/outBuffer2/data_out_reg[29]/CK (DFFRHQX4)      0.00 #     4.30 r
+  inst_CNN/outBuffer2/data_out_reg[29]/Q (DFFRHQX4)       0.37       4.67 r
+  inst_CNN/u118683/Y (BUFX20)                             0.22       4.89 r
+  inst_CNN/data_out[28] (CNN_top)                         0.00       4.89 r
+  PO8W_dout28/PAD (PO8W)                                  1.65       6.54 r
+  data_out[28] (out)                                      0.00       6.54 r
+  data arrival time                                                  6.54
+
+  clock clk (rise edge)                                   7.00       7.00
+  clock network delay (ideal)                             4.30      11.30
+  clock uncertainty                                      -0.50      10.80
+  output external delay                                  -5.00       5.80
+  data required time                                                 5.80
+  --------------------------------------------------------------------------
+  data required time                                                 5.80
+  data arrival time                                                 -6.54
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.74
+
+
+1

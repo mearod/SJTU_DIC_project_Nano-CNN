@@ -1,0 +1,332 @@
+
+  Loading design 'cnn_chip'
+
+
+Information: Setting a dont_touch attribute on net 'enable_out' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'rst_n' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'enable' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'clk' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[7]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[6]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[5]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[4]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[3]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[2]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[1]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[0]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[15]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[14]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[13]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[12]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[11]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[10]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[8]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[23]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[22]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[21]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[20]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[19]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[18]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[17]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[16]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[31]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[30]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[29]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[28]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[27]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[26]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[25]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[24]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[39]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[38]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[37]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[36]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[35]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[34]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[33]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[32]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[47]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[46]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[45]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[44]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[43]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[42]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[41]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[40]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[55]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[54]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[53]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[52]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[51]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[50]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[49]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[48]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[7]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[6]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[5]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[4]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[3]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[2]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[1]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[0]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[15]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[14]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[13]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[12]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[11]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[10]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[9]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[8]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[23]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[22]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[21]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[20]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[19]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[18]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[17]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[16]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[29]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[28]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[27]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[26]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[25]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[24]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[39]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[38]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[37]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[36]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[35]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[34]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[33]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[32]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[47]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[46]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[45]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[44]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[43]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[42]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[41]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[40]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[55]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[54]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[53]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[52]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[51]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[50]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[49]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[48]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[61]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[60]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[59]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[58]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[57]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[56]' because it is connected to a pad cell. (PSYN-088)
+
+
+Information: Library Manufacturing Grid(GridResolution) : 5
+Information: Time Unit from Milkyway design library: 'ns' 
+Information: Design Library and main library timing units are matched - 1.000 ns. 
+Information: Resistance Unit from Milkyway design library: 'kohm' 
+Information: Design Library and main library resistance units are matched - 1.000 kohm. 
+Information: Capacitance Unit from Milkyway design library: 'pf' 
+Information: Design Library and main library capacitance units are matched - 1.000 pf. 
+Information: None of the nets in the design are routed. Estimation of all the nets will be performed. (RCEX-203)
+Information: Start rc update...
+****************************************************************
+Information: TLUPlus based RC computation is enabled. (RCEX-141)
+****************************************************************
+Information: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)
+Information: The RC model used is TLU+. (RCEX-015)
+Information: Library Derived Cap for layer METAL1 : 0.00022 0.0002 (RCEX-011)
+Information: Library Derived Res for layer METAL1 : 0.00044 0.00024 (RCEX-011)
+Information: Library Derived Cap for layer METAL2 : 0.00021 0.00019 (RCEX-011)
+Information: Library Derived Res for layer METAL2 : 0.00036 0.0002 (RCEX-011)
+Information: Library Derived Cap for layer METAL3 : 0.00025 0.00023 (RCEX-011)
+Information: Library Derived Res for layer METAL3 : 0.00036 0.0002 (RCEX-011)
+Information: Library Derived Cap for layer METAL4 : 0.00021 0.00019 (RCEX-011)
+Information: Library Derived Res for layer METAL4 : 0.00036 0.0002 (RCEX-011)
+Information: Library Derived Cap for layer METAL5 : 0.00028 0.00026 (RCEX-011)
+Information: Library Derived Res for layer METAL5 : 0.0001 6.1e-05 (RCEX-011)
+Information: Library Derived Horizontal Cap : 0.00025 0.00023 (RCEX-011)
+Information: Library Derived Horizontal Res : 0.0003 0.00017 (RCEX-011)
+Information: Library Derived Vertical Cap : 0.00021 0.00019 (RCEX-011)
+Information: Library Derived Vertical Res : 0.00036 0.0002 (RCEX-011)
+Information: Using derived R and C coefficients. (RCEX-008)
+Information: Using region-based R and C coefficients. (RCEX-013)
+Information: Library Derived Via Res : 0.0095 0.001 (RCEX-011)
+Information: End rc update.
+Information: Updating graph... (UID-83)
+
+************************************************************
+SI options:
+Delta Delay Computation:           true
+Static Noise Computation:          false
+Timing window analysis for SI:     false
+Min Delta Delay for SI:            true
+Analysis Effort:                   medium
+Max Transition Mode:               normal_slew
+Static Noise Thresholds:           0.35 (0.57V) above low
+                                   0.35 (0.57V) below high
+Route xtalk prevention:            true
+Route xtalk prevention threshold:  0.25
+************************************************************
+
+Warning: Design 'cnn_chip' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Information: Updating design information... (UID-85)
+
+************************************************************
+SI options:
+Delta Delay Computation:           true
+Static Noise Computation:          false
+Timing window analysis for SI:     false
+Min Delta Delay for SI:            true
+Analysis Effort:                   medium
+Max Transition Mode:               normal_slew
+Static Noise Thresholds:           0.35 (0.57V) above low
+                                   0.35 (0.57V) below high
+Route xtalk prevention:            true
+Route xtalk prevention threshold:  0.25
+************************************************************
+
+Warning: Design 'cnn_chip' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Warning: Clock network timing may not be up-to-date since only 0.000000 percentage of clock nets are routed. (TIM-233)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : cnn_chip
+Version: O-2018.06-SP1
+Date   : Thu Apr 23 10:44:15 2026
+****************************************
+
+ * Some/all delay information is back-annotated.
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: slow   Library: slow
+
+Information: Percent of Arnoldi-based delays =  0.00%
+
+  Startpoint: data_in[9] (input port clocked by clk)
+  Endpoint: inst_CNN/sa1/sa1_channels[11].u_SA1_channel/row_loop[10].col_loop[1].genblk1.array_pe/data_in_buffer_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             4.30       4.30
+  input external delay                                    5.00       9.30 f
+  data_in[9] (in)                                         0.02       9.32 f
+  u14/Y (CLKBUFX20)                                       1.36 *    10.68 f
+  PIW_din9/C (PIW)                                        7.42 *    18.10 f
+  inst_CNN/data_in[9] (CNN_top)                           0.00      18.10 f
+  inst_CNN/sa1/data_in[9] (SA1)                           0.00      18.10 f
+  inst_CNN/sa1/sa1_channels[11].u_SA1_channel/data_in[9] (SA1_channel_12)
+                                                          0.00      18.10 f
+  inst_CNN/sa1/sa1_channels[11].u_SA1_channel/row_loop[10].col_loop[1].genblk1.array_pe/data_in_buffer_reg[1]/D (DFFRX1)
+                                                          3.08 *    21.18 f
+  data arrival time                                                 21.18
+
+  clock clk (rise edge)                                   7.00       7.00
+  clock network delay (ideal)                             4.30      11.30
+  clock reconvergence pessimism                           0.00      11.30
+  clock uncertainty                                      -0.20      11.10
+  inst_CNN/sa1/sa1_channels[11].u_SA1_channel/row_loop[10].col_loop[1].genblk1.array_pe/data_in_buffer_reg[1]/CK (DFFRX1)
+                                                          0.00      11.10 r
+  library setup time                                     -0.94      10.16
+  data required time                                                10.16
+  --------------------------------------------------------------------------
+  data required time                                                10.16
+  data arrival time                                                -21.18
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -11.02
+
+
+  Startpoint: inst_CNN/enable_out_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: enable_out (output port clocked by clk)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             4.30       4.30
+  inst_CNN/enable_out_reg/CK (DFFRHQX4)                   0.00 #     4.30 r
+  inst_CNN/enable_out_reg/Q (DFFRHQX4)                    2.69       6.99 r
+  inst_CNN/enable_out (CNN_top)                           0.00       6.99 r
+  PO8W_enable_out/PAD (PO8W)                              3.15 *    10.15 r
+  enable_out (out)                                        0.00 *    10.15 r
+  data arrival time                                                 10.15
+
+  clock clk (rise edge)                                   7.00       7.00
+  clock network delay (ideal)                             4.30      11.30
+  clock reconvergence pessimism                           0.00      11.30
+  clock uncertainty                                      -0.20      11.10
+  output external delay                                  -5.00       6.10
+  data required time                                                 6.10
+  --------------------------------------------------------------------------
+  data required time                                                 6.10
+  data arrival time                                                -10.15
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -4.05
+
+
+  Startpoint: inst_CNN/temp_1[31].quant_1/temp1_reg[4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: inst_CNN/buffer1/data_in_buffer_reg[253]
+            (falling edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             4.30       4.30
+  inst_CNN/temp_1[31].quant_1/temp1_reg[4]/CK (DFFRHQX4)
+                                                          0.00 #     4.30 r
+  inst_CNN/temp_1[31].quant_1/temp1_reg[4]/Q (DFFRHQX4)
+                                                          0.36       4.66 r
+  inst_CNN/u28717/Y (AOI22X2)                             0.12 *     4.78 f
+  inst_CNN/u28719/Y (AOI21X1)                             0.24 *     5.02 r
+  inst_CNN/u28720/Y (AOI221X2)                            0.09 *     5.11 f
+  inst_CNN/u28723/Y (OAI21X1)                             0.18 *     5.29 r
+  inst_CNN/u28724/Y (OAI221X1)                            0.15 *     5.44 f
+  inst_CNN/u28725/Y (OAI2BB1X1)                           0.15 *     5.59 r
+  inst_CNN/u28726/Y (OAI21X1)                             0.12 *     5.71 f
+  inst_CNN/u28729/Y (AOI21X1)                             0.19 *     5.90 r
+  inst_CNN/u28730/Y (AOI21X1)                             0.20 *     6.10 f
+  inst_CNN/u28732/Y (OAI21X1)                             0.26 *     6.36 r
+  inst_CNN/u28734/Y (AOI2BB1X2)                           0.28 *     6.64 r
+  inst_CNN/u28736/Y (OAI21X2)                             0.15 *     6.79 f
+  inst_CNN/u28738/Y (AOI21X4)                             0.17 *     6.96 r
+  inst_CNN/u28740/Y (OAI21X4)                             0.10 *     7.07 f
+  inst_CNN/u28742/Y (AOI21X4)                             0.19 *     7.26 r
+  inst_CNN/u28743/Y (NAND2X4)                             0.09 *     7.35 f
+  inst_CNN/u28744/Y (NAND2BX4)                            0.10 *     7.45 r
+  inst_CNN/u28758/Y (AOI31X2)                             0.22 *     7.67 f
+  inst_CNN/u28764/Y (AOI21XL)                            16.42 *    24.10 r
+  inst_CNN/buffer1/data_in_buffer_reg[253]/D (DFFNRXL)
+                                                          1.83 *    25.93 r
+  data arrival time                                                 25.93
+
+  clock clk (fall edge)                                   3.50       3.50
+  clock network delay (ideal)                             4.30       7.80
+  clock reconvergence pessimism                           0.00       7.80
+  clock uncertainty                                      -0.20       7.60
+  inst_CNN/buffer1/data_in_buffer_reg[253]/CKN (DFFNRXL)
+                                                          0.00       7.60 f
+  library setup time                                     -0.16       7.44
+  data required time                                                 7.44
+  --------------------------------------------------------------------------
+  data required time                                                 7.44
+  data arrival time                                                -25.93
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -18.49
+
+
+1

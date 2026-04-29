@@ -1,0 +1,140 @@
+Warning: Timer is in zero interconnect delay mode. (TIM-177)
+Information: Updating design information... (UID-85)
+Warning: Design 'cnn_chip' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : cnn_chip
+Version: O-2018.06-SP1
+Date   : Thu Apr 23 10:09:06 2026
+****************************************
+
+ z Timer is in zero interconnect delay mode.
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: slow   Library: slow
+
+  Startpoint: rst_n (input port clocked by clk)
+  Endpoint: inst_CNN/buffer1/A1_reg[0]
+            (falling-edge recovery check against clock clk)
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             4.30       4.30
+  input external delay                                    5.00       9.30 r
+  rst_n (in)                                              0.00 z     9.30 r
+  PIW_rst_n/C (PIW)                                       0.00 z #
+                                                                     9.30 r
+  inst_CNN/rst_n (CNN_top)                                0.00 z #
+                                                                     9.30 r
+  inst_CNN/buffer1/A1_reg[0]/RN (DFFNRX1)                 0.00 z #
+                                                                     9.30 r
+  data arrival time                                                  9.30
+
+  clock clk (fall edge)                                   3.50       3.50
+  clock network delay (ideal)                             4.30       7.80
+  clock uncertainty                                      -0.50       7.30
+  inst_CNN/buffer1/A1_reg[0]/CKN (DFFNRX1)                0.00       7.30 f
+  library recovery time                                  -0.10       7.20
+  data required time                                                 7.20
+  --------------------------------------------------------------------------
+  data required time                                                 7.20
+  data arrival time                                                 -9.30
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -2.10
+
+
+  Startpoint: inst_CNN/outBuffer2/data_out_reg[29]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: data_out[28]
+            (output port clocked by clk)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             4.30       4.30
+  inst_CNN/outBuffer2/data_out_reg[29]/CK (DFFRHQX4)      0.00 #     4.30 r
+  inst_CNN/outBuffer2/data_out_reg[29]/Q (DFFRHQX4)       0.37 z     4.67 r
+  inst_CNN/u118683/Y (BUFX20)                             0.22 z     4.89 r
+  inst_CNN/data_out[28] (CNN_top)                         0.00 z     4.89 r
+  PO8W_dout28/PAD (PO8W)                                  1.65 z     6.54 r
+  data_out[28] (out)                                      0.00 z     6.54 r
+  data arrival time                                                  6.54
+
+  clock clk (rise edge)                                   7.00       7.00
+  clock network delay (ideal)                             4.30      11.30
+  clock uncertainty                                      -0.50      10.80
+  output external delay                                  -5.00       5.80
+  data required time                                                 5.80
+  --------------------------------------------------------------------------
+  data required time                                                 5.80
+  data arrival time                                                 -6.54
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.74
+
+
+  Startpoint: inst_CNN/temp_1[26].quant_1/temp1_reg[4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: inst_CNN/buffer1/data_in_buffer_reg[208]
+            (falling edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             4.30       4.30
+  inst_CNN/temp_1[26].quant_1/temp1_reg[4]/CK (DFFRHQX4)
+                                                          0.00 #     4.30 r
+  inst_CNN/temp_1[26].quant_1/temp1_reg[4]/Q (DFFRHQX4)
+                                                          0.27 z     4.57 f
+  inst_CNN/u29149/Y (OAI211X2)                            0.21 z     4.78 r
+  inst_CNN/u29152/Y (AOI21X2)                             0.12 z     4.89 f
+  inst_CNN/u29155/Y (OAI222X2)                            0.25 z     5.14 r
+  inst_CNN/u29158/Y (AOI21X1)                             0.13 z     5.27 f
+  inst_CNN/u29160/Y (OAI22X1)                             0.24 z     5.51 r
+  inst_CNN/u29163/Y (AOI21X2)                             0.14 z     5.65 f
+  inst_CNN/u29164/Y (AOI211X2)                            0.20 z     5.85 r
+  inst_CNN/u119913/Y (OAI21X2)                            0.11 z     5.96 f
+  inst_CNN/u119648/Y (AOI21X2)                            0.16 z     6.12 r
+  inst_CNN/u29171/Y (OAI31X2)                             0.11 z     6.23 f
+  inst_CNN/u29173/Y (OAI2BB1X4)                           0.19 z     6.41 f
+  inst_CNN/u29179/Y (AOI2BB1X4)                           0.22 z     6.63 f
+  inst_CNN/u119423/Y (NOR2X4)                             0.10 z     6.73 r
+  inst_CNN/u29183/Y (AOI21X2)                             0.10 z     6.83 f
+  inst_CNN/u119249/Y (OAI22X2)                            0.14 z     6.98 r
+  inst_CNN/u29204/Y (OAI2BB1X4)                           0.22 z     7.20 r
+  inst_CNN/u119707/Y (INVX4)                              0.05 z     7.24 f
+  inst_CNN/u119709/Y (NAND3X4)                            0.09 z     7.33 r
+  inst_CNN/u119881/Y (NAND2X4)                            0.07 z     7.40 f
+  inst_CNN/u29214/Y (XNOR2X4)                             0.17 z     7.57 f
+  inst_CNN/u119444/Y (NOR2X4)                             0.22 z     7.79 r
+  inst_CNN/u29289/Y (AOI31X2)                             0.13 z     7.92 f
+  inst_CNN/buffer1/data_in_buffer_reg[208]/D (DFFNRXL)
+                                                          0.00 z     7.92 f
+  data arrival time                                                  7.92
+
+  clock clk (fall edge)                                   3.50       3.50
+  clock network delay (ideal)                             4.30       7.80
+  clock uncertainty                                      -0.50       7.30
+  inst_CNN/buffer1/data_in_buffer_reg[208]/CKN (DFFNRXL)
+                                                          0.00       7.30 f
+  library setup time                                     -0.11       7.19
+  data required time                                                 7.19
+  --------------------------------------------------------------------------
+  data required time                                                 7.19
+  data arrival time                                                 -7.92
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.72
+
+
+1

@@ -21,12 +21,11 @@ set_driving_cell -lib_cell PO8W -pin PAD [get_ports en]
 set_driving_cell -lib_cell PO8W -pin PAD [get_ports start]
 
 # Data Input Array (960 bits) - Using wildcard * to constrain all bits simultaneously
-set_driving_cell -lib_cell PO8W -pin PAD [get_ports {feature_window*}]
+set_driving_cell -lib_cell PO8W -pin PAD [get_ports {feature_in*}]
 
 # Output Loads
 set_load -pin_load 4.37 [get_ports done]
-set_load -pin_load 4.37 [get_ports {result0*}]
-set_load -pin_load 4.37 [get_ports {result1*}]
+set_load -pin_load 4.37 [get_ports {result_byte*}]
 
 # Set reset as an ideal network (disable timing/DRC checks on the reset tree)
 set_ideal_network [get_ports rst_b]
@@ -54,12 +53,11 @@ set_clock_transition -max -rise 0.2 [get_clocks clk]
 set_input_delay -clock clk -max 4.0 [get_ports rst_b]
 set_input_delay -clock clk -max 4.0 [get_ports en]
 set_input_delay -clock clk -max 4.0 [get_ports start]
-set_input_delay -clock clk -max 4.0 [get_ports {feature_window*}]
+set_input_delay -clock clk -max 4.0 [get_ports {feature_in*}]
 
 # Output Delays: Assuming downstream logic requires 4.0ns
 set_output_delay -clock clk -max 4.0 [get_ports done]
-set_output_delay -clock clk -max 4.0 [get_ports {result0*}]
-set_output_delay -clock clk -max 4.0 [get_ports {result1*}]
+set_output_delay -clock clk -max 4.0 [get_ports {result_byte*}]
 
 ###################################################################
 # End of SDC

@@ -1,0 +1,802 @@
+
+Warning: Cell 'PIW_din38' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din39' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din40' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din41' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din42' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din43' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din44' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din45' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din46' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din47' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din48' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din49' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din50' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din51' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din52' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din53' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din54' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din55' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout0' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout1' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout2' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout3' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout4' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout5' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout6' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout7' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout8' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout9' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout10' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout11' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout12' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout13' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout14' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout15' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout16' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout17' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout18' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout19' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout20' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout21' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout22' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout23' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout24' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout25' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout26' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout27' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout28' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout29' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout32' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout33' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout34' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout35' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout36' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout37' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout38' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout39' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout40' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout41' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout42' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout43' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout44' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout45' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout46' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout47' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout48' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout49' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout50' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout51' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout52' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout53' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout54' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout55' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout56' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout57' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout58' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout59' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout60' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout61' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_enable_out' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_clk' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_rst_n' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_enable' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din0' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din1' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din2' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din3' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din4' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din5' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din6' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din7' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din8' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din9' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din10' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din11' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din12' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din13' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din14' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din15' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din16' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din17' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din18' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din19' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din20' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din21' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din22' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din23' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din24' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din25' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din26' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din27' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din28' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din29' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din30' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din31' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din32' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din33' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din34' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din35' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din36' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din37' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+  Loading design 'cnn_chip'
+
+
+Information: Setting a dont_touch attribute on net 'enable_out' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'rst_n' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'enable' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'clk' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[7]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[6]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[5]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[4]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[3]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[2]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[1]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[0]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[15]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[14]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[13]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[12]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[11]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[10]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[8]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[23]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[22]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[21]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[20]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[19]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[18]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[17]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[16]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[31]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[30]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[29]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[28]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[27]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[26]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[25]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[24]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[39]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[38]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[37]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[36]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[35]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[34]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[33]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[32]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[47]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[46]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[45]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[44]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[43]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[42]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[41]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[40]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[55]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[54]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[53]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[52]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[51]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[50]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[49]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_in[48]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[7]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[6]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[5]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[4]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[3]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[2]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[1]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[0]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[15]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[14]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[13]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[12]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[11]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[10]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[9]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[8]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[23]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[22]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[21]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[20]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[19]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[18]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[17]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[16]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[29]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[28]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[27]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[26]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[25]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[24]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[39]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[38]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[37]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[36]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[35]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[34]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[33]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[32]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[47]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[46]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[45]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[44]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[43]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[42]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[41]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[40]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[55]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[54]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[53]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[52]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[51]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[50]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[49]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[48]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[61]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[60]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[59]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[58]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[57]' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'data_out[56]' because it is connected to a pad cell. (PSYN-088)
+
+
+Information: Library Manufacturing Grid(GridResolution) : 5
+Information: Time Unit from Milkyway design library: 'ns' 
+Information: Design Library and main library timing units are matched - 1.000 ns. 
+Information: Resistance Unit from Milkyway design library: 'kohm' 
+Information: Design Library and main library resistance units are matched - 1.000 kohm. 
+Information: Capacitance Unit from Milkyway design library: 'pf' 
+Information: Design Library and main library capacitance units are matched - 1.000 pf. 
+Warning: Inconsistent library data found for layer POLY1. (RCEX-018)
+Information: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)
+Information: The RC model used is detail route TLU+. (RCEX-015)
+Information: Start mixed mode parasitic extraction. (RCEX-023)
+Information: Start rc extraction...
+Warning: Not enough nets are routed (263/1003572 < 0.66667); will do extraction by using placement congestion map as background. (RCEX-047)
+Memory usage for extraction task 2693 Mbytes -- main task 6362 Mbytes.
+Warning: Net 'net_clk' is exceeding threshold (over 1000 pins) and will be skipped. (RCEX-020)
+Warning: Net 'net_rst_n' is exceeding threshold (over 1000 pins) and will be skipped. (RCEX-020)
+Information: Parasitic source is LPE. (RCEX-040)
+Information: Parasitic mode is RealRVirtualC. (RCEX-041)
+Information: Using virtual shield extraction. (RCEX-081)
+Information: Extraction mode is MIN_MAX. (RCEX-042)
+Information: Extraction derate is 0/25/125. (RCEX-043)
+Information: Start back annotation for parasitic extraction. (RCEX-023)
+Information: End back annotation for parasitic extraction. (RCEX-023)
+Information: Start timing update for parasitic extraction. (RCEX-023)
+Information: End timing update for parasitic extraction. (RCEX-023)
+Information: End parasitic extraction. (RCEX-023)
+Information: Start rc update...
+****************************************************************
+Information: TLUPlus based RC computation is enabled. (RCEX-141)
+****************************************************************
+Information: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)
+Information: The RC model used is TLU+. (RCEX-015)
+Information: Library Derived Cap for layer METAL1 : 0.00022 0.0002 (RCEX-011)
+Information: Library Derived Res for layer METAL1 : 0.00044 0.00024 (RCEX-011)
+Information: Library Derived Cap for layer METAL2 : 0.00021 0.00019 (RCEX-011)
+Information: Library Derived Res for layer METAL2 : 0.00036 0.0002 (RCEX-011)
+Information: Library Derived Cap for layer METAL3 : 0.00025 0.00023 (RCEX-011)
+Information: Library Derived Res for layer METAL3 : 0.00036 0.0002 (RCEX-011)
+Information: Library Derived Cap for layer METAL4 : 0.00021 0.00019 (RCEX-011)
+Information: Library Derived Res for layer METAL4 : 0.00036 0.0002 (RCEX-011)
+Information: Library Derived Cap for layer METAL5 : 0.00028 0.00026 (RCEX-011)
+Information: Library Derived Res for layer METAL5 : 0.0001 6.1e-05 (RCEX-011)
+Information: Library Derived Horizontal Cap : 0.00025 0.00023 (RCEX-011)
+Information: Library Derived Horizontal Res : 0.0003 0.00017 (RCEX-011)
+Information: Library Derived Vertical Cap : 0.00021 0.00019 (RCEX-011)
+Information: Library Derived Vertical Res : 0.00036 0.0002 (RCEX-011)
+Information: Using derived R and C coefficients. (RCEX-008)
+Information: Using region-based R and C coefficients. (RCEX-013)
+Information: Library Derived Via Res : 0.0095 0.001 (RCEX-011)
+Information: End rc update.
+Information: The mixed mode parasitic extraction has been performed. (RCEX-202)
+Warning: Cell 'PIW_din38' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din39' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din40' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din41' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din42' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din43' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din44' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din45' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din46' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din47' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din48' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din49' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din50' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din51' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din52' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din53' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din54' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din55' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout0' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout1' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout2' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout3' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout4' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout5' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout6' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout7' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout8' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout9' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout10' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout11' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout12' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout13' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout14' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout15' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout16' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout17' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout18' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout19' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout20' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout21' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout22' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout23' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout24' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout25' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout26' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout27' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout28' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout29' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout32' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout33' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout34' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout35' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout36' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout37' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout38' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout39' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout40' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout41' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout42' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout43' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout44' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout45' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout46' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout47' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout48' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout49' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout50' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout51' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout52' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout53' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout54' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout55' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout56' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout57' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout58' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout59' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout60' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_dout61' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_enable_out' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_clk' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_rst_n' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_enable' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din0' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din1' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din2' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din3' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din4' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din5' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din6' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din7' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din8' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din9' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din10' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din11' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din12' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din13' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din14' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din15' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din16' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din17' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din18' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din19' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din20' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din21' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din22' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din23' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din24' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din25' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din26' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din27' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din28' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din29' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din30' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din31' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din32' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din33' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din34' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din35' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din36' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PIW_din37' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Information: Updating graph... (UID-83)
+
+************************************************************
+SI options:
+Delta Delay Computation:           true
+Static Noise Computation:          false
+Timing window analysis for SI:     false
+Min Delta Delay for SI:            true
+Analysis Effort:                   medium
+Max Transition Mode:               normal_slew
+Static Noise Thresholds:           0.35 (0.57V) above low
+                                   0.35 (0.57V) below high
+Route xtalk prevention:            true
+Route xtalk prevention threshold:  0.25
+************************************************************
+
+Warning: Design 'cnn_chip' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Information: Updating design information... (UID-85)
+
+************************************************************
+SI options:
+Delta Delay Computation:           true
+Static Noise Computation:          false
+Timing window analysis for SI:     false
+Min Delta Delay for SI:            true
+Analysis Effort:                   medium
+Max Transition Mode:               normal_slew
+Static Noise Thresholds:           0.35 (0.57V) above low
+                                   0.35 (0.57V) below high
+Route xtalk prevention:            true
+Route xtalk prevention threshold:  0.25
+************************************************************
+
+Warning: Design 'cnn_chip' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : qor
+Design : cnn_chip
+Version: O-2018.06-SP1
+Date   : Thu Apr 23 13:08:42 2026
+****************************************
+
+
+  Timing Path Group 'INPUTS'
+  -----------------------------------
+  Levels of Logic:               2.00
+  Critical Path Length:         11.88
+  Critical Path Slack:         -11.02
+  Critical Path Clk Period:      7.00
+  Total Negative Slack:      -8296.08
+  No. of Violating Paths:     2283.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'OUTPUTS'
+  -----------------------------------
+  Levels of Logic:               1.00
+  Critical Path Length:          5.85
+  Critical Path Slack:          -4.05
+  Critical Path Clk Period:      7.00
+  Total Negative Slack:        -65.48
+  No. of Violating Paths:       61.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'clk'
+  -----------------------------------
+  Levels of Logic:              19.00
+  Critical Path Length:         21.63
+  Critical Path Slack:         -18.49
+  Critical Path Clk Period:      7.00
+  Total Negative Slack:     -56678.12
+  No. of Violating Paths:    22475.00
+  Worst Hold Violation:         -0.07
+  Total Hold Violation:        -23.63
+  No. of Hold Violations:     3252.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:         71
+  Hierarchical Port Count:      79707
+  Leaf Cell Count:             992909
+  Buf/Inv Cell Count:           42318
+  Buf Cell Count:                 303
+  Inv Cell Count:               42015
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:    815704
+  Sequential Cell Count:       177195
+  Macro Count:                     10
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area: 13986532.795355
+  Noncombinational Area: 12453326.547874
+  Buf/Inv Area:        2200528.616378
+  Total Buffer Area:          4899.79
+  Total Inverter Area:      280428.83
+  Macro/Black Box Area: 1389394.062500
+  Net Area:                  0.000000
+  Net XLength        :    30118086.00
+  Net YLength        :    24371326.00
+  -----------------------------------
+  Cell Area:          27829253.405729
+  Design Area:        27829253.405729
+  Net Length        :     54489412.00
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:       1003578
+  Nets With Violations:          7760
+  Max Trans Violations:          7205
+  Max Cap Violations:            5824
+  -----------------------------------
+
+
+  Hostname: Student
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    0.00
+  Logic Optimization:                  0.00
+  Mapping Optimization:                0.00
+  -----------------------------------------
+  Overall Compile Time:                0.00
+  Overall Compile Wall Clock Time:     0.00
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 18.49  TNS: 65039.69  Number of Violating Paths: 24819  (with Crosstalk delta delays)
+
+
+  Design (Hold)  WNS: 0.07  TNS: 23.63  Number of Violating Paths: 3252  (with Crosstalk delta delays)
+
+  --------------------------------------------------------------------
+
+
+1

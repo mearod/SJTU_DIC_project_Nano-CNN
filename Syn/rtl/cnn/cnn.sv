@@ -75,7 +75,7 @@ module cnn (
         .input_data(feature_window),
         .cnt_in(conv_cnt_in),
         .DWconv_sram_cnt_out(DWconv_sram_cnt),  // Pass channel index to DWconv
-        .cnt_out(conv_cnt_out),
+        .cnt_out(),
         .pos_out(conv_pos_out),
         .output_data(conv_output),
         .valid_out(conv_valid_out)
