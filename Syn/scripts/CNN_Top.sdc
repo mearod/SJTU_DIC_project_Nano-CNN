@@ -34,7 +34,7 @@ set_ideal_network [get_ports rst_b]
 # 3. Clock Definitions
 # =========================================================================
 # Target: 100 MHz (10ns period)
-create_clock [get_ports clk] -period 8.0 -waveform {0 5.0}
+create_clock [get_ports clk] -period 6.0 -waveform {0 5.0}
 
 # Clock Network Modeling (Latency and Jitter/Skew)
 set_clock_latency 0.3 [get_clocks clk]

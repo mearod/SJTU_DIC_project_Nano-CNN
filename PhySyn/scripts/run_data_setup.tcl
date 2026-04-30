@@ -27,7 +27,7 @@ create_mw_lib ../${DESIGN_NAME}.mw -open -technology $tech_file -mw_reference_li
 # 3. 将 -top 改为你的新顶层模块名
 # 【必查】：请确认 CNN_Top_clk_with_driving.v 中的 module 名称是否就叫 CNN_Top。
 # 如果 module 名称和文件名一模一样，这里也可以直接写成 -top ${DESIGN_NAME}
-import_designs $verilog_file -format verilog -top CNN_Top 
+import_designs $verilog_file -format verilog -top CNN_chip 
 
 ############################################################
 # Load TLU+ files
