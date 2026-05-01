@@ -99,9 +99,9 @@ verify_lvs
 #          REPORT DESIGN AREA          #
 ########################################
 
-#report_area -nosplit > ../reports/cnn_chip.area.rpt
-#report_qor -nosplit > ../reports/cnn_chip.qor.rpt
-#report_design -physical -nosplit > ../reports/cnn_chip.physical.rpt
+report_area -nosplit > ../reports/cnn_chip.area.rpt
+report_qor -nosplit > ../reports/cnn_chip.qor.rpt
+report_design -physical -nosplit > ../reports/cnn_chip.physical.rpt
 
 ########################################
 #       SAVE DESIGN AND STREAM OUT     #
