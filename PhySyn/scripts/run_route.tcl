@@ -27,6 +27,10 @@ report_route_zrt_track_options;
 report_route_zrt_detail_options; 
 # Reports zrt detail route options
 
+# --- 在 route_opt -initial_route_only 之前，加上这一句！---
+# 【关键修复】：强制提高 RC 提取的节点上限，防止跳过时钟树，暴露出真实的 Hold Time！
+set_extraction_options -max_pins 100000
+
 route_opt -initial_route_only
 redirect -tee ../reports/route_initial1.timing { report_timing }
 report_clock_tree -summary
@@ -44,6 +48,14 @@ verify_lvs
 #LVS: isolate opens and shorts
 route_opt -incremental  
 save_mw_cel -as 5_route_2
+
+# --- 在 route_opt -incremental 之后，加上这一段！---
+# 【关键修复】：专门跑一遍设计规则修复，把那 7000 多个 Max Trans/Cap 违例干掉！
+echo "SCRIPT-Info: Running Design Rule fixing..."
+set_route_opt_strategy -fix_design_rule_effort high
+route_opt -only_design_rule
+save_mw_cel -as 5_route_3_drv_fixed
+
 #run incremental route_opt to see if that will fix the errors.
 route_zrt_eco
 report_design_physical -route
