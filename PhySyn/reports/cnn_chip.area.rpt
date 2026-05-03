@@ -34,7 +34,7 @@ Information: Loading local_link_library attribute {slow.db, S018V3EBCDSP_X8Y4D72
 
 Information: The design has horizontal rows, and Y-symmetry has been used for sites. (MWDC-217)
 Floorplan loading succeeded.
-# GUI Debug: Building dc for netlist invalid. -- Time: 12sec 947ms
+# GUI Debug: Building dc for netlist invalid. -- Time: 14sec 618ms
 Warning: Cell 'PIW_clk' is being marked as "dont_touch" because it has 
 	a fixed_placement attribute. (PSYN-040)
 Warning: Cell 'PIW_rst_b' is being marked as "dont_touch" because it has 
@@ -146,7 +146,7 @@ Route xtalk prevention threshold:  0.25
 Report : area
 Design : CNN_chip
 Version: O-2018.06-SP1
-Date   : Sun May  3 02:27:20 2026
+Date   : Sun May  3 17:44:27 2026
 ****************************************
 
 Information: Updating design information... (UID-85)
@@ -171,8 +171,8 @@ Information: Input delay ('rise') on clock port 'clk' will be added to the clock
 Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
 Library(s) Used:
 
-    slow (File: /home/student/Desktop/Workspace/SMIC18/db/slow.db)
     SP018W_V1p5_max (File: /home/student/Desktop/Workspace/SMIC18/db/SP018W_V1p5_max.db)
+    slow (File: /home/student/Desktop/Workspace/SMIC18/db/slow.db)
     S018V3EBCDSP_X8Y4D16_PR (File: /home/student/Desktop/Workspace/SMIC18/db/S018V3EBCDSP_X8Y4D16_PR.db)
     S018V3EBCDSP_X8Y4D128_PR (File: /home/student/Desktop/Workspace/SMIC18/db/S018V3EBCDSP_X8Y4D128_PR.db)
     S018V3EBCDSP_X8Y4D72_PR (File: /home/student/Desktop/Workspace/SMIC18/db/S018V3EBCDSP_X8Y4D72_PR.db)
@@ -186,14 +186,14 @@ Number of combinational cells:             73
 Number of sequential cells:                 0
 Number of macros/black boxes:              15
 Number of buf/inv:                         28
-Number of references:                      17
+Number of references:                      13
 
-Combinational area:            4843125.643466
-Buf/Inv area:                  1175184.164112
-Noncombinational area:          981534.170250
+Combinational area:            4681226.427552
+Buf/Inv area:                  1115621.645348
+Noncombinational area:          976977.001907
 Macro/Black Box area:          1342617.781250
 Net Interconnect area:      undefined  (No wire load specified)
 
-Total cell area:               7167277.594966
+Total cell area:               7000821.210709
 Total area:                 undefined
 1

@@ -56,115 +56,115 @@ Information: Resistance Unit from Milkyway design library: 'kohm'
 Information: Design Library and main library resistance units are matched - 1.000 kohm. 
 Information: Capacitance Unit from Milkyway design library: 'pf' 
 Information: Design Library and main library capacitance units are matched - 1.000 pf. 
-230827/263379 nets are routed
+227603/260404 nets are routed
 Warning: Inconsistent library data found for layer POLY1. (RCEX-018)
 Information: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)
 Information: The RC model used is global route TLU+. (RCEX-015)
 Information: Start mixed mode parasitic extraction. (RCEX-023)
 Information: Start rc extraction...
-Memory usage for extraction task 1332 Mbytes -- main task 1471 Mbytes.
-Warning: Net 'inst_CNN_Top/n1222' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/n1411' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/n1404' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/n1520' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/n1652' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/n1649' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/n1697' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/n1959' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/n3370' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/n3457' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/n926' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/n910' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/n941' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/n1205' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/n1250' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/n1693' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/n2130' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/n2124' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/n2573' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_linear/u_linear_group0/n73' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/n3253' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_maxpool/n64' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/n4068' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/n2114' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/n1342' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/n92' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/n1830' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/n1958' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/n2400' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/n2387' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/n2601' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/n2596' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/n2639' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[0].rescalerelu_inst/rescalerelu_mult/n58' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[0].rescalerelu_inst/rescalerelu_shifter_relu/n29' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].rescalerelu_inst/rescalerelu_shifter_relu/n30' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].rescalerelu_inst/rescalerelu_mult/n56' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].rescalerelu_inst/rescalerelu_mult/n47' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].rescalerelu_inst/rescalerelu_shifter_relu/n30' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/buffer_inst/n700' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/buffer_inst/n940' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/buffer_inst/n1058' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/buffer_inst/n1377' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/buffer_inst/n1790' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n1398' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/row_gen[1].col_gen[1].rescalerelu_inst/rescalerelu_mult/n47' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n2377' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n4673' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n4774' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n5199' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n5332' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n6215' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n6634' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n7542' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n7641' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n8342' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n10561' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n10679' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n5071' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n5007' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n9911' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n10453' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n11608' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/row_gen[1].col_gen[0].rescalerelu_inst/rescalerelu_mult/n55' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/n18' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/n44' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/row_gen[0].col_gen[0].rescalerelu_inst/rescalerelu_mult/n53' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n14041' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n8512' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n9368' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n9366' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n9651' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n1240' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n1217' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n1702' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n1700' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n2213' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n2264' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n420' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n537' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n1393' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n1672' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n9066' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/n2701' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/n3583' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/n3879' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/n3875' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/n4395' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[0].rescalerelu/rescalerelu_mult/n57' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].rescalerelu/rescalerelu_mult/n47' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].rescalerelu/rescalerelu_shifter_relu/n31' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].rescalerelu/rescalerelu_shifter_relu/n32' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/n5793' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/n2677' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/n4125' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/n6344' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/n4378' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/n2346' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/n2340' is not fully connected and will be estimated. (RCEX-060)
-Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/n6642' is not fully connected and will be estimated. (RCEX-060)
+Memory usage for extraction task 1325 Mbytes -- main task 1463 Mbytes.
+Warning: Net 'inst_CNN_Top/n1241' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/n1356' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/n1532' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/n1604' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/n1923' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/n1979' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/n3264' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/n3687' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/n3720' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/n3745' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/n3829' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/n4033' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/n4024' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/n4021' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/n8370' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/n5210' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/n5024' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_linear/u_linear_group1/n309' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_linear/u_linear_group0/n291' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/n1622' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/n1686' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_linear/iter_tmp[3]' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_rescale/n10' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_rescale/rescale0/rescale_mult/n52' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/iter_rescale[3]' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/n1442' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/n2210' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_linear/u_linear_group1/n310' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/n2096' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/n2023' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_linear/u_linear_group1/n78' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[0].rescalerelu_inst/rescalerelu_shifter_relu/n32' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].rescalerelu_inst/rescalerelu_mult/n53' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].rescalerelu_inst/rescalerelu_shifter_relu/n31' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[1].rescalerelu_inst/rescalerelu_mult/n62' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].rescalerelu_inst/rescalerelu_mult/n61' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].rescalerelu_inst/rescalerelu_mult/n58' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/buffer_inst/n774' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/buffer_inst/n1636' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n2072' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n3681' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n4274' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n4591' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n5881' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n9011' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n9528' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n10069' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n8139' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/row_gen[0].col_gen[0].rescalerelu_inst/rescalerelu_mult/n62' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n1485' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_dwconv/mult_add_inst/n1373' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n8895' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n8869' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n8987' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n8984' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n9265' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n9178' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n9795' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n1650' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n1680' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n540' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n1003' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n9303' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/fifo_inst/n8604' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/n2127' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/n4293' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[0].rescalerelu/rescalerelu_mult/n59' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[0].rescalerelu/rescalerelu_mult/n55' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[2].rescalerelu/rescalerelu_mult/n57' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[2].rescalerelu/rescalerelu_shifter_relu/n27' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].rescalerelu/rescalerelu_shifter_relu/n32' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[0].col_gen[3].rescalerelu/rescalerelu_shifter_relu/n28' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].rescalerelu/rescalerelu_mult/n62' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].rescalerelu/rescalerelu_shifter_relu/n27' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].rescalerelu/rescalerelu_mult/n56' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/n5104' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/n3455' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_conv/mult_add_inst/n3868' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/n4983' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/n4979' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/n6557' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/n6670' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/n6990' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/n7289' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/n8073' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/n5498' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/n5491' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/n9098' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/n177' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/n7647' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/n3436' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/n3508' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/n5034' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/n5345' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/n5383' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/n5943' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/n6502' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/n6717' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/n7032' is not fully connected and will be estimated. (RCEX-060)
+Warning: Net 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/n7340' is not fully connected and will be estimated. (RCEX-060)
 Warning: not to display message after 100.(RCEX-060)
-Warning: total 593 open nets.(RCEX-060)
+Warning: total 479 open nets.(RCEX-060)
 Information: Parasitic source is LPE. (RCEX-040)
 Information: Parasitic mode is RealRVirtualC. (RCEX-041)
 Information: Using virtual shield extraction. (RCEX-081)
@@ -174,7 +174,7 @@ Information: Coupling capacitances are lumped to ground. (RCEX-044)
 Information: Start back annotation for parasitic extraction. (RCEX-023)
 Information: End back annotation for parasitic extraction. (RCEX-023)
 Information: Start timing update for parasitic extraction. (RCEX-023)
-Information: Resetting clock timing frozen to FALSE since percentage of routed and extracted clock nets is 97.740112 and threshold expected is 92.853104. (TIM-222)
+Information: Resetting clock timing frozen to FALSE since percentage of routed and extracted clock nets is 99.096382 and threshold expected is 94.050003. (TIM-222)
 Information: End timing update for parasitic extraction. (RCEX-023)
 Information: End parasitic extraction. (RCEX-023)
 Information: Start rc update...
@@ -206,7 +206,6 @@ Information: Updating graph... (UID-83)
 Information: Updating design information... (UID-85)
 Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
 Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
-Warning: Clock network timing may not be up-to-date since only 97.740112 percentage of clock nets are routed. (TIM-233)
  
 ****************************************
 Report : timing
@@ -215,7 +214,7 @@ Report : timing
         -max_paths 1
 Design : CNN_chip
 Version: O-2018.06-SP1
-Date   : Sun May  3 01:48:52 2026
+Date   : Sun May  3 17:06:37 2026
 ****************************************
 
  * Some/all delay information is back-annotated.
@@ -229,7 +228,7 @@ Operating Conditions: slow   Library: slow
 Information: Percent of Arnoldi-based delays =  2.12%
 
   Startpoint: rst_b (input port clocked by clk)
-  Endpoint: inst_CNN_Top/u_cnn/u_conv/fifo_inst/fifo_mem_reg[7][1][3][5]
+  Endpoint: inst_CNN_Top/u_cnn/u_conv/fifo_inst/fifo_mem_reg[4][1][2][0]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: INPUTS
   Path Type: max
@@ -237,47 +236,51 @@ Information: Percent of Arnoldi-based delays =  2.12%
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
-  clock network delay (ideal)                             3.25       3.25
-  input external delay                                    4.00       7.25 f
-  rst_b (in)                                              0.00       7.25 f
-  PIW_rst_b/C (PIW)                                       1.77 *     9.02 f
-  inst_CNN_Top/rst_b (CNN_Top)                            0.00       9.02 f
-  inst_CNN_Top/U1/Y (BUFX20)                              3.21 &    12.23 f
-  inst_CNN_Top/u_cnn/IN14 (cnn)                           0.00      12.23 f
-  inst_CNN_Top/u_cnn/u_conv/IN121 (Conv)                  0.00      12.23 f
-  inst_CNN_Top/u_cnn/u_conv/fifo_inst/IN31 (FIFO_2x4X8)
-                                                          0.00      12.23 f
-  inst_CNN_Top/u_cnn/u_conv/fifo_inst/U1/Y (CLKBUFX20)
-                                                          0.24 *    12.47 f
-  inst_CNN_Top/u_cnn/u_conv/fifo_inst/u7953/Y (NAND2X4)
-                                                          0.19 *    12.66 r
-  inst_CNN_Top/u_cnn/u_conv/fifo_inst/u8184/Y (NAND2BX2)
-                                                          1.85 &    14.51 r
-  inst_CNN_Top/u_cnn/u_conv/fifo_inst/U148/Y (BUFX16)     0.34 &    14.84 r
-  inst_CNN_Top/u_cnn/u_conv/fifo_inst/U336/Y (BUFX20)     0.22 *    15.07 r
-  inst_CNN_Top/u_cnn/u_conv/fifo_inst/u12375/Y (MXI2X1)
-                                                          0.20 *    15.26 f
-  inst_CNN_Top/u_cnn/u_conv/fifo_inst/fifo_mem_reg[7][1][3][5]/D (DFFXL)
-                                                          0.00 &    15.26 f
-  data arrival time                                                 15.26
+  clock network delay (ideal)                             3.13       3.13
+  input external delay                                    4.00       7.13 f
+  rst_b (in)                                              0.00       7.13 f
+  PIW_rst_b/C (PIW)                                       1.84 *     8.97 f
+  inst_CNN_Top/rst_b (CNN_Top)                            0.00       8.97 f
+  inst_CNN_Top/U1/Y (BUFX20)                              2.60 &    11.57 f
+  inst_CNN_Top/U127/Y (BUFX20)                            0.17 *    11.74 f
+  inst_CNN_Top/u_cnn/IN8 (cnn)                            0.00      11.74 f
+  inst_CNN_Top/u_cnn/u_conv/IN182 (Conv)                  0.00      11.74 f
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/IN59 (FIFO_2x4X8)
+                                                          0.00      11.74 f
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/U3/Y (BUFX20)       0.16 *    11.91 f
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/U285/Y (NAND2X4)
+                                                          0.12 *    12.03 r
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/U287/Y (CLKINVX8)
+                                                          0.09 *    12.12 f
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/U232/Y (NAND2X4)
+                                                          0.14 &    12.26 r
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/u8013/Y (NAND2BX2)
+                                                          2.06 *    14.32 r
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/U171/Y (BUFX16)     0.30 &    14.62 r
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/U225/Y (BUFX20)     0.25 *    14.87 r
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/u12015/Y (MXI2X1)
+                                                          0.26 *    15.12 f
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/fifo_mem_reg[4][1][2][0]/D (DFFXL)
+                                                          0.00 &    15.12 f
+  data arrival time                                                 15.12
 
-  clock clk (rise edge)                                   7.00       7.00
-  clock network delay (propagated)                        3.12      10.12
-  clock uncertainty                                      -0.20       9.92
-  inst_CNN_Top/u_cnn/u_conv/fifo_inst/fifo_mem_reg[7][1][3][5]/CK (DFFXL)
-                                                          0.00       9.92 r
-  library setup time                                     -0.11       9.82
-  data required time                                                 9.82
+  clock clk (rise edge)                                   7.50       7.50
+  clock network delay (propagated)                        2.88      10.38
+  clock uncertainty                                      -0.20      10.18
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/fifo_mem_reg[4][1][2][0]/CK (DFFXL)
+                                                          0.00      10.18 r
+  library setup time                                     -0.13      10.05
+  data required time                                                10.05
   --------------------------------------------------------------------------
-  data required time                                                 9.82
-  data arrival time                                                -15.26
+  data required time                                                10.05
+  data arrival time                                                -15.12
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -5.45
+  slack (VIOLATED)                                                  -5.07
 
 
-  Startpoint: inst_CNN_Top/result_byte_reg[7]
+  Startpoint: inst_CNN_Top/result_byte_reg[3]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: result_byte[7]
+  Endpoint: result_byte[3]
             (output port clocked by clk)
   Path Group: OUTPUTS
   Path Type: max
@@ -285,31 +288,31 @@ Information: Percent of Arnoldi-based delays =  2.12%
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
-  clock network delay (propagated)                        3.40       3.40
-  inst_CNN_Top/result_byte_reg[7]/CK (DFFRHQX4)           0.00       3.40 r
-  inst_CNN_Top/result_byte_reg[7]/Q (DFFRHQX4)            2.74       6.14 r
-  inst_CNN_Top/result_byte[7] (CNN_Top)                   0.00       6.14 r
-  U3/Y (BUFX20)                                           0.33 &     6.47 r
-  U4/Y (CLKBUFX20)                                        0.25 *     6.73 r
-  gen_po8w_result[7].PO8W_result/PAD (PO8W)               1.80 *     8.52 r
-  result_byte[7] (out)                                    0.00 *     8.52 r
-  data arrival time                                                  8.52
+  clock network delay (propagated)                        3.29       3.29
+  inst_CNN_Top/result_byte_reg[3]/CK (DFFRHQX1)           0.00       3.29 r
+  inst_CNN_Top/result_byte_reg[3]/Q (DFFRHQX1)            4.82       8.11 r
+  inst_CNN_Top/result_byte[3] (CNN_Top)                   0.00       8.11 r
+  U15/Y (BUFX4)                                           0.37 &     8.48 r
+  U25/Y (CLKBUFX20)                                       0.24 *     8.72 r
+  gen_po8w_result[3].PO8W_result/PAD (PO8W)               1.86 *    10.58 r
+  result_byte[3] (out)                                    0.00 *    10.58 r
+  data arrival time                                                 10.58
 
-  clock clk (rise edge)                                   7.00       7.00
-  clock network delay (ideal)                             3.25      10.25
-  clock uncertainty                                      -0.20      10.05
-  output external delay                                  -4.00       6.05
-  data required time                                                 6.05
+  clock clk (rise edge)                                   7.50       7.50
+  clock network delay (ideal)                             3.13      10.63
+  clock uncertainty                                      -0.20      10.43
+  output external delay                                  -4.00       6.43
+  data required time                                                 6.43
   --------------------------------------------------------------------------
-  data required time                                                 6.05
-  data arrival time                                                 -8.52
+  data required time                                                 6.43
+  data arrival time                                                -10.58
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -2.47
+  slack (VIOLATED)                                                  -4.15
 
 
   Startpoint: inst_CNN_Top/asyn_en_reg
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: inst_CNN_Top/flat_shift_reg_reg[64][5]
+  Endpoint: inst_CNN_Top/flat_shift_reg_reg[61][6]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -317,31 +320,31 @@ Information: Percent of Arnoldi-based delays =  2.12%
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
-  clock network delay (propagated)                        3.40       3.40
-  inst_CNN_Top/asyn_en_reg/CK (DFFHQXL)                   0.00       3.40 r
-  inst_CNN_Top/asyn_en_reg/Q (DFFHQXL)                   12.50      15.91 r
-  inst_CNN_Top/U55/Y (BUFX8)                              0.27 &    16.18 r
-  inst_CNN_Top/U56/Y (CLKBUFX20)                          0.36 *    16.53 r
-  inst_CNN_Top/U57/Y (BUFX3)                              1.05 *    17.58 r
-  inst_CNN_Top/u6229/Y (NAND3BX1)                         0.48 *    18.06 f
-  inst_CNN_Top/u6770/Y (NOR3BX1)                          5.40 &    23.46 r
-  inst_CNN_Top/u6771/Y (NAND2X1)                          2.74 &    26.20 f
-  inst_CNN_Top/U80/Y (BUFX3)                              1.38 &    27.58 f
-  inst_CNN_Top/u11456/Y (MXI2X1)                          0.72 *    28.30 f
-  inst_CNN_Top/flat_shift_reg_reg[64][5]/D (DFFXL)        0.00 &    28.30 f
-  data arrival time                                                 28.30
+  clock network delay (propagated)                        3.33       3.33
+  inst_CNN_Top/asyn_en_reg/CK (DFFHQXL)                   0.00       3.33 r
+  inst_CNN_Top/asyn_en_reg/Q (DFFHQXL)                   11.71      15.04 r
+  inst_CNN_Top/U53/Y (CLKBUFX4)                           1.32 &    16.36 r
+  inst_CNN_Top/U54/Y (CLKBUFX20)                          0.37 *    16.73 r
+  inst_CNN_Top/u6214/Y (AND3X2)                           0.54 *    17.27 r
+  inst_CNN_Top/U56/Y (INVX1)                              0.19 &    17.46 f
+  inst_CNN_Top/u6470/Y (NOR3BX1)                          8.54 *    26.00 r
+  inst_CNN_Top/u6737/Y (NAND2X1)                          2.58 &    28.58 f
+  inst_CNN_Top/U89/Y (BUFX3)                              1.38 &    29.96 f
+  inst_CNN_Top/u11406/Y (MXI2X1)                          0.64 *    30.60 f
+  inst_CNN_Top/flat_shift_reg_reg[61][6]/D (DFFXL)        0.00 &    30.60 f
+  data arrival time                                                 30.60
 
-  clock clk (rise edge)                                   7.00       7.00
-  clock network delay (propagated)                        3.16      10.16
-  clock uncertainty                                      -0.20       9.96
-  inst_CNN_Top/flat_shift_reg_reg[64][5]/CK (DFFXL)       0.00       9.96 r
-  library setup time                                     -0.12       9.85
-  data required time                                                 9.85
+  clock clk (rise edge)                                   7.50       7.50
+  clock network delay (propagated)                        3.00      10.50
+  clock uncertainty                                      -0.20      10.30
+  inst_CNN_Top/flat_shift_reg_reg[61][6]/CK (DFFXL)       0.00      10.30 r
+  library setup time                                     -0.13      10.17
+  data required time                                                10.17
   --------------------------------------------------------------------------
-  data required time                                                 9.85
-  data arrival time                                                -28.30
+  data required time                                                10.17
+  data arrival time                                                -30.60
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                 -18.46
+  slack (VIOLATED)                                                 -20.43
 
 
 1

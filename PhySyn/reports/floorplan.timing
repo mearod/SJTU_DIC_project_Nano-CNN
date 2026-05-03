@@ -32,9 +32,9 @@ Information: Loading local_link_library attribute {slow.db, S018V3EBCDSP_X8Y4D72
                               /home/student/Desktop/Workspace/SMIC18/db/S018V3EBCDSP_X8Y4D32_PR.db
   SP018W_V1p5_max (library)   /home/student/Desktop/Workspace/SMIC18/db/SP018W_V1p5_max.db
 
-Warning: The non-constant Milkyway net 'IDS_UNCONNECTED' (0x29744) has a hierarchical load pin 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/input_data[199]' but no driver. It will now be driven by logic zero. (MWDC-229)
+Warning: The non-constant Milkyway net 'IDS_UNCONNECTED' (0x29d44) has a hierarchical load pin 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/input_data[199]' but no driver. It will now be driven by logic zero. (MWDC-229)
 Warning: The non-constant Milkyway net 'IDS_UNCONNECTED' (0x7424) has a hierarchical load pin 'inst_CNN_Top/u_cnn/u_dwconv/input_data[127]' but no driver. It will now be driven by logic zero. (MWDC-229)
-# GUI Debug: Building dc from empty. -- Time: 6sec 294ms
+# GUI Debug: Building dc from empty. -- Time: 6sec 37ms
 Information: The design has horizontal rows, and Y-symmetry has been used for sites. (MWDC-217)
 Floorplan loading succeeded.
 Warning: Cell 'PIW_clk' is being marked as "dont_touch" because it has 
@@ -275,13 +275,13 @@ Information: Resistance Unit from Milkyway design library: 'kohm'
 Information: Design Library and main library resistance units are matched - 1.000 kohm. 
 Information: Capacitance Unit from Milkyway design library: 'pf' 
 Information: Design Library and main library capacitance units are matched - 1.000 pf. 
-234634/234679 nets are routed
+230255/230300 nets are routed
 Warning: Inconsistent library data found for layer POLY1. (RCEX-018)
 Information: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)
 Information: The RC model used is global route TLU+. (RCEX-015)
 Information: Start mixed mode parasitic extraction. (RCEX-023)
 Information: Start rc extraction...
-Memory usage for extraction task 994 Mbytes -- main task 1193 Mbytes.
+Memory usage for extraction task 989 Mbytes -- main task 1181 Mbytes.
 Warning: Net 'net_clk' is exceeding threshold (over 1000 pins) and will be skipped. (RCEX-020)
 Information: Parasitic source is LPE. (RCEX-040)
 Information: Parasitic mode is RealRVirtualC. (RCEX-041)
@@ -423,7 +423,7 @@ Report : timing
         -max_paths 1
 Design : CNN_chip
 Version: O-2018.06-SP1
-Date   : Sun May  3 01:25:40 2026
+Date   : Sun May  3 16:48:00 2026
 ****************************************
 
  * Some/all delay information is back-annotated.
@@ -451,29 +451,29 @@ Information: Percent of Arnoldi-based delays =  0.00%
   clock network delay (ideal)                             0.30       0.30
   input external delay                                    4.00       4.30 f
   feature_in[4] (in)                                      0.00       4.30 f
-  gen_piw_feature[4].PIW_feature/C (PIW)                  0.93 *     5.23 f
-  inst_CNN_Top/feature_in[4] (CNN_Top)                    0.00       5.23 f
-  inst_CNN_Top/u10404/Y (INVX1)                          10.67 *    15.90 r
-  inst_CNN_Top/u10626/Y (MXI2X1)                          3.10 *    19.00 f
-  inst_CNN_Top/flat_shift_reg_reg[12][4]/D (DFFXL)        0.00 *    19.00 f
-  data arrival time                                                 19.00
+  gen_piw_feature[4].PIW_feature/C (PIW)                  0.92 *     5.22 f
+  inst_CNN_Top/feature_in[4] (CNN_Top)                    0.00       5.22 f
+  inst_CNN_Top/u18780/Y (INVX1)                          10.35 *    15.57 r
+  inst_CNN_Top/u10626/Y (MXI2X1)                          3.56 *    19.14 f
+  inst_CNN_Top/flat_shift_reg_reg[12][4]/D (DFFXL)        0.00 *    19.14 f
+  data arrival time                                                 19.14
 
-  clock clk (rise edge)                                   7.00       7.00
-  clock network delay (ideal)                             0.30       7.30
-  clock uncertainty                                      -0.50       6.80
-  inst_CNN_Top/flat_shift_reg_reg[12][4]/CK (DFFXL)       0.00       6.80 r
-  library setup time                                     -0.35       6.45
-  data required time                                                 6.45
+  clock clk (rise edge)                                   7.50       7.50
+  clock network delay (ideal)                             0.30       7.80
+  clock uncertainty                                      -0.50       7.30
+  inst_CNN_Top/flat_shift_reg_reg[12][4]/CK (DFFXL)       0.00       7.30 r
+  library setup time                                     -0.35       6.95
+  data required time                                                 6.95
   --------------------------------------------------------------------------
-  data required time                                                 6.45
-  data arrival time                                                -19.00
+  data required time                                                 6.95
+  data arrival time                                                -19.14
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                 -12.55
+  slack (VIOLATED)                                                 -12.18
 
 
-  Startpoint: inst_CNN_Top/result_byte_reg[6]
+  Startpoint: inst_CNN_Top/result_byte_reg[7]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: result_byte[6]
+  Endpoint: result_byte[7]
             (output port clocked by clk)
   Path Group: OUTPUTS
   Path Type: max
@@ -482,28 +482,28 @@ Information: Percent of Arnoldi-based delays =  0.00%
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.30       0.30
-  inst_CNN_Top/result_byte_reg[6]/CK (DFFRHQX2)           0.00 #     0.30 r
-  inst_CNN_Top/result_byte_reg[6]/Q (DFFRHQX2)            4.11       4.41 r
-  inst_CNN_Top/result_byte[6] (CNN_Top)                   0.00       4.41 r
-  gen_po8w_result[6].PO8W_result/PAD (PO8W)               3.04 *     7.45 r
-  result_byte[6] (out)                                    0.00 *     7.45 r
-  data arrival time                                                  7.45
+  inst_CNN_Top/result_byte_reg[7]/CK (DFFRHQX1)           0.00 #     0.30 r
+  inst_CNN_Top/result_byte_reg[7]/Q (DFFRHQX1)            7.52       7.82 r
+  inst_CNN_Top/result_byte[7] (CNN_Top)                   0.00       7.82 r
+  gen_po8w_result[7].PO8W_result/PAD (PO8W)               3.47 *    11.29 r
+  result_byte[7] (out)                                    0.00 *    11.29 r
+  data arrival time                                                 11.29
 
-  clock clk (rise edge)                                   7.00       7.00
-  clock network delay (ideal)                             0.30       7.30
-  clock uncertainty                                      -0.50       6.80
-  output external delay                                  -4.00       2.80
-  data required time                                                 2.80
+  clock clk (rise edge)                                   7.50       7.50
+  clock network delay (ideal)                             0.30       7.80
+  clock uncertainty                                      -0.50       7.30
+  output external delay                                  -4.00       3.30
+  data required time                                                 3.30
   --------------------------------------------------------------------------
-  data required time                                                 2.80
-  data arrival time                                                 -7.45
+  data required time                                                 3.30
+  data arrival time                                                -11.29
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -4.65
+  slack (VIOLATED)                                                  -7.99
 
 
-  Startpoint: inst_CNN_Top/asyn_en_reg
+  Startpoint: inst_CNN_Top/u_cnn/u_conv/valid_pipe_reg[3]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: inst_CNN_Top/flat_holding_reg_reg[86][1]
+  Endpoint: inst_CNN_Top/u_cnn/u_conv/fifo_inst/rd_data_reg[1][2][4]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -512,29 +512,41 @@ Information: Percent of Arnoldi-based delays =  0.00%
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.30       0.30
-  inst_CNN_Top/asyn_en_reg/CK (DFFHQXL)                   0.00 #     0.30 r
-  inst_CNN_Top/asyn_en_reg/Q (DFFHQXL)                   10.67      10.97 r
-  inst_CNN_Top/u6214/Y (AND3X2)                           0.90 *    11.87 r
-  inst_CNN_Top/u16394/Y (INVX1)                           0.23 *    12.11 f
-  inst_CNN_Top/u6211/Y (NOR2X1)                           0.25 *    12.36 r
-  inst_CNN_Top/u7236/Y (NAND2X1)                          4.66 *    17.02 f
-  inst_CNN_Top/u16487/Y (INVX1)                           3.18 *    20.20 r
-  inst_CNN_Top/u16488/Y (INVX1)                           2.69 *    22.90 f
-  inst_CNN_Top/u13736/Y (MXI2X1)                          0.81 *    23.71 f
-  inst_CNN_Top/flat_holding_reg_reg[86][1]/D (DFFX1)      0.00 *    23.71 f
-  data arrival time                                                 23.71
+  inst_CNN_Top/u_cnn/u_conv/valid_pipe_reg[3]/CK (DFFRHQXL)
+                                                          0.00 #     0.30 r
+  inst_CNN_Top/u_cnn/u_conv/valid_pipe_reg[3]/Q (DFFRHQXL)
+                                                          7.93       8.23 r
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/rd_en (FIFO_2x4X8)
+                                                          0.00       8.23 r
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/u16719/Y (INVX1)
+                                                          2.56 *    10.79 f
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/u16716/Y (INVX1)
+                                                          4.81 *    15.60 r
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/u6037/Y (INVX1)     3.88 *    19.49 f
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/u6344/Y (AOI21X1)
+                                                          0.63 *    20.12 r
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/u24808/Y (NAND3X1)
+                                                          0.14 *    20.26 f
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/u24809/Y (NOR3X1)
+                                                          5.95 *    26.21 r
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/u24810/Y (AOI2BB1X1)
+                                                          0.74 *    26.94 f
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/rd_data_reg[1][2][4]/D (DFFRHQXL)
+                                                          0.00 *    26.94 f
+  data arrival time                                                 26.94
 
-  clock clk (rise edge)                                   7.00       7.00
-  clock network delay (ideal)                             0.30       7.30
-  clock uncertainty                                      -0.50       6.80
-  inst_CNN_Top/flat_holding_reg_reg[86][1]/CK (DFFX1)     0.00       6.80 r
-  library setup time                                     -0.33       6.47
-  data required time                                                 6.47
+  clock clk (rise edge)                                   7.50       7.50
+  clock network delay (ideal)                             0.30       7.80
+  clock uncertainty                                      -0.50       7.30
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/rd_data_reg[1][2][4]/CK (DFFRHQXL)
+                                                          0.00       7.30 r
+  library setup time                                     -0.38       6.92
+  data required time                                                 6.92
   --------------------------------------------------------------------------
-  data required time                                                 6.47
-  data arrival time                                                -23.71
+  data required time                                                 6.92
+  data arrival time                                                -26.94
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                 -17.24
+  slack (VIOLATED)                                                 -20.02
 
 
 1

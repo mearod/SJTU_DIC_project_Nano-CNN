@@ -3,21 +3,21 @@ Information: Propagating switching activity (high effort zero delay simulation).
 Warning: Design has unannotated primary inputs. (PWR-414)
 Warning: Design has unannotated sequential cell outputs. (PWR-415)
 Warning: Design has unannotated black box outputs. (PWR-428)
-Warning: The following physical-only library cells don't have power description that matches design's operation condition:PVDD1W  PVSS2W  PVDD2W  PVSS1W   (PWR-681)
+Warning: The following physical-only library cells don't have power description that matches design's operation condition:PVDD2W  PVSS1W  PVDD1W  PVSS2W   (PWR-681)
  
 ****************************************
 Report : power
         -analysis_effort high
 Design : CNN_chip
 Version: O-2018.06-SP1
-Date   : Sun May  3 02:29:16 2026
+Date   : Sun May  3 17:46:31 2026
 ****************************************
 
 
 Library(s) Used:
 
-    slow (File: /home/student/Desktop/Workspace/SMIC18/db/slow.db)
     SP018W_V1p5_max (File: /home/student/Desktop/Workspace/SMIC18/db/SP018W_V1p5_max.db)
+    slow (File: /home/student/Desktop/Workspace/SMIC18/db/slow.db)
     S018V3EBCDSP_X8Y4D16_PR (File: /home/student/Desktop/Workspace/SMIC18/db/S018V3EBCDSP_X8Y4D16_PR.db)
     S018V3EBCDSP_X8Y4D128_PR (File: /home/student/Desktop/Workspace/SMIC18/db/S018V3EBCDSP_X8Y4D128_PR.db)
     S018V3EBCDSP_X8Y4D72_PR (File: /home/student/Desktop/Workspace/SMIC18/db/S018V3EBCDSP_X8Y4D72_PR.db)
@@ -38,24 +38,24 @@ Power-specific unit information :
     Leakage Power Units = 1pW
 
 
-  Cell Internal Power  = 464.5771 mW   (73%)
-  Net Switching Power  = 168.5775 mW   (27%)
+  Cell Internal Power  = 438.3053 mW   (73%)
+  Net Switching Power  = 164.9427 mW   (27%)
                          ---------
-Total Dynamic Power    = 633.1546 mW  (100%)
+Total Dynamic Power    = 603.2479 mW  (100%)
 
-Cell Leakage Power     = 413.2924 uW
+Cell Leakage Power     = 392.3776 uW
 
 
                  Internal         Switching           Leakage            Total
 Power Group      Power            Power               Power              Power   (   %    )  Attrs
 --------------------------------------------------------------------------------------------------
-io_pad             1.2661            0.2477        4.0045e+05            1.5142  (   0.24%)
-memory           203.7409            4.8620        1.5073e+08          208.7535  (  32.95%)
+io_pad             1.1640            0.2660        4.0045e+05            1.4305  (   0.24%)
+memory           191.5362            4.1057        1.5073e+08          195.7926  (  32.44%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
-clock_network      2.8091           39.1914        7.2914e+05           42.0012  (   6.63%)
-register         152.4214            8.6453        2.8782e+07          161.0959  (  25.43%)
+clock_network      2.4757           36.3591        7.0797e+05           38.8355  (   6.43%)
+register         142.0628            8.9120        2.8111e+07          151.0036  (  25.02%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational    104.3352          115.6300        2.3265e+08          220.1998  (  34.76%)
+combinational    101.0660          115.2982        2.1243e+08          216.5729  (  35.88%)
 --------------------------------------------------------------------------------------------------
-Total            464.5726 mW       168.5763 mW     4.1329e+08 pW       633.5646 mW
+Total            438.3047 mW       164.9411 mW     3.9238e+08 pW       603.6351 mW
 1

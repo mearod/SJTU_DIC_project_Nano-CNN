@@ -151,7 +151,7 @@ Information: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-
 Information: The RC model used is detail route TLU+. (RCEX-015)
 Information: Start mixed mode parasitic extraction. (RCEX-023)
 Information: Start rc extraction...
-Memory usage for extraction task 1282 Mbytes -- main task 2593 Mbytes.
+Memory usage for extraction task 1281 Mbytes -- main task 2552 Mbytes.
 Information: Parasitic source is LPE. (RCEX-040)
 Information: Parasitic mode is RealRC. (RCEX-041)
 Information: Using virtual shield extraction. (RCEX-081)
@@ -319,18 +319,18 @@ Information: Input delay ('fall') on clock port 'clk' will be added to the clock
 Report : qor
 Design : CNN_chip
 Version: O-2018.06-SP1
-Date   : Sun May  3 02:28:51 2026
+Date   : Sun May  3 17:46:05 2026
 ****************************************
 
 
   Timing Path Group 'INPUTS'
   -----------------------------------
-  Levels of Logic:              10.00
-  Critical Path Length:          2.49
-  Critical Path Slack:          -0.28
-  Critical Path Clk Period:      7.00
-  Total Negative Slack:       -125.02
-  No. of Violating Paths:     1510.00
+  Levels of Logic:              12.00
+  Critical Path Length:          2.62
+  Critical Path Slack:           0.00
+  Critical Path Clk Period:      7.50
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
   Worst Hold Violation:          0.00
   Total Hold Violation:          0.00
   No. of Hold Violations:        0.00
@@ -338,10 +338,10 @@ Date   : Sun May  3 02:28:51 2026
 
   Timing Path Group 'OUTPUTS'
   -----------------------------------
-  Levels of Logic:               2.00
-  Critical Path Length:          2.87
-  Critical Path Slack:           0.04
-  Critical Path Clk Period:      7.00
+  Levels of Logic:               4.00
+  Critical Path Length:          3.46
+  Critical Path Slack:           0.09
+  Critical Path Clk Period:      7.50
   Total Negative Slack:          0.00
   No. of Violating Paths:        0.00
   Worst Hold Violation:          0.00
@@ -352,27 +352,27 @@ Date   : Sun May  3 02:28:51 2026
   Timing Path Group 'clk'
   -----------------------------------
   Levels of Logic:               5.00
-  Critical Path Length:          6.89
-  Critical Path Slack:          -0.48
-  Critical Path Clk Period:      7.00
-  Total Negative Slack:        -21.67
-  No. of Violating Paths:      416.00
-  Worst Hold Violation:         -0.02
-  Total Hold Violation:         -0.03
-  No. of Hold Violations:        2.00
+  Critical Path Length:          7.01
+  Critical Path Slack:          -0.30
+  Critical Path Clk Period:      7.50
+  Total Negative Slack:        -16.68
+  No. of Violating Paths:      189.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
   -----------------------------------
 
 
   Cell Count
   -----------------------------------
   Hierarchical Cell Count:         23
-  Hierarchical Port Count:      24033
-  Leaf Cell Count:             257874
-  Buf/Inv Cell Count:           36209
-  Buf Cell Count:                5466
-  Inv Cell Count:               30743
-  CT Buf/Inv Cell Count:          352
-  Combinational Cell Count:    240503
+  Hierarchical Port Count:      24094
+  Leaf Cell Count:             254837
+  Buf/Inv Cell Count:           32521
+  Buf Cell Count:                5073
+  Inv Cell Count:               27448
+  CT Buf/Inv Cell Count:          330
+  Combinational Cell Count:    237466
   Sequential Cell Count:        17356
   Macro Count:                     15
   -----------------------------------
@@ -380,26 +380,26 @@ Date   : Sun May  3 02:28:51 2026
 
   Area
   -----------------------------------
-  Combinational Area:  4843125.643466
-  Noncombinational Area: 981534.170250
-  Buf/Inv Area:        1175184.164112
-  Total Buffer Area:        179765.31
-  Total Inverter Area:      277218.85
+  Combinational Area:  4681226.427552
+  Noncombinational Area: 976977.001907
+  Buf/Inv Area:        1115621.645348
+  Total Buffer Area:        159683.83
+  Total Inverter Area:      237737.81
   Macro/Black Box Area: 1342617.781250
   Net Area:                  0.000000
-  Net XLength        :     6716130.00
-  Net YLength        :     6757463.50
+  Net XLength        :     6848448.50
+  Net YLength        :     6170660.00
   -----------------------------------
-  Cell Area:           7167277.594966
-  Design Area:         7167277.594966
-  Net Length        :     13473594.00
+  Cell Area:           7000821.210709
+  Design Area:         7000821.210709
+  Net Length        :     13019108.00
 
 
   Design Rules
   -----------------------------------
-  Total Number of Nets:        263898
-  Nets With Violations:             3
-  Max Trans Violations:             1
+  Total Number of Nets:        260737
+  Nets With Violations:             4
+  Max Trans Violations:             2
   Max Cap Violations:               2
   -----------------------------------
 
@@ -410,17 +410,17 @@ Date   : Sun May  3 02:28:51 2026
   -----------------------------------------
   Resource Sharing:                    0.00
   Logic Optimization:                  0.00
-  Mapping Optimization:              719.80
+  Mapping Optimization:              390.82
   -----------------------------------------
-  Overall Compile Time:              723.30
-  Overall Compile Wall Clock Time:   726.40
+  Overall Compile Time:              394.34
+  Overall Compile Wall Clock Time:   395.80
 
   --------------------------------------------------------------------
 
-  Design  WNS: 0.48  TNS: 146.68  Number of Violating Paths: 1926  (with Crosstalk delta delays)
+  Design  WNS: 0.30  TNS: 16.68  Number of Violating Paths: 189  (with Crosstalk delta delays)
 
 
-  Design (Hold)  WNS: 0.02  TNS: 0.03  Number of Violating Paths: 2  (with Crosstalk delta delays)
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0  (with Crosstalk delta delays)
 
   --------------------------------------------------------------------
 
