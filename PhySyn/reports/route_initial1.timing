@@ -61,7 +61,7 @@ Information: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-
 Information: The RC model used is detail route TLU+. (RCEX-015)
 Information: Start mixed mode parasitic extraction. (RCEX-023)
 Information: Start rc extraction...
-Memory usage for extraction task 1672 Mbytes -- main task 2015 Mbytes.
+Memory usage for extraction task 1158 Mbytes -- main task 1471 Mbytes.
 Information: Parasitic source is LPE. (RCEX-040)
 Information: Parasitic mode is RealRC. (RCEX-041)
 Information: Using virtual shield extraction. (RCEX-081)
@@ -142,7 +142,7 @@ Report : timing
         -max_paths 1
 Design : CNN_chip
 Version: O-2018.06-SP1
-Date   : Thu Apr 30 22:17:16 2026
+Date   : Sun May  3 02:01:04 2026
 ****************************************
 
  * Some/all delay information is back-annotated.
@@ -153,11 +153,10 @@ Operating Conditions: slow   Library: slow
 	Extraction mode     : MIN_MAX
 	Extraction derating : 0/25/125
 
-Information: Percent of Arnoldi-based delays = 15.18%
+Information: Percent of Arnoldi-based delays = 15.30%
 
-  Startpoint: feature_in[6]
-              (input port clocked by clk)
-  Endpoint: inst_CNN_Top/flat_shift_reg_reg[88][6]
+  Startpoint: rst_b (input port clocked by clk)
+  Endpoint: inst_CNN_Top/u_cnn/u_conv/fifo_inst/fifo_mem_reg[25][1][1][2]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: INPUTS
   Path Type: max
@@ -165,35 +164,56 @@ Information: Percent of Arnoldi-based delays = 15.18%
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
-  clock network delay (ideal)                             3.78       3.78
-  input external delay                                    4.00       7.78 r
-  feature_in[6] (in)                                      0.00       7.78 r
-  gen_piw_feature[6].PIW_feature/C (PIW)                  1.08 *     8.86 r
-  inst_CNN_Top/feature_in[6] (CNN_Top)                    0.00       8.86 r
-  inst_CNN_Top/U17/Y (CLKBUFX20)                          0.27 @     9.14 r
-  inst_CNN_Top/U290/Y (CLKBUFX8)                          0.27 @     9.41 r
-  inst_CNN_Top/U19/Y (INVX20)                             0.30 @     9.71 f
-  inst_CNN_Top/u11838/Y (MXI2X1)                          0.26 @     9.97 r
-  inst_CNN_Top/flat_shift_reg_reg[88][6]/D (DFFXL)        0.00 &     9.97 r
-  data arrival time                                                  9.97
+  clock network delay (ideal)                             3.25       3.25
+  input external delay                                    4.00       7.25 r
+  rst_b (in)                                              0.00       7.25 r
+  PIW_rst_b/C (PIW)                                       1.06 *     8.31 r
+  inst_CNN_Top/rst_b (CNN_Top)                            0.00       8.31 r
+  inst_CNN_Top/U1/Y (BUFX20)                              0.18 @     8.50 r
+  inst_CNN_Top/u_cnn/IN14 (cnn)                           0.00       8.50 r
+  inst_CNN_Top/u_cnn/u_conv/IN121 (Conv)                  0.00       8.50 r
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/IN31 (FIFO_2x4X8)
+                                                          0.00       8.50 r
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/U1/Y (CLKBUFX20)
+                                                          0.19 @     8.69 r
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/U258/Y (NAND2X4)
+                                                          0.14 @     8.83 f
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/U391/Y (CLKINVX8)
+                                                          0.09 &     8.92 r
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/U270/Y (NAND2X4)
+                                                          0.10 &     9.02 f
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/U234/Y (CLKINVX4)
+                                                          0.07 &     9.09 r
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/U303/Y (NAND2X4)
+                                                          0.07 &     9.16 f
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/U364/Y (CLKINVX8)
+                                                          0.06 &     9.22 r
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/U164/Y (CLKBUFX20)
+                                                          0.25 @     9.46 r
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/u14177/Y (MXI2X1)
+                                                          0.28 @     9.74 f
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/fifo_mem_reg[25][1][1][2]/D (DFFXL)
+                                                          0.00 &     9.74 f
+  data arrival time                                                  9.74
 
   clock clk (rise edge)                                   7.00       7.00
-  clock network delay (propagated)                        3.03      10.03
-  clock reconvergence pessimism                           0.00      10.03
-  clock uncertainty                                      -0.20       9.83
-  inst_CNN_Top/flat_shift_reg_reg[88][6]/CK (DFFXL)       0.00       9.83 r
-  library setup time                                     -0.08       9.75
-  data required time                                                 9.75
+  clock network delay (propagated)                        2.71       9.71
+  clock reconvergence pessimism                           0.00       9.71
+  clock uncertainty                                      -0.20       9.51
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/fifo_mem_reg[25][1][1][2]/CK (DFFXL)
+                                                          0.00       9.51 r
+  library setup time                                     -0.11       9.39
+  data required time                                                 9.39
   --------------------------------------------------------------------------
-  data required time                                                 9.75
-  data arrival time                                                 -9.97
+  data required time                                                 9.39
+  data arrival time                                                 -9.74
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.22
+  slack (VIOLATED)                                                  -0.35
 
 
-  Startpoint: inst_CNN_Top/result_byte_reg[7]
+  Startpoint: inst_CNN_Top/result_byte_reg[4]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: result_byte[7]
+  Endpoint: result_byte[4]
             (output port clocked by clk)
   Path Group: OUTPUTS
   Path Type: max
@@ -201,33 +221,32 @@ Information: Percent of Arnoldi-based delays = 15.18%
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
-  clock network delay (propagated)                        3.56       3.56
-  inst_CNN_Top/result_byte_reg[7]/CK (DFFRHQX4)           0.00       3.56 r
-  inst_CNN_Top/result_byte_reg[7]/Q (DFFRHQX4)            0.41       3.96 r
-  inst_CNN_Top/result_byte[7] (CNN_Top)                   0.00       3.96 r
-  U4/Y (BUFX8)                                            0.14 &     4.10 r
-  U5/Y (CLKBUFX20)                                        0.15 @     4.25 r
-  U6/Y (BUFX20)                                           0.35 @     4.60 r
-  gen_po8w_result[7].PO8W_result/PAD (PO8W)               1.71 @     6.31 r
-  result_byte[7] (out)                                    0.00 *     6.31 r
-  data arrival time                                                  6.31
+  clock network delay (propagated)                        3.13       3.13
+  inst_CNN_Top/result_byte_reg[4]/CK (DFFRHQX4)           0.00       3.13 r
+  inst_CNN_Top/result_byte_reg[4]/Q (DFFRHQX4)            0.41       3.54 r
+  inst_CNN_Top/result_byte[4] (CNN_Top)                   0.00       3.54 r
+  U12/Y (BUFX12)                                          0.14 @     3.69 r
+  U13/Y (CLKBUFX20)                                       0.18 @     3.87 r
+  gen_po8w_result[4].PO8W_result/PAD (PO8W)               1.73 @     5.60 r
+  result_byte[4] (out)                                    0.00 *     5.60 r
+  data arrival time                                                  5.60
 
   clock clk (rise edge)                                   7.00       7.00
-  clock network delay (ideal)                             3.78      10.78
-  clock reconvergence pessimism                           0.00      10.78
-  clock uncertainty                                      -0.20      10.58
-  output external delay                                  -4.00       6.58
-  data required time                                                 6.58
+  clock network delay (ideal)                             3.25      10.25
+  clock reconvergence pessimism                           0.00      10.25
+  clock uncertainty                                      -0.20      10.05
+  output external delay                                  -4.00       6.05
+  data required time                                                 6.05
   --------------------------------------------------------------------------
-  data required time                                                 6.58
-  data arrival time                                                 -6.31
+  data required time                                                 6.05
+  data arrival time                                                 -5.60
   --------------------------------------------------------------------------
-  slack (MET)                                                        0.28
+  slack (MET)                                                        0.45
 
 
-  Startpoint: inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/s1_prod_reg[5][0]
+  Startpoint: inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s1_prod_reg[49][3]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/s2_out_reg[0][11]
+  Endpoint: inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_out_reg[3][18]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -235,68 +254,72 @@ Information: Percent of Arnoldi-based delays = 15.18%
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
-  clock network delay (propagated)                        3.53       3.53
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/s1_prod_reg[5][0]/CK (DFFHQX1)
-                                                          0.00       3.53 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/s1_prod_reg[5][0]/Q (DFFHQX1)
-                                                          0.59       4.12 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/U674/Y (OAI2BB2X4)
-                                                          0.24 &     4.36 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/U675/Y (INVX8)
-                                                          0.06 &     4.43 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/u269/Y (OAI21X1)
-                                                          0.33 &     4.76 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/u746/Y (AOI22XL)
-                                                          0.35 &     5.11 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/u747/Y (OAI22X2)
-                                                          0.60 &     5.70 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/u756/Y (AOI22X1)
-                                                          0.88 &     6.58 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/u757/Y (AOI221X2)
-                                                          0.26 &     6.85 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/u758/Y (OAI22X1)
-                                                          0.22 &     7.06 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/u759/Y (AOI33X2)
-                                                          0.35 &     7.42 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/u762/Y (AOI2BB1X2)
-                                                          0.29 &     7.71 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/u764/Y (OAI2BB1X4)
-                                                          0.23 &     7.93 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/u766/Y (OAI221X1)
-                                                          0.20 &     8.13 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/u767/Y (OAI2BB1X2)
-                                                          0.17 &     8.30 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/u1486/Y (AOI21X1)
-                                                          0.14 &     8.45 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/U371/Y (INVX1)
-                                                          0.09 &     8.54 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/U369/Y (NAND2X1)
-                                                          0.10 &     8.64 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/U370/Y (NAND2X2)
-                                                          0.22 &     8.86 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/u1495/Y (NAND2XL)
-                                                          0.30 &     9.16 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/u1567/Y (NAND2XL)
-                                                          0.15 &     9.30 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/u34108/Y (XNOR2XL)
-                                                          1.23 &    10.53 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/s2_out_reg[0][11]/D (DFFHQXL)
-                                                          0.86 &    11.39 r
-  data arrival time                                                 11.39
+  clock network delay (propagated)                        3.04       3.04
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s1_prod_reg[49][3]/CK (DFFHQXL)
+                                                          0.00       3.04 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s1_prod_reg[49][3]/Q (DFFHQXL)
+                                                          0.57       3.61 f
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/u3106/Y (AND2X2)
+                                                          0.25 &     3.86 f
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/u3114/Y (OAI211X1)
+                                                          0.30 &     4.16 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/u3116/Y (AOI21X2)
+                                                          0.17 &     4.33 f
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/u3122/Y (OAI211X2)
+                                                          0.28 &     4.61 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/u3127/Y (AOI211X2)
+                                                          0.19 &     4.80 f
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/u3181/Y (OAI221XL)
+                                                          0.87 &     5.67 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/u3182/Y (AND2XL)
+                                                          1.08 &     6.75 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/u3276/Y (AND2X2)
+                                                          0.19 &     6.94 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/U2108/Y (INVXL)
+                                                          0.08 &     7.02 f
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/U2109/Y (AND2X4)
+                                                          0.24 &     7.26 f
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/u3292/Y (OAI211X2)
+                                                          0.24 &     7.51 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/u3322/Y (OAI2BB1X1)
+                                                          0.31 &     7.82 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/u3554/Y (XNOR2X1)
+                                                          0.35 &     8.17 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/U2760/Y (NAND2X1)
+                                                          0.16 &     8.33 f
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/U2762/Y (NAND2X4)
+                                                          0.20 &     8.53 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/u3811/Y (XNOR2X1)
+                                                          0.33 &     8.86 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/u3812/Y (XNOR2X1)
+                                                          0.36 &     9.22 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/u3815/Y (AND2X2)
+                                                          0.24 &     9.46 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/u3816/Y (NOR2BX4)
+                                                          0.08 &     9.54 f
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/u3823/Y (AOI211X2)
+                                                          0.28 &     9.83 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/u3831/Y (OAI31X2)
+                                                          0.12 &     9.94 f
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/u20056/Y (XNOR2X1)
+                                                          0.22 &    10.16 f
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_out_reg[3][18]/D (DFFHQXL)
+                                                          0.00 &    10.16 f
+  data arrival time                                                 10.16
 
   clock clk (rise edge)                                   7.00       7.00
-  clock network delay (propagated)                        3.20      10.20
-  clock reconvergence pessimism                           0.07      10.28
-  clock uncertainty                                      -0.20      10.08
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[3].cell_inst/s2_out_reg[0][11]/CK (DFFHQXL)
-                                                          0.00      10.08 r
-  library setup time                                     -0.14       9.93
-  data required time                                                 9.93
+  clock network delay (propagated)                        2.81       9.81
+  clock reconvergence pessimism                           0.11       9.92
+  clock uncertainty                                      -0.20       9.72
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[0].cell_inst/s2_out_reg[3][18]/CK (DFFHQXL)
+                                                          0.00       9.72 r
+  library setup time                                     -0.18       9.54
+  data required time                                                 9.54
   --------------------------------------------------------------------------
-  data required time                                                 9.93
-  data arrival time                                                -11.39
+  data required time                                                 9.54
+  data arrival time                                                -10.16
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -1.46
+  slack (VIOLATED)                                                  -0.62
 
 
 1

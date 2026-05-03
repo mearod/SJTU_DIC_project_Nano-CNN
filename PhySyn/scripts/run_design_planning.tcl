@@ -18,30 +18,30 @@ save_mw_cel -as 2_1_floorplan_init
 # 确保在摆放宏单元前，已经执行了 create_floorplan！
 
 # 1. 卷积层 (u_conv) 的 SRAM
-move_objects -to {300 300}  [get_cells -hier *u_conv*bias_rom*sram*]
-move_objects -to {300 450}  [get_cells -hier *u_conv*weight_rom*sram_inst*0*]
-move_objects -to {300 600}  [get_cells -hier *u_conv*weight_rom*sram_inst*1*]
-move_objects -to {300 750}  [get_cells -hier *u_conv*weight_rom*sram_inst*2*]
-move_objects -to {300 900}  [get_cells -hier *u_conv*weight_rom*sram_inst*3*]
-move_objects -to {300 1050} [get_cells -hier *u_conv*weight_rom*sram_inst*4*]
+move_objects -to {300 300}  [get_cells {inst_CNN_Top/u_cnn/u_conv/bias_rom/sram_inst}]
+move_objects -to {300 450}  [get_cells {inst_CNN_Top/u_cnn/u_conv/weight_rom/sram_inst[0].u_sram}]
+move_objects -to {300 600}  [get_cells {inst_CNN_Top/u_cnn/u_conv/weight_rom/sram_inst[1].u_sram}]
+move_objects -to {300 750}  [get_cells {inst_CNN_Top/u_cnn/u_conv/weight_rom/sram_inst[2].u_sram}]
+move_objects -to {300 900}  [get_cells {inst_CNN_Top/u_cnn/u_conv/weight_rom/sram_inst[3].u_sram}]
+move_objects -to {300 1050} [get_cells {inst_CNN_Top/u_cnn/u_conv/weight_rom/sram_inst[4].u_sram}]
 
 # 2. 深度卷积层 (u_dwconv) 的 SRAM
-move_objects -to {300 1200} [get_cells -hier *u_dwconv*bias_rom*sram*]
-move_objects -to {300 1350} [get_cells -hier *u_dwconv*weight_rom*sram*]
+move_objects -to {300 1200} [get_cells {inst_CNN_Top/u_cnn/u_dwconv/bias_rom/sram_inst}]
+move_objects -to {300 1350} [get_cells {inst_CNN_Top/u_cnn/u_dwconv/weight_rom/sram_inst}]
 
 # 3. 逐点卷积层 (u_pwconv) 的 SRAM
-move_objects -to {300 1500} [get_cells -hier *u_pwconv*bias_rom*sram*]
-move_objects -to {300 1650} [get_cells -hier *u_pwconv*weight_rom*sram_inst*0*]
-move_objects -to {300 1800} [get_cells -hier *u_pwconv*weight_rom*sram_inst*1*]
+move_objects -to {300 1500} [get_cells {inst_CNN_Top/u_cnn/u_pwconv/bias_rom/sram_inst}]
+move_objects -to {300 1650} [get_cells {inst_CNN_Top/u_cnn/u_pwconv/weight_rom/sram_inst[0].u_sram}]
+move_objects -to {300 1800} [get_cells {inst_CNN_Top/u_cnn/u_pwconv/weight_rom/sram_inst[1].u_sram}]
 
 # 4. 后处理层 (u_postprocess) 的 SRAM
-move_objects -to {300 1950} [get_cells -hier *u_postprocess*sigmoid*sram_inst0*]
-move_objects -to {300 2150} [get_cells -hier *u_postprocess*sigmoid*sram_inst1*]
-move_objects -to {300 2350} [get_cells -hier *u_postprocess*linear_weight*sram_lo*]
-move_objects -to {300 2550} [get_cells -hier *u_postprocess*linear_weight*sram_hi*]
+move_objects -to {300 1950} [get_cells {inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_sigmoid/sram_inst0}]
+move_objects -to {300 2150} [get_cells {inst_CNN_Top/u_cnn/u_postprocess/u_postprocess_sigmoid/sram_inst1}]
+move_objects -to {300 2350} [get_cells {inst_CNN_Top/u_cnn/u_postprocess/u_linear_weightROM/sram_lo}]
+move_objects -to {300 2550} [get_cells {inst_CNN_Top/u_cnn/u_postprocess/u_linear_weightROM/sram_hi}]
 
-# 【非常重要】摆完之后，一定要把它们固定住，防止后续步骤又把它们挪走！
-set_dont_touch_placement [get_cells -hier *sram*]
+# 【非常重要】摆完之后，把这 15 个硬宏单元牢牢钉死在原地！
+set_dont_touch_placement [get_cells -hier -filter "is_hard_macro == true"]
 
 ## Create placement blockage around the macro to avoid DRC violations
 ##  1. You can create the placement blockage in the GUI:

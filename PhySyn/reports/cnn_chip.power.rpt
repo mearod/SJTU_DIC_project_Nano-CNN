@@ -1,0 +1,61 @@
+Warning: The following library cells don't have power description:FILL1  FILL2  FILL4  FILL8  FILL16  FILL32  PCORNERW  FILL64   (PWR-682)
+Information: Propagating switching activity (high effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+Warning: Design has unannotated black box outputs. (PWR-428)
+Warning: The following physical-only library cells don't have power description that matches design's operation condition:PVDD1W  PVSS2W  PVDD2W  PVSS1W   (PWR-681)
+ 
+****************************************
+Report : power
+        -analysis_effort high
+Design : CNN_chip
+Version: O-2018.06-SP1
+Date   : Sun May  3 02:29:16 2026
+****************************************
+
+
+Library(s) Used:
+
+    slow (File: /home/student/Desktop/Workspace/SMIC18/db/slow.db)
+    SP018W_V1p5_max (File: /home/student/Desktop/Workspace/SMIC18/db/SP018W_V1p5_max.db)
+    S018V3EBCDSP_X8Y4D16_PR (File: /home/student/Desktop/Workspace/SMIC18/db/S018V3EBCDSP_X8Y4D16_PR.db)
+    S018V3EBCDSP_X8Y4D128_PR (File: /home/student/Desktop/Workspace/SMIC18/db/S018V3EBCDSP_X8Y4D128_PR.db)
+    S018V3EBCDSP_X8Y4D72_PR (File: /home/student/Desktop/Workspace/SMIC18/db/S018V3EBCDSP_X8Y4D72_PR.db)
+    S018V3EBCDSP_X64Y4D32_PR (File: /home/student/Desktop/Workspace/SMIC18/db/S018V3EBCDSP_X64Y4D32_PR.db)
+    S018V3EBCDSP_X64Y4D16_PR (File: /home/student/Desktop/Workspace/SMIC18/db/S018V3EBCDSP_X64Y4D16_PR.db)
+
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 1.62 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+  Cell Internal Power  = 464.5771 mW   (73%)
+  Net Switching Power  = 168.5775 mW   (27%)
+                         ---------
+Total Dynamic Power    = 633.1546 mW  (100%)
+
+Cell Leakage Power     = 413.2924 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             1.2661            0.2477        4.0045e+05            1.5142  (   0.24%)
+memory           203.7409            4.8620        1.5073e+08          208.7535  (  32.95%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      2.8091           39.1914        7.2914e+05           42.0012  (   6.63%)
+register         152.4214            8.6453        2.8782e+07          161.0959  (  25.43%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational    104.3352          115.6300        2.3265e+08          220.1998  (  34.76%)
+--------------------------------------------------------------------------------------------------
+Total            464.5726 mW       168.5763 mW     4.1329e+08 pW       633.5646 mW
+1

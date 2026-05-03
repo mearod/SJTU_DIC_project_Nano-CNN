@@ -1,28 +1,4 @@
 
-Warning: Cell 'gen_piw_feature[29].PIW_feature' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_piw_feature[30].PIW_feature' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_piw_feature[31].PIW_feature' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'PO8W_done' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[0].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[1].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[2].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[3].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[4].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[5].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[6].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[7].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
 Warning: Cell 'PIW_clk' is being marked as "dont_touch" because it has 
 	a fixed_placement attribute. (PSYN-040)
 Warning: Cell 'PIW_rst_b' is being marked as "dont_touch" because it has 
@@ -88,6 +64,30 @@ Warning: Cell 'gen_piw_feature[26].PIW_feature' is being marked as "dont_touch" 
 Warning: Cell 'gen_piw_feature[27].PIW_feature' is being marked as "dont_touch" because it has 
 	a fixed_placement attribute. (PSYN-040)
 Warning: Cell 'gen_piw_feature[28].PIW_feature' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_piw_feature[29].PIW_feature' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_piw_feature[30].PIW_feature' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_piw_feature[31].PIW_feature' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_done' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[0].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[1].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[2].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[3].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[4].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[5].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[6].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[7].PO8W_result' is being marked as "dont_touch" because it has 
 	a fixed_placement attribute. (PSYN-040)
   Loading design 'CNN_chip'
 
@@ -151,7 +151,7 @@ Information: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-
 Information: The RC model used is detail route TLU+. (RCEX-015)
 Information: Start mixed mode parasitic extraction. (RCEX-023)
 Information: Start rc extraction...
-Memory usage for extraction task 1857 Mbytes -- main task 3827 Mbytes.
+Memory usage for extraction task 1282 Mbytes -- main task 2593 Mbytes.
 Information: Parasitic source is LPE. (RCEX-040)
 Information: Parasitic mode is RealRC. (RCEX-041)
 Information: Using virtual shield extraction. (RCEX-081)
@@ -188,30 +188,6 @@ Information: Using region-based R and C coefficients. (RCEX-013)
 Information: Library Derived Via Res : 0.0095 0.001 (RCEX-011)
 Information: End rc update.
 Information: The mixed mode parasitic extraction has been performed. (RCEX-202)
-Warning: Cell 'gen_piw_feature[29].PIW_feature' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_piw_feature[30].PIW_feature' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_piw_feature[31].PIW_feature' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'PO8W_done' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[0].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[1].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[2].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[3].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[4].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[5].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[6].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[7].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
 Warning: Cell 'PIW_clk' is being marked as "dont_touch" because it has 
 	a fixed_placement attribute. (PSYN-040)
 Warning: Cell 'PIW_rst_b' is being marked as "dont_touch" because it has 
@@ -278,6 +254,30 @@ Warning: Cell 'gen_piw_feature[27].PIW_feature' is being marked as "dont_touch" 
 	a fixed_placement attribute. (PSYN-040)
 Warning: Cell 'gen_piw_feature[28].PIW_feature' is being marked as "dont_touch" because it has 
 	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_piw_feature[29].PIW_feature' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_piw_feature[30].PIW_feature' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_piw_feature[31].PIW_feature' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_done' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[0].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[1].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[2].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[3].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[4].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[5].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[6].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[7].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
 Information: Updating graph... (UID-83)
 
 ************************************************************
@@ -319,18 +319,18 @@ Information: Input delay ('fall') on clock port 'clk' will be added to the clock
 Report : qor
 Design : CNN_chip
 Version: O-2018.06-SP1
-Date   : Thu Apr 30 23:23:19 2026
+Date   : Sun May  3 02:28:51 2026
 ****************************************
 
 
   Timing Path Group 'INPUTS'
   -----------------------------------
-  Levels of Logic:               4.00
-  Critical Path Length:          2.10
-  Critical Path Slack:          -0.02
+  Levels of Logic:              10.00
+  Critical Path Length:          2.49
+  Critical Path Slack:          -0.28
   Critical Path Clk Period:      7.00
-  Total Negative Slack:         -0.02
-  No. of Violating Paths:        1.00
+  Total Negative Slack:       -125.02
+  No. of Violating Paths:     1510.00
   Worst Hold Violation:          0.00
   Total Hold Violation:          0.00
   No. of Hold Violations:        0.00
@@ -338,12 +338,12 @@ Date   : Thu Apr 30 23:23:19 2026
 
   Timing Path Group 'OUTPUTS'
   -----------------------------------
-  Levels of Logic:               3.00
-  Critical Path Length:          3.17
-  Critical Path Slack:          -0.02
+  Levels of Logic:               2.00
+  Critical Path Length:          2.87
+  Critical Path Slack:           0.04
   Critical Path Clk Period:      7.00
-  Total Negative Slack:         -0.02
-  No. of Violating Paths:        1.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
   Worst Hold Violation:          0.00
   Total Hold Violation:          0.00
   No. of Hold Violations:        0.00
@@ -351,56 +351,56 @@ Date   : Thu Apr 30 23:23:19 2026
 
   Timing Path Group 'clk'
   -----------------------------------
-  Levels of Logic:              25.00
-  Critical Path Length:          6.92
-  Critical Path Slack:          -1.13
+  Levels of Logic:               5.00
+  Critical Path Length:          6.89
+  Critical Path Slack:          -0.48
   Critical Path Clk Period:      7.00
-  Total Negative Slack:      -1779.50
-  No. of Violating Paths:     4393.00
-  Worst Hold Violation:          0.00
-  Total Hold Violation:          0.00
-  No. of Hold Violations:        0.00
+  Total Negative Slack:        -21.67
+  No. of Violating Paths:      416.00
+  Worst Hold Violation:         -0.02
+  Total Hold Violation:         -0.03
+  No. of Hold Violations:        2.00
   -----------------------------------
 
 
   Cell Count
   -----------------------------------
   Hierarchical Cell Count:         23
-  Hierarchical Port Count:      24927
-  Leaf Cell Count:             408797
-  Buf/Inv Cell Count:           45982
-  Buf Cell Count:                8417
-  Inv Cell Count:               37565
-  CT Buf/Inv Cell Count:          422
-  Combinational Cell Count:    388374
-  Sequential Cell Count:        20408
+  Hierarchical Port Count:      24033
+  Leaf Cell Count:             257874
+  Buf/Inv Cell Count:           36209
+  Buf Cell Count:                5466
+  Inv Cell Count:               30743
+  CT Buf/Inv Cell Count:          352
+  Combinational Cell Count:    240503
+  Sequential Cell Count:        17356
   Macro Count:                     15
   -----------------------------------
 
 
   Area
   -----------------------------------
-  Combinational Area:  7398349.730257
-  Noncombinational Area: 1148097.000099
-  Buf/Inv Area:        1393539.041629
-  Total Buffer Area:        317381.80
-  Total Inverter Area:      357957.24
+  Combinational Area:  4843125.643466
+  Noncombinational Area: 981534.170250
+  Buf/Inv Area:        1175184.164112
+  Total Buffer Area:        179765.31
+  Total Inverter Area:      277218.85
   Macro/Black Box Area: 1342617.781250
   Net Area:                  0.000000
-  Net XLength        :     9956189.00
-  Net YLength        :    11868289.00
+  Net XLength        :     6716130.00
+  Net YLength        :     6757463.50
   -----------------------------------
-  Cell Area:           9889064.511606
-  Design Area:         9889064.511606
-  Net Length        :     21824478.00
+  Cell Area:           7167277.594966
+  Design Area:         7167277.594966
+  Net Length        :     13473594.00
 
 
   Design Rules
   -----------------------------------
-  Total Number of Nets:        414711
-  Nets With Violations:             8
+  Total Number of Nets:        263898
+  Nets With Violations:             3
   Max Trans Violations:             1
-  Max Cap Violations:               7
+  Max Cap Violations:               2
   -----------------------------------
 
 
@@ -410,17 +410,17 @@ Date   : Thu Apr 30 23:23:19 2026
   -----------------------------------------
   Resource Sharing:                    0.00
   Logic Optimization:                  0.00
-  Mapping Optimization:             1835.77
+  Mapping Optimization:              719.80
   -----------------------------------------
-  Overall Compile Time:             1842.87
-  Overall Compile Wall Clock Time:  1868.64
+  Overall Compile Time:              723.30
+  Overall Compile Wall Clock Time:   726.40
 
   --------------------------------------------------------------------
 
-  Design  WNS: 1.13  TNS: 1779.55  Number of Violating Paths: 4395  (with Crosstalk delta delays)
+  Design  WNS: 0.48  TNS: 146.68  Number of Violating Paths: 1926  (with Crosstalk delta delays)
 
 
-  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0  (with Crosstalk delta delays)
+  Design (Hold)  WNS: 0.02  TNS: 0.03  Number of Violating Paths: 2  (with Crosstalk delta delays)
 
   --------------------------------------------------------------------
 

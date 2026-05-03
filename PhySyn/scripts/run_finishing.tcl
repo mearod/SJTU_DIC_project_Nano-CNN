@@ -103,6 +103,9 @@ report_area -nosplit > ../reports/cnn_chip.area.rpt
 report_qor -nosplit > ../reports/cnn_chip.qor.rpt
 report_design -physical -nosplit > ../reports/cnn_chip.physical.rpt
 
+# 【新增】：生成详细的静态/动态功耗评估报告！
+report_power -analysis_effort high > ../reports/cnn_chip.power.rpt
+
 ########################################
 #       SAVE DESIGN AND STREAM OUT     #
 ########################################

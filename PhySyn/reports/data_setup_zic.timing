@@ -9,7 +9,7 @@ Report : timing
         -max_paths 1
 Design : CNN_chip
 Version: O-2018.06-SP1
-Date   : Thu Apr 30 21:07:05 2026
+Date   : Sun May  3 01:22:45 2026
 ****************************************
 
  z Timer is in zero interconnect delay mode.
@@ -19,7 +19,7 @@ Date   : Thu Apr 30 21:07:05 2026
 Operating Conditions: slow   Library: slow
 
   Startpoint: rst_b (input port clocked by clk)
-  Endpoint: inst_CNN_Top/u_cnn/u_conv/fifo_inst/fifo_mem_reg[4][0][0][0]
+  Endpoint: inst_CNN_Top/u_cnn/u_conv/fifo_inst/fifo_mem_reg[5][0][0][0]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: INPUTS
   Path Type: max
@@ -36,30 +36,30 @@ Operating Conditions: slow   Library: slow
   inst_CNN_Top/u_cnn/u_conv/rst_b (Conv)                  0.00 z     4.30 f
   inst_CNN_Top/u_cnn/u_conv/fifo_inst/rst_n (FIFO_2x4X8)
                                                           0.00 z     4.30 f
-  inst_CNN_Top/u_cnn/u_conv/fifo_inst/u7774/Y (NOR2BX1)
-                                                          0.18 z     4.48 f
-  inst_CNN_Top/u_cnn/u_conv/fifo_inst/u7775/Y (NAND2X1)
-                                                          0.21 z     4.69 r
-  inst_CNN_Top/u_cnn/u_conv/fifo_inst/u8013/Y (NAND2BX2)
-                                                          1.39 z     6.09 r
-  inst_CNN_Top/u_cnn/u_conv/fifo_inst/u11931/Y (MXI2X1)
-                                                          0.54 z     6.63 f
-  inst_CNN_Top/u_cnn/u_conv/fifo_inst/fifo_mem_reg[4][0][0][0]/D (DFFXL)
-                                                          0.00 z     6.63 f
-  data arrival time                                                  6.63
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/u7774/Y (NOR2BX2)
+                                                          0.14 z     4.44 f
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/u7835/Y (NAND3X1)
+                                                          0.22 z     4.66 r
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/u8070/Y (NAND2BX2)
+                                                          1.40 z     6.06 r
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/u12043/Y (MXI2X1)
+                                                          0.54 z     6.60 f
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/fifo_mem_reg[5][0][0][0]/D (DFFXL)
+                                                          0.00 z     6.60 f
+  data arrival time                                                  6.60
 
   clock clk (rise edge)                                   7.00       7.00
   clock network delay (ideal)                             0.30       7.30
   clock uncertainty                                      -0.50       6.80
-  inst_CNN_Top/u_cnn/u_conv/fifo_inst/fifo_mem_reg[4][0][0][0]/CK (DFFXL)
+  inst_CNN_Top/u_cnn/u_conv/fifo_inst/fifo_mem_reg[5][0][0][0]/CK (DFFXL)
                                                           0.00       6.80 r
   library setup time                                     -0.16       6.64
   data required time                                                 6.64
   --------------------------------------------------------------------------
   data required time                                                 6.64
-  data arrival time                                                 -6.63
+  data arrival time                                                 -6.60
   --------------------------------------------------------------------------
-  slack (MET)                                                        0.01
+  slack (MET)                                                        0.04
 
 
   Startpoint: inst_CNN_Top/done_reg
@@ -91,9 +91,9 @@ Operating Conditions: slow   Library: slow
   slack (MET)                                         0.06
 
 
-  Startpoint: inst_CNN_Top/u_cnn/u_conv/weight_rom/sram_inst[2].u_sram
+  Startpoint: inst_CNN_Top/u_cnn/u_conv/weight_rom/sram_inst[3].u_sram
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s1_prod_reg[32][15]
+  Endpoint: inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/s1_prod_reg[51][14]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -102,70 +102,70 @@ Operating Conditions: slow   Library: slow
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.30       0.30
-  inst_CNN_Top/u_cnn/u_conv/weight_rom/sram_inst[2].u_sram/CLK (S018V3EBCDSP_X8Y4D128_PR)
+  inst_CNN_Top/u_cnn/u_conv/weight_rom/sram_inst[3].u_sram/CLK (S018V3EBCDSP_X8Y4D128_PR)
                                                           0.00 #     0.30 r
-  inst_CNN_Top/u_cnn/u_conv/weight_rom/sram_inst[2].u_sram/Q[6] (S018V3EBCDSP_X8Y4D128_PR)
+  inst_CNN_Top/u_cnn/u_conv/weight_rom/sram_inst[3].u_sram/Q[26] (S018V3EBCDSP_X8Y4D128_PR)
                                                           2.12 z     2.42 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/conv_weights[262] (Conv_MultAdd)
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/conv_weights[410] (Conv_MultAdd)
                                                           0.00 z     2.42 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/u4657/Y (CLKINVX3)
-                                                          0.05 z     2.47 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/u4658/Y (CLKINVX16)
-                                                          0.30 z     2.76 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/conv_weights[262] (Conv_MultAdd_cell_6)
-                                                          0.00 z     2.76 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/u18301/Y (AOI22X2)
-                                                          0.12 z     2.88 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/u18378/Y (NAND2BX1)
-                                                          0.24 z     3.11 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/u18380/Y (NAND2BX2)
-                                                          0.19 z     3.30 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/u18383/Y (AOI21X1)
-                                                          0.23 z     3.53 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/u18508/Y (NOR2X2)
-                                                          0.10 z     3.63 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/u18509/Y (XNOR2X2)
-                                                          0.26 z     3.89 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/u18510/Y (NOR2X1)
-                                                          0.07 z     3.96 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/u18512/Y (NAND2BX2)
-                                                          0.19 z     4.16 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/u18514/Y (XNOR2X4)
-                                                          0.18 z     4.33 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/u18516/Y (AND2X4)
-                                                          0.17 z     4.51 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/u18517/Y (NOR2X4)
-                                                          0.12 z     4.63 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/u18518/Y (XNOR2X4)
-                                                          0.24 z     4.87 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/u18523/Y (AOI21X4)
-                                                          0.16 z     5.02 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/u18527/Y (NAND3X1)
-                                                          0.14 z     5.16 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/u18530/Y (AOI21X2)
-                                                          0.20 z     5.36 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/u18542/Y (OAI21X2)
-                                                          0.11 z     5.47 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/u18544/Y (OR2X4)
-                                                          0.24 z     5.70 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/u18545/Y (NOR2X2)
-                                                          0.13 z     5.83 r
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/u18572/Y (OAI22X2)
-                                                          0.13 z     5.97 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/u18575/Y (AOI2BB1X4)
-                                                          0.22 z     6.18 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/u18578/Y (AOI2BB1X2)
-                                                          0.22 z     6.40 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/u18579/Y (OR2X2)
-                                                          0.19 z     6.59 f
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s1_prod_reg[32][15]/D (DFFHQXL)
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/u4685/Y (BUFX4)
+                                                          0.14 z     2.56 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/u5593/Y (BUFX20)
+                                                          0.18 z     2.74 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/conv_weights[410] (Conv_MultAdd_cell_7)
+                                                          0.00 z     2.74 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/u10767/Y (AND2X2)
+                                                          0.19 z     2.93 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/u22477/Y (INVXL)
+                                                          0.06 z     3.00 f
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/u22478/Y (INVX1)
+                                                          0.08 z     3.08 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/u10815/Y (NAND3XL)
+                                                          0.11 z     3.19 f
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/u10818/Y (AOI21X1)
+                                                          0.19 z     3.38 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/u10852/Y (NAND2BX1)
+                                                          0.19 z     3.57 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/u10867/Y (NAND2X1)
+                                                          0.09 z     3.66 f
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/u10868/Y (XNOR2X1)
+                                                          0.41 z     4.07 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/u10869/Y (XNOR2X4)
+                                                          0.26 z     4.33 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/u10908/Y (NAND2X1)
+                                                          0.07 z     4.40 f
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/u10987/Y (NOR2BX1)
+                                                          0.20 z     4.60 f
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/u10988/Y (XNOR2X1)
+                                                          0.25 z     4.85 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/u10989/Y (INVX1)
+                                                          0.09 z     4.94 f
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/u10992/Y (AOI221X2)
+                                                          0.32 z     5.26 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/u10994/Y (OAI21X2)
+                                                          0.15 z     5.40 f
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/u11005/Y (OAI211X2)
+                                                          0.22 z     5.63 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/u11007/Y (NOR2BX4)
+                                                          0.18 z     5.80 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/u11008/Y (OR2X4)
+                                                          0.15 z     5.95 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/u11009/Y (NOR2X2)
+                                                          0.06 z     6.02 f
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/u11011/Y (OAI21X2)
+                                                          0.19 z     6.21 r
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/u11013/Y (OAI21X2)
+                                                          0.12 z     6.33 f
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/u20484/Y (XNOR2X1)
+                                                          0.26 z     6.59 f
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/s1_prod_reg[51][14]/D (DFFHQXL)
                                                           0.00 z     6.59 f
   data arrival time                                                  6.59
 
   clock clk (rise edge)                                   7.00       7.00
   clock network delay (ideal)                             0.30       7.30
   clock uncertainty                                      -0.50       6.80
-  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[1].cell_inst/s1_prod_reg[32][15]/CK (DFFHQXL)
+  inst_CNN_Top/u_cnn/u_conv/mult_add_inst/row_gen[1].col_gen[2].cell_inst/s1_prod_reg[51][14]/CK (DFFHQXL)
                                                           0.00       6.80 r
   library setup time                                     -0.21       6.59
   data required time                                                 6.59

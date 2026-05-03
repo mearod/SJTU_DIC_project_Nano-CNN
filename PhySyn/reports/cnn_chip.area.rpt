@@ -33,33 +33,8 @@ Information: Loading local_link_library attribute {slow.db, S018V3EBCDSP_X8Y4D72
   SP018W_V1p5_max (library)   /home/student/Desktop/Workspace/SMIC18/db/SP018W_V1p5_max.db
 
 Information: The design has horizontal rows, and Y-symmetry has been used for sites. (MWDC-217)
-Derived Core Area : (0 240000) (8695060 4839260) is different from CEL Core Area (240000 240000) (4318800 4317360).
 Floorplan loading succeeded.
-# GUI Debug: Building dc for netlist invalid. -- Time: 26sec 347ms
-Warning: Cell 'gen_piw_feature[29].PIW_feature' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_piw_feature[30].PIW_feature' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_piw_feature[31].PIW_feature' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'PO8W_done' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[0].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[1].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[2].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[3].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[4].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[5].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[6].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[7].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
+# GUI Debug: Building dc for netlist invalid. -- Time: 12sec 947ms
 Warning: Cell 'PIW_clk' is being marked as "dont_touch" because it has 
 	a fixed_placement attribute. (PSYN-040)
 Warning: Cell 'PIW_rst_b' is being marked as "dont_touch" because it has 
@@ -126,6 +101,30 @@ Warning: Cell 'gen_piw_feature[27].PIW_feature' is being marked as "dont_touch" 
 	a fixed_placement attribute. (PSYN-040)
 Warning: Cell 'gen_piw_feature[28].PIW_feature' is being marked as "dont_touch" because it has 
 	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_piw_feature[29].PIW_feature' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_piw_feature[30].PIW_feature' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_piw_feature[31].PIW_feature' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_done' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[0].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[1].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[2].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[3].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[4].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[5].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[6].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[7].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
 Information: Updating graph... (UID-83)
 
 ************************************************************
@@ -147,7 +146,7 @@ Route xtalk prevention threshold:  0.25
 Report : area
 Design : CNN_chip
 Version: O-2018.06-SP1
-Date   : Thu Apr 30 23:20:02 2026
+Date   : Sun May  3 02:27:20 2026
 ****************************************
 
 Information: Updating design information... (UID-85)
@@ -172,8 +171,8 @@ Information: Input delay ('rise') on clock port 'clk' will be added to the clock
 Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
 Library(s) Used:
 
-    SP018W_V1p5_max (File: /home/student/Desktop/Workspace/SMIC18/db/SP018W_V1p5_max.db)
     slow (File: /home/student/Desktop/Workspace/SMIC18/db/slow.db)
+    SP018W_V1p5_max (File: /home/student/Desktop/Workspace/SMIC18/db/SP018W_V1p5_max.db)
     S018V3EBCDSP_X8Y4D16_PR (File: /home/student/Desktop/Workspace/SMIC18/db/S018V3EBCDSP_X8Y4D16_PR.db)
     S018V3EBCDSP_X8Y4D128_PR (File: /home/student/Desktop/Workspace/SMIC18/db/S018V3EBCDSP_X8Y4D128_PR.db)
     S018V3EBCDSP_X8Y4D72_PR (File: /home/student/Desktop/Workspace/SMIC18/db/S018V3EBCDSP_X8Y4D72_PR.db)
@@ -181,20 +180,20 @@ Library(s) Used:
     S018V3EBCDSP_X64Y4D16_PR (File: /home/student/Desktop/Workspace/SMIC18/db/S018V3EBCDSP_X64Y4D16_PR.db)
 
 Number of ports:                           45
-Number of nets:                           119
-Number of cells:                           73
-Number of combinational cells:             72
+Number of nets:                           120
+Number of cells:                           74
+Number of combinational cells:             73
 Number of sequential cells:                 0
 Number of macros/black boxes:              15
-Number of buf/inv:                         27
-Number of references:                      13
+Number of buf/inv:                         28
+Number of references:                      17
 
-Combinational area:            7398349.730257
-Buf/Inv area:                  1393539.041629
-Noncombinational area:         1148097.000099
+Combinational area:            4843125.643466
+Buf/Inv area:                  1175184.164112
+Noncombinational area:          981534.170250
 Macro/Black Box area:          1342617.781250
 Net Interconnect area:      undefined  (No wire load specified)
 
-Total cell area:               9889064.511606
+Total cell area:               7167277.594966
 Total area:                 undefined
 1

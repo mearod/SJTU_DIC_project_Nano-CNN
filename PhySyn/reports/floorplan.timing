@@ -32,36 +32,11 @@ Information: Loading local_link_library attribute {slow.db, S018V3EBCDSP_X8Y4D72
                               /home/student/Desktop/Workspace/SMIC18/db/S018V3EBCDSP_X8Y4D32_PR.db
   SP018W_V1p5_max (library)   /home/student/Desktop/Workspace/SMIC18/db/SP018W_V1p5_max.db
 
-Warning: The non-constant Milkyway net 'IDS_UNCONNECTED' (0x29844) has a hierarchical load pin 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/input_data[199]' but no driver. It will now be driven by logic zero. (MWDC-229)
+Warning: The non-constant Milkyway net 'IDS_UNCONNECTED' (0x29744) has a hierarchical load pin 'inst_CNN_Top/u_cnn/u_pwconv/mult_add_inst/row_gen[0].col_gen[0].cell_inst/input_data[199]' but no driver. It will now be driven by logic zero. (MWDC-229)
 Warning: The non-constant Milkyway net 'IDS_UNCONNECTED' (0x7424) has a hierarchical load pin 'inst_CNN_Top/u_cnn/u_dwconv/input_data[127]' but no driver. It will now be driven by logic zero. (MWDC-229)
-# GUI Debug: Building dc from empty. -- Time: 7sec 651ms
+# GUI Debug: Building dc from empty. -- Time: 6sec 294ms
 Information: The design has horizontal rows, and Y-symmetry has been used for sites. (MWDC-217)
-Derived Core Area : (0 240000) (8695060 4839260) is different from CEL Core Area (240000 240000) (4318800 4317360).
 Floorplan loading succeeded.
-Warning: Cell 'gen_piw_feature[29].PIW_feature' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_piw_feature[30].PIW_feature' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_piw_feature[31].PIW_feature' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'PO8W_done' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[0].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[1].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[2].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[3].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[4].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[5].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[6].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[7].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
 Warning: Cell 'PIW_clk' is being marked as "dont_touch" because it has 
 	a fixed_placement attribute. (PSYN-040)
 Warning: Cell 'PIW_rst_b' is being marked as "dont_touch" because it has 
@@ -127,32 +102,32 @@ Warning: Cell 'gen_piw_feature[26].PIW_feature' is being marked as "dont_touch" 
 Warning: Cell 'gen_piw_feature[27].PIW_feature' is being marked as "dont_touch" because it has 
 	a fixed_placement attribute. (PSYN-040)
 Warning: Cell 'gen_piw_feature[28].PIW_feature' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_piw_feature[29].PIW_feature' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_piw_feature[30].PIW_feature' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_piw_feature[31].PIW_feature' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_done' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[0].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[1].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[2].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[3].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[4].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[5].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[6].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[7].PO8W_result' is being marked as "dont_touch" because it has 
 	a fixed_placement attribute. (PSYN-040)
 
-Warning: Cell 'gen_piw_feature[29].PIW_feature' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_piw_feature[30].PIW_feature' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_piw_feature[31].PIW_feature' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'PO8W_done' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[0].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[1].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[2].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[3].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[4].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[5].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[6].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[7].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
 Warning: Cell 'PIW_clk' is being marked as "dont_touch" because it has 
 	a fixed_placement attribute. (PSYN-040)
 Warning: Cell 'PIW_rst_b' is being marked as "dont_touch" because it has 
@@ -218,6 +193,30 @@ Warning: Cell 'gen_piw_feature[26].PIW_feature' is being marked as "dont_touch" 
 Warning: Cell 'gen_piw_feature[27].PIW_feature' is being marked as "dont_touch" because it has 
 	a fixed_placement attribute. (PSYN-040)
 Warning: Cell 'gen_piw_feature[28].PIW_feature' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_piw_feature[29].PIW_feature' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_piw_feature[30].PIW_feature' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_piw_feature[31].PIW_feature' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_done' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[0].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[1].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[2].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[3].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[4].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[5].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[6].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[7].PO8W_result' is being marked as "dont_touch" because it has 
 	a fixed_placement attribute. (PSYN-040)
   Loading design 'CNN_chip'
 
@@ -276,13 +275,13 @@ Information: Resistance Unit from Milkyway design library: 'kohm'
 Information: Design Library and main library resistance units are matched - 1.000 kohm. 
 Information: Capacitance Unit from Milkyway design library: 'pf' 
 Information: Design Library and main library capacitance units are matched - 1.000 pf. 
-371756/371913 nets are routed
+234634/234679 nets are routed
 Warning: Inconsistent library data found for layer POLY1. (RCEX-018)
 Information: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)
 Information: The RC model used is global route TLU+. (RCEX-015)
 Information: Start mixed mode parasitic extraction. (RCEX-023)
 Information: Start rc extraction...
-Memory usage for extraction task 1435 Mbytes -- main task 1507 Mbytes.
+Memory usage for extraction task 994 Mbytes -- main task 1193 Mbytes.
 Warning: Net 'net_clk' is exceeding threshold (over 1000 pins) and will be skipped. (RCEX-020)
 Information: Parasitic source is LPE. (RCEX-040)
 Information: Parasitic mode is RealRVirtualC. (RCEX-041)
@@ -321,30 +320,6 @@ Information: Using region-based R and C coefficients. (RCEX-013)
 Information: Library Derived Via Res : 0.0095 0.001 (RCEX-011)
 Information: End rc update.
 Information: The mixed mode parasitic extraction has been performed. (RCEX-202)
-Warning: Cell 'gen_piw_feature[29].PIW_feature' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_piw_feature[30].PIW_feature' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_piw_feature[31].PIW_feature' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'PO8W_done' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[0].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[1].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[2].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[3].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[4].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[5].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[6].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
-Warning: Cell 'gen_po8w_result[7].PO8W_result' is being marked as "dont_touch" because it has 
-	a fixed_placement attribute. (PSYN-040)
 Warning: Cell 'PIW_clk' is being marked as "dont_touch" because it has 
 	a fixed_placement attribute. (PSYN-040)
 Warning: Cell 'PIW_rst_b' is being marked as "dont_touch" because it has 
@@ -411,6 +386,30 @@ Warning: Cell 'gen_piw_feature[27].PIW_feature' is being marked as "dont_touch" 
 	a fixed_placement attribute. (PSYN-040)
 Warning: Cell 'gen_piw_feature[28].PIW_feature' is being marked as "dont_touch" because it has 
 	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_piw_feature[29].PIW_feature' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_piw_feature[30].PIW_feature' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_piw_feature[31].PIW_feature' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'PO8W_done' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[0].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[1].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[2].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[3].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[4].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[5].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[6].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
+Warning: Cell 'gen_po8w_result[7].PO8W_result' is being marked as "dont_touch" because it has 
+	a fixed_placement attribute. (PSYN-040)
 Information: Updating graph... (UID-83)
 Warning: Design 'CNN_chip' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
 Information: Updating design information... (UID-85)
@@ -424,7 +423,7 @@ Report : timing
         -max_paths 1
 Design : CNN_chip
 Version: O-2018.06-SP1
-Date   : Thu Apr 30 21:11:50 2026
+Date   : Sun May  3 01:25:40 2026
 ****************************************
 
  * Some/all delay information is back-annotated.
@@ -439,9 +438,9 @@ Operating Conditions: slow   Library: slow
 
 Information: Percent of Arnoldi-based delays =  0.00%
 
-  Startpoint: feature_in[12]
+  Startpoint: feature_in[4]
               (input port clocked by clk)
-  Endpoint: inst_CNN_Top/flat_shift_reg_reg[101][4]
+  Endpoint: inst_CNN_Top/flat_shift_reg_reg[12][4]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: INPUTS
   Path Type: max
@@ -451,30 +450,30 @@ Information: Percent of Arnoldi-based delays =  0.00%
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.30       0.30
   input external delay                                    4.00       4.30 f
-  feature_in[12] (in)                                     0.00       4.30 f
-  gen_piw_feature[12].PIW_feature/C (PIW)                 0.82 *     5.12 f
-  inst_CNN_Top/feature_in[12] (CNN_Top)                   0.00       5.12 f
-  inst_CNN_Top/u10428/Y (INVX1)                          14.30 *    19.42 r
-  inst_CNN_Top/u12050/Y (MXI2X1)                          4.80 *    24.22 f
-  inst_CNN_Top/flat_shift_reg_reg[101][4]/D (DFFXL)       0.00 *    24.22 f
-  data arrival time                                                 24.22
+  feature_in[4] (in)                                      0.00       4.30 f
+  gen_piw_feature[4].PIW_feature/C (PIW)                  0.93 *     5.23 f
+  inst_CNN_Top/feature_in[4] (CNN_Top)                    0.00       5.23 f
+  inst_CNN_Top/u10404/Y (INVX1)                          10.67 *    15.90 r
+  inst_CNN_Top/u10626/Y (MXI2X1)                          3.10 *    19.00 f
+  inst_CNN_Top/flat_shift_reg_reg[12][4]/D (DFFXL)        0.00 *    19.00 f
+  data arrival time                                                 19.00
 
   clock clk (rise edge)                                   7.00       7.00
   clock network delay (ideal)                             0.30       7.30
   clock uncertainty                                      -0.50       6.80
-  inst_CNN_Top/flat_shift_reg_reg[101][4]/CK (DFFXL)      0.00       6.80 r
-  library setup time                                     -0.41       6.39
-  data required time                                                 6.39
+  inst_CNN_Top/flat_shift_reg_reg[12][4]/CK (DFFXL)       0.00       6.80 r
+  library setup time                                     -0.35       6.45
+  data required time                                                 6.45
   --------------------------------------------------------------------------
-  data required time                                                 6.39
-  data arrival time                                                -24.22
+  data required time                                                 6.45
+  data arrival time                                                -19.00
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                 -17.83
+  slack (VIOLATED)                                                 -12.55
 
 
-  Startpoint: inst_CNN_Top/result_byte_reg[1]
+  Startpoint: inst_CNN_Top/result_byte_reg[6]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: result_byte[1]
+  Endpoint: result_byte[6]
             (output port clocked by clk)
   Path Group: OUTPUTS
   Path Type: max
@@ -483,12 +482,12 @@ Information: Percent of Arnoldi-based delays =  0.00%
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.30       0.30
-  inst_CNN_Top/result_byte_reg[1]/CK (DFFRHQX2)           0.00 #     0.30 r
-  inst_CNN_Top/result_byte_reg[1]/Q (DFFRHQX2)            5.52       5.82 r
-  inst_CNN_Top/result_byte[1] (CNN_Top)                   0.00       5.82 r
-  gen_po8w_result[1].PO8W_result/PAD (PO8W)               4.03 *     9.85 r
-  result_byte[1] (out)                                    0.00 *     9.86 r
-  data arrival time                                                  9.86
+  inst_CNN_Top/result_byte_reg[6]/CK (DFFRHQX2)           0.00 #     0.30 r
+  inst_CNN_Top/result_byte_reg[6]/Q (DFFRHQX2)            4.11       4.41 r
+  inst_CNN_Top/result_byte[6] (CNN_Top)                   0.00       4.41 r
+  gen_po8w_result[6].PO8W_result/PAD (PO8W)               3.04 *     7.45 r
+  result_byte[6] (out)                                    0.00 *     7.45 r
+  data arrival time                                                  7.45
 
   clock clk (rise edge)                                   7.00       7.00
   clock network delay (ideal)                             0.30       7.30
@@ -497,14 +496,14 @@ Information: Percent of Arnoldi-based delays =  0.00%
   data required time                                                 2.80
   --------------------------------------------------------------------------
   data required time                                                 2.80
-  data arrival time                                                 -9.86
+  data arrival time                                                 -7.45
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -7.06
+  slack (VIOLATED)                                                  -4.65
 
 
   Startpoint: inst_CNN_Top/asyn_en_reg
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: inst_CNN_Top/u_cnn/u_conv/bias_rom/sram_inst
+  Endpoint: inst_CNN_Top/flat_holding_reg_reg[86][1]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -514,26 +513,28 @@ Information: Percent of Arnoldi-based delays =  0.00%
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.30       0.30
   inst_CNN_Top/asyn_en_reg/CK (DFFHQXL)                   0.00 #     0.30 r
-  inst_CNN_Top/asyn_en_reg/Q (DFFHQXL)                    9.78      10.08 r
-  inst_CNN_Top/u_cnn/en (cnn)                             0.00      10.08 r
-  inst_CNN_Top/u_cnn/u_conv/en (Conv)                     0.00      10.08 r
-  inst_CNN_Top/u_cnn/u_conv/u64/Y (INVX1)                15.49 *    25.56 f
-  inst_CNN_Top/u_cnn/u_conv/bias_rom/sram_inst/CEN (S018V3EBCDSP_X8Y4D16_PR)
-                                                          0.57 *    26.14 f
-  data arrival time                                                 26.14
+  inst_CNN_Top/asyn_en_reg/Q (DFFHQXL)                   10.67      10.97 r
+  inst_CNN_Top/u6214/Y (AND3X2)                           0.90 *    11.87 r
+  inst_CNN_Top/u16394/Y (INVX1)                           0.23 *    12.11 f
+  inst_CNN_Top/u6211/Y (NOR2X1)                           0.25 *    12.36 r
+  inst_CNN_Top/u7236/Y (NAND2X1)                          4.66 *    17.02 f
+  inst_CNN_Top/u16487/Y (INVX1)                           3.18 *    20.20 r
+  inst_CNN_Top/u16488/Y (INVX1)                           2.69 *    22.90 f
+  inst_CNN_Top/u13736/Y (MXI2X1)                          0.81 *    23.71 f
+  inst_CNN_Top/flat_holding_reg_reg[86][1]/D (DFFX1)      0.00 *    23.71 f
+  data arrival time                                                 23.71
 
   clock clk (rise edge)                                   7.00       7.00
   clock network delay (ideal)                             0.30       7.30
   clock uncertainty                                      -0.50       6.80
-  inst_CNN_Top/u_cnn/u_conv/bias_rom/sram_inst/CLK (S018V3EBCDSP_X8Y4D16_PR)
-                                                          0.00       6.80 r
-  library setup time                                     -0.97       5.83
-  data required time                                                 5.83
+  inst_CNN_Top/flat_holding_reg_reg[86][1]/CK (DFFX1)     0.00       6.80 r
+  library setup time                                     -0.33       6.47
+  data required time                                                 6.47
   --------------------------------------------------------------------------
-  data required time                                                 5.83
-  data arrival time                                                -26.14
+  data required time                                                 6.47
+  data arrival time                                                -23.71
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                 -20.30
+  slack (VIOLATED)                                                 -17.24
 
 
 1
